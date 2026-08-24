@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Scratch Fuzzer
 
 An automated fuzz-testing pipeline for [Scratch 3.0](https://scratch.mit.edu) programs. It reads a `.sb3` project, statically analyses its blocks and variables, generates test oracles (deterministic structural rules plus LLM-inferred semantic properties), then runs the actual program inside a headless copy of the Scratch virtual machine and checks those oracles continuously while it plays.
@@ -67,3 +68,7 @@ Each stage's output feeds the next: `_analysis.json` → `_oracles.js` → `_bug
 ## Tech stack
 
 Node.js, [`scratch-vm`](https://github.com/scratchfoundation/scratch-vm) (headless), [Groq](https://groq.com) LLM inference API, Python (for HTML report rendering).
+=======
+# Automated-Fuzz-Testing-Pipeline-for-Scratch-3.0-Programs
+Automated fuzz-testing pipeline for Scratch 3.0 — static analysis + LLM-generated oracles + headless VM execution. Found a previously undocumented variable-aliasing defect in the Scratch runtime.
+>>>>>>> 8078c3c6ca76bd892a5157207f7ca89e00dc2318
