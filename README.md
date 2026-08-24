@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Scratch Fuzzer
 
 An automated fuzz-testing pipeline for [Scratch 3.0](https://scratch.mit.edu) programs. It reads a `.sb3` project, statically analyses its blocks and variables, generates test oracles (deterministic structural rules plus LLM-inferred semantic properties), then runs the actual program inside a headless copy of the Scratch virtual machine and checks those oracles continuously while it plays.
