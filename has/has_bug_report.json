@@ -1,0 +1,154 @@
+{
+  "program": "has.sb3",
+  "oracles": "has_oracles.js",
+  "timestamp": "2026-08-20T16:03:56.426Z",
+  "totalSequences": 14,
+  "totalTicks": 6360,
+  "oracleCount": 20,
+  "cameraSystem": true,
+  "coverage": {
+    "statesVisited": [
+      "CURRENT PLAYER STAT=hided|MENU=Main",
+      "CURRENT PLAYER STAT=hided|MENU=Play Settings"
+    ],
+    "eventsTriggered": [
+      "inject:start",
+      "key:1",
+      "key:2",
+      "key:3",
+      "key:4",
+      "key:a",
+      "key:b",
+      "key:d",
+      "key:Down",
+      "key:f",
+      "key:h",
+      "key:Left",
+      "key:m",
+      "key:r",
+      "key:Right",
+      "key:s",
+      "key: ",
+      "key:Up",
+      "key:w",
+      "key:x",
+      "key:y",
+      "key:z"
+    ]
+  },
+  "bugsFound": 14,
+  "bugs": [
+    {
+      "oracle": "StaticBug_AliasingVariables",
+      "tier": 2,
+      "description": "14 variable IDs shared across sprites — writes in one sprite corrupt another",
+      "sequence": "Boot_Idle",
+      "tick": 0,
+      "detail": "14 variable IDs shared across sprites — writes in one sprite corrupt another Examples: Player.hidden for seeker? = Bot1.hidden for seeker?; Player.power = Bot1.power; Player.speed up = Bot1.speed up"
+    },
+    {
+      "oracle": "StaticBug_AliasingVariables",
+      "tier": 2,
+      "description": "14 variable IDs shared across sprites — writes in one sprite corrupt another",
+      "sequence": "Boot_then_Playing",
+      "tick": 0,
+      "detail": "14 variable IDs shared across sprites — writes in one sprite corrupt another Examples: Player.hidden for seeker? = Bot1.hidden for seeker?; Player.power = Bot1.power; Player.speed up = Bot1.speed up"
+    },
+    {
+      "oracle": "StaticBug_AliasingVariables",
+      "tier": 2,
+      "description": "14 variable IDs shared across sprites — writes in one sprite corrupt another",
+      "sequence": "Playing_Hold_1",
+      "tick": 0,
+      "detail": "14 variable IDs shared across sprites — writes in one sprite corrupt another Examples: Player.hidden for seeker? = Bot1.hidden for seeker?; Player.power = Bot1.power; Player.speed up = Bot1.speed up"
+    },
+    {
+      "oracle": "StaticBug_AliasingVariables",
+      "tier": 2,
+      "description": "14 variable IDs shared across sprites — writes in one sprite corrupt another",
+      "sequence": "Playing_Hold_2",
+      "tick": 0,
+      "detail": "14 variable IDs shared across sprites — writes in one sprite corrupt another Examples: Player.hidden for seeker? = Bot1.hidden for seeker?; Player.power = Bot1.power; Player.speed up = Bot1.speed up"
+    },
+    {
+      "oracle": "StaticBug_AliasingVariables",
+      "tier": 2,
+      "description": "14 variable IDs shared across sprites — writes in one sprite corrupt another",
+      "sequence": "Playing_Hold_3",
+      "tick": 0,
+      "detail": "14 variable IDs shared across sprites — writes in one sprite corrupt another Examples: Player.hidden for seeker? = Bot1.hidden for seeker?; Player.power = Bot1.power; Player.speed up = Bot1.speed up"
+    },
+    {
+      "oracle": "StaticBug_AliasingVariables",
+      "tier": 2,
+      "description": "14 variable IDs shared across sprites — writes in one sprite corrupt another",
+      "sequence": "Playing_Hold_4",
+      "tick": 0,
+      "detail": "14 variable IDs shared across sprites — writes in one sprite corrupt another Examples: Player.hidden for seeker? = Bot1.hidden for seeker?; Player.power = Bot1.power; Player.speed up = Bot1.speed up"
+    },
+    {
+      "oracle": "StaticBug_AliasingVariables",
+      "tier": 2,
+      "description": "14 variable IDs shared across sprites — writes in one sprite corrupt another",
+      "sequence": "Playing_Hold_a",
+      "tick": 0,
+      "detail": "14 variable IDs shared across sprites — writes in one sprite corrupt another Examples: Player.hidden for seeker? = Bot1.hidden for seeker?; Player.power = Bot1.power; Player.speed up = Bot1.speed up"
+    },
+    {
+      "oracle": "StaticBug_AliasingVariables",
+      "tier": 2,
+      "description": "14 variable IDs shared across sprites — writes in one sprite corrupt another",
+      "sequence": "Playing_All_Keys",
+      "tick": 0,
+      "detail": "14 variable IDs shared across sprites — writes in one sprite corrupt another Examples: Player.hidden for seeker? = Bot1.hidden for seeker?; Player.power = Bot1.power; Player.speed up = Bot1.speed up"
+    },
+    {
+      "oracle": "StaticBug_AliasingVariables",
+      "tier": 2,
+      "description": "14 variable IDs shared across sprites — writes in one sprite corrupt another",
+      "sequence": "Playing_Random_600",
+      "tick": 0,
+      "detail": "14 variable IDs shared across sprites — writes in one sprite corrupt another Examples: Player.hidden for seeker? = Bot1.hidden for seeker?; Player.power = Bot1.power; Player.speed up = Bot1.speed up"
+    },
+    {
+      "oracle": "StaticBug_AliasingVariables",
+      "tier": 2,
+      "description": "14 variable IDs shared across sprites — writes in one sprite corrupt another",
+      "sequence": "Playing_Spam_Long",
+      "tick": 0,
+      "detail": "14 variable IDs shared across sprites — writes in one sprite corrupt another Examples: Player.hidden for seeker? = Bot1.hidden for seeker?; Player.power = Bot1.power; Player.speed up = Bot1.speed up"
+    },
+    {
+      "oracle": "StaticBug_AliasingVariables",
+      "tier": 2,
+      "description": "14 variable IDs shared across sprites — writes in one sprite corrupt another",
+      "sequence": "Playing_Mixed_Long",
+      "tick": 0,
+      "detail": "14 variable IDs shared across sprites — writes in one sprite corrupt another Examples: Player.hidden for seeker? = Bot1.hidden for seeker?; Player.power = Bot1.power; Player.speed up = Bot1.speed up"
+    },
+    {
+      "oracle": "StaticBug_AliasingVariables",
+      "tier": 2,
+      "description": "14 variable IDs shared across sprites — writes in one sprite corrupt another",
+      "sequence": "Double_Inject",
+      "tick": 0,
+      "detail": "14 variable IDs shared across sprites — writes in one sprite corrupt another Examples: Player.hidden for seeker? = Bot1.hidden for seeker?; Player.power = Bot1.power; Player.speed up = Bot1.speed up"
+    },
+    {
+      "oracle": "StaticBug_AliasingVariables",
+      "tier": 2,
+      "description": "14 variable IDs shared across sprites — writes in one sprite corrupt another",
+      "sequence": "Boot_Long_600",
+      "tick": 0,
+      "detail": "14 variable IDs shared across sprites — writes in one sprite corrupt another Examples: Player.hidden for seeker? = Bot1.hidden for seeker?; Player.power = Bot1.power; Player.speed up = Bot1.speed up"
+    },
+    {
+      "oracle": "StaticBug_AliasingVariables",
+      "tier": 2,
+      "description": "14 variable IDs shared across sprites — writes in one sprite corrupt another",
+      "sequence": "Playing_Rapid_Switch",
+      "tick": 0,
+      "detail": "14 variable IDs shared across sprites — writes in one sprite corrupt another Examples: Player.hidden for seeker? = Bot1.hidden for seeker?; Player.power = Bot1.power; Player.speed up = Bot1.speed up"
+    }
+  ]
+}

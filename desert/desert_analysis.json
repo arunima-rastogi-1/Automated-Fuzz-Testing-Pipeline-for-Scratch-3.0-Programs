@@ -1,0 +1,351 @@
+{
+  "project": "desert.sb3",
+  "sprites": [
+    {
+      "name": "Player",
+      "variables": [],
+      "lists": [],
+      "costumes": [
+        "Fading guy",
+        "Very prickled guy/white guy",
+        "Prickled guy",
+        "Original guy",
+        "Healed guy",
+        "Heaven guy"
+      ],
+      "keysListened": [
+        "left arrow",
+        "right arrow",
+        "up arrow"
+      ],
+      "broadcastsListened": [
+        "estop",
+        "next level",
+        "Water run out"
+      ],
+      "broadcastsSent": [
+        "next level",
+        "Red",
+        "Water run out"
+      ],
+      "hasCollisionLogic": true,
+      "monotonicVars": [
+        "Recovered health",
+        "Damage"
+      ],
+      "blockCount": 226
+    },
+    {
+      "name": "Levels",
+      "variables": [],
+      "lists": [],
+      "costumes": [
+        "costume1",
+        "costume2",
+        "costume4",
+        "costume3",
+        "costume5",
+        "costume6",
+        "end"
+      ],
+      "keysListened": [],
+      "broadcastsListened": [
+        "next level"
+      ],
+      "broadcastsSent": [],
+      "hasCollisionLogic": false,
+      "monotonicVars": [],
+      "blockCount": 17
+    },
+    {
+      "name": "Thumbnail",
+      "variables": [],
+      "lists": [],
+      "costumes": [
+        ""
+      ],
+      "keysListened": [],
+      "broadcastsListened": [],
+      "broadcastsSent": [],
+      "hasCollisionLogic": false,
+      "monotonicVars": [],
+      "blockCount": 23
+    },
+    {
+      "name": "Cactus",
+      "variables": [],
+      "lists": [],
+      "costumes": [
+        "costume1",
+        "costume2",
+        "costume4",
+        "costume3",
+        "costume5",
+        "costume6",
+        "costume7"
+      ],
+      "keysListened": [],
+      "broadcastsListened": [
+        "next level"
+      ],
+      "broadcastsSent": [],
+      "hasCollisionLogic": false,
+      "monotonicVars": [],
+      "blockCount": 15
+    },
+    {
+      "name": "Bounce",
+      "variables": [],
+      "lists": [],
+      "costumes": [
+        "costume1",
+        "costume2",
+        "costume4",
+        "costume3",
+        "costume5",
+        "end"
+      ],
+      "keysListened": [],
+      "broadcastsListened": [
+        "next level"
+      ],
+      "broadcastsSent": [],
+      "hasCollisionLogic": false,
+      "monotonicVars": [],
+      "blockCount": 10
+    },
+    {
+      "name": "Speed",
+      "variables": [],
+      "lists": [],
+      "costumes": [
+        "costume1",
+        "costume2",
+        "costume3",
+        "costume4",
+        "costume5",
+        "costume6"
+      ],
+      "keysListened": [],
+      "broadcastsListened": [
+        "next level"
+      ],
+      "broadcastsSent": [],
+      "hasCollisionLogic": false,
+      "monotonicVars": [],
+      "blockCount": 10
+    },
+    {
+      "name": "Backdrop",
+      "variables": [],
+      "lists": [],
+      "costumes": [
+        "City"
+      ],
+      "keysListened": [],
+      "broadcastsListened": [],
+      "broadcastsSent": [],
+      "hasCollisionLogic": false,
+      "monotonicVars": [],
+      "blockCount": 12
+    },
+    {
+      "name": "Shadow",
+      "variables": [],
+      "lists": [],
+      "costumes": [
+        "costume1",
+        "costume2",
+        "costume4",
+        "costume3",
+        "costume5",
+        "costume6",
+        "costume7"
+      ],
+      "keysListened": [],
+      "broadcastsListened": [
+        "next level"
+      ],
+      "broadcastsSent": [],
+      "hasCollisionLogic": false,
+      "monotonicVars": [],
+      "blockCount": 13
+    },
+    {
+      "name": "Player Shadow",
+      "variables": [],
+      "lists": [],
+      "costumes": [
+        "costume1"
+      ],
+      "keysListened": [],
+      "broadcastsListened": [
+        "estop"
+      ],
+      "broadcastsSent": [],
+      "hasCollisionLogic": false,
+      "monotonicVars": [],
+      "blockCount": 13
+    },
+    {
+      "name": "Red border",
+      "variables": [],
+      "lists": [],
+      "costumes": [
+        "costume1"
+      ],
+      "keysListened": [],
+      "broadcastsListened": [
+        "Red"
+      ],
+      "broadcastsSent": [],
+      "hasCollisionLogic": false,
+      "monotonicVars": [],
+      "blockCount": 11
+    },
+    {
+      "name": "Water",
+      "variables": [],
+      "lists": [],
+      "costumes": [
+        "Water drink",
+        "costume1",
+        "costume2",
+        "costume3"
+      ],
+      "keysListened": [],
+      "broadcastsListened": [
+        "next level"
+      ],
+      "broadcastsSent": [],
+      "hasCollisionLogic": true,
+      "monotonicVars": [
+        "Water"
+      ],
+      "blockCount": 17
+    }
+  ],
+  "stage": {
+    "variables": [
+      {
+        "name": "my variable",
+        "currentValue": 0,
+        "type": "numeric"
+      },
+      {
+        "name": "Xvel",
+        "currentValue": "0",
+        "type": "numeric"
+      },
+      {
+        "name": "Yvel",
+        "currentValue": "0",
+        "type": "numeric"
+      },
+      {
+        "name": "Xv",
+        "currentValue": "0",
+        "type": "numeric"
+      },
+      {
+        "name": "Yv",
+        "currentValue": "0",
+        "type": "numeric"
+      },
+      {
+        "name": "size",
+        "currentValue": 0,
+        "type": "numeric"
+      },
+      {
+        "name": "Health",
+        "currentValue": -4,
+        "type": "lives"
+      },
+      {
+        "name": "Recovered health",
+        "currentValue": "0",
+        "type": "lives"
+      },
+      {
+        "name": "Damage",
+        "currentValue": 4,
+        "type": "numeric"
+      },
+      {
+        "name": "Water",
+        "currentValue": -1,
+        "type": "numeric"
+      }
+    ],
+    "lists": []
+  },
+  "allBroadcasts": [
+    "Red",
+    "Water run out",
+    "estop",
+    "next level"
+  ],
+  "allKeys": [
+    "left arrow",
+    "right arrow",
+    "up arrow"
+  ],
+  "fsm": {
+    "stateVariables": [],
+    "broadcasts": {
+      "setup": [],
+      "start": [],
+      "end": [
+        "estop"
+      ],
+      "menu": [],
+      "tick": [],
+      "other": [
+        "next level",
+        "Red",
+        "Water run out"
+      ]
+    },
+    "inferredStates": [
+      "Boot",
+      "Playing",
+      "GameOver"
+    ]
+  },
+  "cameraSystem": {
+    "present": false,
+    "hasZoom": false
+  },
+  "duplicateVariables": [],
+  "oracleHints": [
+    {
+      "type": "monotonic_increase",
+      "variable": "Recovered health",
+      "description": "\"Recovered health\" should never decrease"
+    },
+    {
+      "type": "monotonic_increase",
+      "variable": "Damage",
+      "description": "\"Damage\" should never decrease"
+    },
+    {
+      "type": "monotonic_increase",
+      "variable": "Water",
+      "description": "\"Water\" should never decrease"
+    },
+    {
+      "type": "lives_bounds",
+      "variable": "Health",
+      "initialValue": -4,
+      "description": "\"Health\" should stay between 0 and -4"
+    },
+    {
+      "type": "lives_bounds",
+      "variable": "Recovered health",
+      "initialValue": "0",
+      "description": "\"Recovered health\" should stay between 0 and 0"
+    }
+  ],
+  "llmPrompt": "This is a Scratch program called \"desert.sb3\".\nIt has 11 sprites: Player, Levels, Thumbnail, Cactus, Bounce, Speed, Backdrop, Shadow, Player Shadow, Red border, Water.\nLives/health variables: \"Health\" (starts at -4), \"Recovered health\" (starts at 0).\nInferred game states: Boot → Playing → GameOver.\nEnd-of-round broadcasts: estop.\nSprites with collision detection logic: Player, Water.\n\nBased on the above, list 5 to 8 properties that should ALWAYS be true while this program runs. For each property, write it as a single sentence starting with \"The\". Focus on game logic correctness, not graphical rendering."
+}

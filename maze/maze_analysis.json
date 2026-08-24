@@ -1,0 +1,323 @@
+{
+  "project": "Maze.sb3",
+  "sprites": [
+    {
+      "name": "Character",
+      "variables": [],
+      "lists": [],
+      "costumes": [
+        "Up",
+        "Down",
+        "Right",
+        "Left"
+      ],
+      "keysListened": [
+        "right arrow",
+        "left arrow",
+        "up arrow",
+        "down arrow"
+      ],
+      "broadcastsListened": [
+        "logo end",
+        "logo fade out"
+      ],
+      "broadcastsSent": [
+        "change bd",
+        "win"
+      ],
+      "hasCollisionLogic": true,
+      "monotonicVars": [],
+      "blockCount": 157
+    },
+    {
+      "name": "Message",
+      "variables": [],
+      "lists": [],
+      "costumes": [
+        "Welcome",
+        "Win"
+      ],
+      "keysListened": [],
+      "broadcastsListened": [
+        "logo end",
+        "win"
+      ],
+      "broadcastsSent": [],
+      "hasCollisionLogic": false,
+      "monotonicVars": [],
+      "blockCount": 25
+    },
+    {
+      "name": "Key Press",
+      "variables": [],
+      "lists": [],
+      "costumes": [
+        "Costume"
+      ],
+      "keysListened": [
+        "space",
+        "up arrow",
+        "down arrow",
+        "right arrow",
+        "left arrow",
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z",
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "broadcastsListened": [],
+      "broadcastsSent": [],
+      "hasCollisionLogic": false,
+      "monotonicVars": [],
+      "blockCount": 253
+    },
+    {
+      "name": "Key",
+      "variables": [],
+      "lists": [],
+      "costumes": [
+        "Blue",
+        "Red",
+        "Orange",
+        "Green"
+      ],
+      "keysListened": [],
+      "broadcastsListened": [
+        "change bd"
+      ],
+      "broadcastsSent": [],
+      "hasCollisionLogic": true,
+      "monotonicVars": [
+        "Index"
+      ],
+      "blockCount": 88
+    },
+    {
+      "name": "Logo",
+      "variables": [],
+      "lists": [],
+      "costumes": [
+        "Costume"
+      ],
+      "keysListened": [],
+      "broadcastsListened": [
+        "logo start"
+      ],
+      "broadcastsSent": [
+        "logo fade in",
+        "logo fade out",
+        "logo end"
+      ],
+      "hasCollisionLogic": false,
+      "monotonicVars": [],
+      "blockCount": 62
+    }
+  ],
+  "stage": {
+    "variables": [
+      {
+        "name": "X Speed",
+        "currentValue": 0,
+        "type": "numeric"
+      },
+      {
+        "name": "Y Speed",
+        "currentValue": 0,
+        "type": "numeric"
+      },
+      {
+        "name": "X Tile",
+        "currentValue": 0,
+        "type": "numeric"
+      },
+      {
+        "name": "Y Tile",
+        "currentValue": 0,
+        "type": "numeric"
+      },
+      {
+        "name": "Key Pressed?",
+        "currentValue": "false",
+        "type": "flag"
+      },
+      {
+        "name": "Touching Color?",
+        "currentValue": "false",
+        "type": "flag"
+      },
+      {
+        "name": "Index",
+        "currentValue": 5,
+        "type": "numeric"
+      },
+      {
+        "name": "Show?",
+        "currentValue": "false",
+        "type": "flag"
+      },
+      {
+        "name": "Don't Update?",
+        "currentValue": "false",
+        "type": "flag"
+      }
+    ],
+    "lists": [
+      "Gates",
+      "Keys - X",
+      "Keys - Y",
+      "Keys - Locations"
+    ]
+  },
+  "allBroadcasts": [
+    "change bd",
+    "logo end",
+    "logo fade in",
+    "logo fade out",
+    "logo start",
+    "win"
+  ],
+  "allKeys": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "a",
+    "b",
+    "c",
+    "d",
+    "down arrow",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "left arrow",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "right arrow",
+    "s",
+    "space",
+    "t",
+    "u",
+    "up arrow",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z"
+  ],
+  "fsm": {
+    "stateVariables": [
+      "Don't Update?",
+      "Touching Color?",
+      "Key Pressed?"
+    ],
+    "broadcasts": {
+      "setup": [],
+      "start": [
+        "logo start"
+      ],
+      "end": [
+        "logo end",
+        "win"
+      ],
+      "menu": [],
+      "tick": [],
+      "other": [
+        "change bd",
+        "logo fade out",
+        "logo fade in"
+      ]
+    },
+    "inferredStates": [
+      "Boot",
+      "Playing",
+      "GameOver"
+    ]
+  },
+  "cameraSystem": {
+    "present": false,
+    "hasZoom": false
+  },
+  "duplicateVariables": [],
+  "oracleHints": [
+    {
+      "type": "monotonic_increase",
+      "variable": "Index",
+      "description": "\"Index\" should never decrease"
+    },
+    {
+      "type": "state_enum",
+      "variable": "Don't Update?",
+      "knownValues": [
+        "false",
+        "true"
+      ],
+      "description": "\"Don't Update?\" should only take values: false, true"
+    },
+    {
+      "type": "state_enum",
+      "variable": "Touching Color?",
+      "knownValues": [
+        "true",
+        "false"
+      ],
+      "description": "\"Touching Color?\" should only take values: true, false"
+    },
+    {
+      "type": "state_enum",
+      "variable": "Key Pressed?",
+      "knownValues": [
+        "false",
+        "true"
+      ],
+      "description": "\"Key Pressed?\" should only take values: false, true"
+    }
+  ],
+  "llmPrompt": "This is a Scratch program called \"Maze.sb3\".\nIt has 5 sprites: Character, Message, Key Press, Key, Logo.\nInferred game states: Boot → Playing → GameOver.\nEnd-of-round broadcasts: logo end, win.\nSprites with collision detection logic: Character, Key.\n\nBased on the above, list 5 to 8 properties that should ALWAYS be true while this program runs. For each property, write it as a single sentence starting with \"The\". Focus on game logic correctness, not graphical rendering."
+}

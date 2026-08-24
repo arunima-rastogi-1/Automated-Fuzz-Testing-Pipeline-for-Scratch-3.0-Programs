@@ -1,0 +1,164 @@
+
+[1m[36mOracle Generator — Step 2[0m
+
+[36mℹ[0m  Reading: has/has_analysis.json
+[90m───────────────────────────────────────────────────────[0m
+[36mℹ[0m  Generating Tier 2 structural oracles...
+[32m✔[0m    [T2] Monotonic_Rescue_streak
+[32m✔[0m    [T2] Monotonic_Total_Players_found
+[32m✔[0m    [T2] Monotonic_Your_total_rescues
+[32m✔[0m    [T2] Countdown_NonNegative
+[32m✔[0m    [T2] StateEnum_EDITOR
+[32m✔[0m    [T2] StateEnum_LOADED_PATHS
+[32m✔[0m    [T2] StateEnum_AUDIO
+[32m✔[0m    [T2] StateEnum_SEEKER
+[32m✔[0m    [T2] StateEnum_MAP
+[32m✔[0m    [T2] StateEnum_MENU
+[32m✔[0m    [T2] StateEnum_SEEKER_IS_COUNTING
+[32m✔[0m    [T2] StateEnum_CURRENT_PLAYER_STAT
+[32m✔[0m    [T2] StaticBug_AliasingVariables
+[32m✔[0m    [T2] Suppression_SpatialBounds
+[90m     14 structural oracles generated.[0m
+[90m───────────────────────────────────────────────────────[0m
+[36mℹ[0m  Calling Groq (Llama 3.3 70B) — Step A: generating natural language properties...
+[32m✔[0m  Step A complete.
+[90m   LLM properties received:[0m
+[90m     <think>[0m
+[90m     Thinking Process:[0m
+[90m     1.  **Deconstruct the User's Input:**[0m
+[90m         *   Program Name: "has.sb3"[0m
+[90m         *   Sprites: 16 listed.[0m
+[90m         *   Camera System: ZOOM, CAM X, CAM Y. Sprites move off-stage; bounds violations are expected/normal.[0m
+[90m         *   State Variables: "CURRENT PLAYER STAT" (value: "hided"), "MENU" (value: "In-Game").[0m
+[90m         *   Score/Stat Variables: "Highest rescue streak:", "Total Players found:", "Your total rescues:", "Rescue streak:", "Meters walked:", "Stealth meters:", "point of intrest", "at point of intrest?" (repeated multiple times, suggests distinct instances or a list-like structure, but the warning mentions shared IDs).[0m
+[90m         *   *Critical Warning:* 14 variable IDs are shared across multiple sprites. Writes in one affect others. This is highlighted as a "likely aliasing bug," but the user is asking for properties that should *ALWAYS* be true. If there's a bug, the property might be "The variables are shared," but usually, when asked for invariants in the presence of reported bugs, I should look for what the game *intends* to be true, or structural invariants that hold regardless of logic bugs, or constraints imposed by the architecture. However, the prompt asks for properties based on the description. The description mentions "Score/stat variables (should only increase)". This is a strong candidate for an invariant.[0m
+[90m         *   Game States: Boot → Initialising → Menu → Playing → GameOver.[0m
+[90m         *   Tick Broadcasts: Many sprites broadcast "Tick" every frame.[0m
+[90m         *   End-of-round: "End Game-Round".[0m
+[90m         *   Collision Sprites: Menu, Level, Spawn, Spots, Path, Player, Bots.[0m
+[90m     2.  **Brainstorming Invariants (Properties that should always be true):**[0m
+[90m         *   *Camera:* The camera variables exist. Sprites might be off-stage. So, "The stage dimensions are 480x360" is true, but that's hardware/display, not logic. "Sprites can have coordinates outside -240 to 240 / -180 to 180" is true. This is a property: "The position coordinates of sprites are not required to remain within the default stage boundaries."[0m
+[90m         *   *States:* The game has a state machine. At any given time, the game must be in one of the defined states. "The current game state must be one of Boot, Initialising, Menu, Playing, or GameOver."[0m
+[90m         *   *Variables:* "Score/stat variables (should only increase)". This implies monotonicity. "The values of score and stat variables such as 'Highest rescue streak' and 'Total Players found' must never decrease during runtime."[0m
+[90m         *   *Ticks:* Tick broadcasts fire every frame. "The 'Level - Tick' broadcast is sent continuously to drive game updates." Or generally, "Tick-based updates occur for active game sprites."[0m
+[90m         *   *Collision:* Sprites listed have collision logic. "Collision detection checks occur between sprites such as Player and Level/Bots."[0m
+[90m         *   *Shared Variables:* The warning mentions shared IDs. Is it a property that they are shared? Yes. "14 variable IDs are shared across multiple sprites, meaning a change in one sprite immediately reflects in others." This is a structural property of the current project.[0m
+[90m         *   *Menu/State Link:* "MENU" variable is "In-Game". "CURRENT PLAYER STAT" is "hided". There's likely a relationship. If MENU is "In-Game", the game is Playing. "If the 'MENU' variable indicates 'In-Game', the game is in the Playing state."[0m
+[90m         *   *Stats updates:* "Score/stat variables (should only increase)" is repeated. This is a very strong invariant candidate.[0m
+[90m     3.  **Filtering and Refining Properties (Aim for 5 to 8, single sentence, start with "The"):**[0m
+[90m         *   *Draft 1:* The game state must always be one of the defined values: Boot, Initialising, Menu, Playing, or GameOver.[0m
+[90m             *   *Critique:* Good. Covers the inferred states.[0m
+[90m         *   *Draft 2:* The values of accumulation variables like 'Highest rescue streak' and 'Total Players found' must never decrease, as they are designed to only increase.[0m
+[90m             *   *Critique:* Good. Based on "should only increase".[0m
+[90m         *   *Draft 3:* Sprite coordinates are allowed to exist outside the visible 480×360 stage area due to the virtual camera system, so boundary checks relative to the stage edge are not required for valid gameplay positions.[0m
+[90m             *   *Critique:* Good. Based on "spatial bounds violations are expected".[0m
+[90m         *   *Draft 4:* The 'MENU' variable value must correspond to the active game flow, such as being 'In-Game' when the Playing state is active.[0m
+[90m             *   *Critique:* Good. Links variable to state.[0m
+[90m         *   *Draft 5:* Modifications to any of the 14 shared variable IDs in one sprite will immediately propagate to all other sprites referencing that same ID.[0m
+[90m             *   *Critique:* Good. Based on the warning. This is a "should always be true" property of the execution environment, even if it causes logic bugs. The property holds: writes affect reads elsewhere.[0m
+[90m         *   *Draft 6:* The Player sprite's 'CURRENT PLAYER STAT' must reflect a valid status like 'hided' during active gameplay.[0m
+[90m             *   *Critique:* A bit weak. "hided" is just the current value. Better to stick to structural invariants.[0m
+[90m         *   *Draft 7:* Tick broadcasts are sent every frame to update logic for sprites including the Player, Bots, Level, and Path.[0m
+[90m             *   *Critique:* Good. Describes the loop.[0m
+[90m         *   *Draft 8:* Collision detection logic must be evaluated between active entities such as the Player and the Level or Bot sprites to determine interactions.[0m
+[90m             *   *Critique:* Good.[0m
+[90m     4.  **Selecting the Best 5-8:**[0m
+[90m         *   I need to focus on "game logic correctness" as requested, but also include structural truths if they impact logic.[0m
+[90m         *   *Selection:*[0m
+[90m             1.  State Machine: The current game state must always remain within the valid set of Boot, Initialising, Menu, Playing, or GameOver.[0m
+[90m             2.  Monotonicity: Score and statistic variables such as 'Highest rescue streak', 'Total Players found', and 'Your total rescues' must never decrease during gameplay execution.[0m
+[90m             3.  Camera/Bounds: Sprite positions are valid even when they fall outside the default 480×360 stage boundaries due to the virtual camera panning mechanism.[0m
+[90m             4.  Shared Vars: Writing to any of the 14 shared variable IDs triggers immediate value updates in all sprites that reference that variable, enforcing global visibility of those values.[0m
+[90m             5.  Ticks: The game loop continuously broadcasts tick messages to update logic for critical sprites including the Player, Bots, Level, and Spots every frame.[0m
+[90m             6.  Menu/State Consistency: The 'MENU' variable must accurately reflect the current interface context, such as displaying 'In-Game' when the gameplay loop is active.[0m
+[90m             7.  Player Stat: The 'CURRENT PLAYER STAT' variable must hold a defined status value, such as 'hided', to track the Player's condition during play.[0m
+[90m         *   *Review against constraints:*[0m
+[90m             *   5 to 8 properties? I have 7. Good.[0m
+[90m             *   Single sentence? Yes.[0m
+[90m             *   Start with "The"? Yes.[0m
+[90m             *   Focus on game logic correctness? Yes.[0m
+[90m             *   Based on input? Yes.[0m
+[90m             *   "Score/stat variables (should only increase)" -> Property 2.[0m
+[90m             *   "Inferred game states" -> Property 1.[0m
+[90m             *   "Cam... off stage... NOT bugs" -> Property 3.[0m
+[90m             *   "14 variable IDs shared... writes... affect another" -> Property 4.[0m
+[90m             *   "Tick broadcasts... every frame" -> Property 5.[0m
+[90m             *   "MENU... In-Game" -> Property 6.[0m
+[90m             *   "CURRENT PLAYER STAT... hided" -> Property 7.[0m
+[90m         *   *Refinement of wording for clarity and precision:*[0m
+[90m             *   Prop 1: The game state machine must transition only through the defined sequence and maintain a current state among Boot, Initialising, Menu, Playing, or GameOver at all times.[0m
+[90m             *   Prop 2: Accumulation variables including 'Highest rescue streak', 'Total Players found', 'Your total rescues', 'Rescue streak', 'Meters walked', and 'Stealth meters' must exhibit non-decreasing behavior throughout the session.[0m
+[90m             *   Prop 3: Sprite coordinate values are considered valid regardless of whether they lie within or outside the 480×360 stage viewport due to the intentional use of a virtual camera system.[0m
+[90m             *   Prop 4: All 14 shared variable IDs maintain global consistency, meaning any assignment to a shared variable immediately updates its value for all sprites referencing that ID.[0m
+[90m             *   Prop 5: The game logic relies on periodic tick broadcasts sent every frame to drive updates for sprites such as Player, Bots, Level, Path, and Spots.[0m
+[90m             *   Prop 6: The 'MENU' variable must synchronize with the gameplay flow, holding values like 'In-Game' when the active state is Playing.[0m
+[90m             *   Prop 7: Collision detection logic must be actively evaluated between interactive sprites, including the Player, Level, Spots, Path, Spawn, and Bot entities.[0m
+[90m         *   *Count:* 7 properties.[0m
+[90m         *   *Check "End Game-Round":* This is an event, not really an invariant, though "End Game-Round terminates the current round" is a property. The list is solid enough without it.[0m
+[90m         *   *Check "point of intrest":* Listed multiple times. Might be redundant or a list. The monotonicity covers stats.[0m
+[90m         *   *Result looks solid.*[0m
+[90m     5.  **Final Output Construction:**[0m
+[90m         *   List the 7 properties.[0m
+[90m         *   Ensure format matches request.[0m
+[90m         *   "The [property]."[0m
+[90m         *   Result:[0m
+[90m             1.  The game state must always be one of the valid values: Boot, Initialising, Menu, Playing, or GameOver.[0m
+[90m             2.  Score and statistic variables such as 'Highest rescue streak', 'Total Players found', and 'Your total rescues' must never decrease during execution.[0m
+[90m             3.  Sprite positions are valid even when coordinates fall outside the 480×360 stage boundaries due to the virtual camera system.[0m
+[90m             4.  Writing to any of the 14 shared variable IDs immediately updates the value for all sprites that reference that variable, enforcing global aliasing.[0m
+[90m             5.  Tick broadcasts are sent every frame to continuously update logic for sprites including the Player, Bots, Level, Path, and Spots.[0m
+[90m             6.  The 'MENU' variable must reflect the active interface context, such as holding 'In-Game' when the Playing state is active.[0m
+[90m             7.  Collision detection must be evaluated between active entities including the Player, Level, Spots, Path, Spawn, and Bot sprites.[0m
+[90m         *   This covers logic, structure, constraints, and behavior described.[0m
+[90m     </think>[0m
+[90m     1. The game state must always remain within the valid set of defined values: Boot, Initialising, Menu, Playing, or GameOver.[0m
+[90m     2. Score and statistic variables such as 'Highest rescue streak', 'Total Players found', 'Your total rescues', 'Rescue streak', 'Meters walked', and 'Stealth meters' must never decrease during runtime.[0m
+[90m     3. Sprite coordinate values are considered valid regardless of whether they lie inside or outside the 480×360 stage viewport due to the intentional virtual camera panning system.[0m
+[90m     4. All 14 shared variable IDs maintain immediate global consistency, meaning any assignment to a shared variable instantly updates its value for all sprites referencing that ID.[0m
+[90m     5. The game loop must continuously broadcast tick messages every frame to drive logic updates for critical sprites including the Player, Bots, Level, Path, and Spots.[0m
+[90m     6. The 'MENU' variable must synchronize with the active gameplay flow, holding values like 'In-Game' when the Playing state is active.[0m
+[90m     7. Collision detection logic must be actively evaluated between interactive sprites, including the Player, Level, Spots, Path, Spawn, and Bot entities.[0m
+[90m───────────────────────────────────────────────────────[0m
+[36mℹ[0m  Step B [1/7]: converting to code...
+[90m     "The game state must always remain within the valid set of defined values: Boot, Initialising, Menu, Playing, or GameOver."[0m
+[33m⚠[0m    Generated code failed to parse (Unexpected token '}') — using no-op fallback.
+[32m✔[0m    Generated.
+[36mℹ[0m  Step B [2/7]: converting to code...
+[90m     "Score and statistic variables such as 'Highest rescue streak', 'Total Players found', 'Your total rescues', 'Rescue streak', 'Meters walked', and 'Stealth meters' must never decrease during runtime."[0m
+[33m⚠[0m    Generated code failed to parse (Unexpected token '}') — using no-op fallback.
+[32m✔[0m    Generated.
+[36mℹ[0m  Step B [3/7]: converting to code...
+[90m     "Sprite coordinate values are considered valid regardless of whether they lie inside or outside the 480×360 stage viewport due to the intentional virtual camera panning system."[0m
+[32m✔[0m    Generated.
+[36mℹ[0m  Step B [4/7]: converting to code...
+[90m     "All 14 shared variable IDs maintain immediate global consistency, meaning any assignment to a shared variable instantly updates its value for all sprites referencing that ID."[0m
+[32m✔[0m    Generated.
+[36mℹ[0m  Step B [5/7]: converting to code...
+[90m     "The game loop must continuously broadcast tick messages every frame to drive logic updates for critical sprites including the Player, Bots, Level, Path, and Spots."[0m
+[32m✔[0m    Generated.
+[36mℹ[0m  Step B [6/7]: converting to code...
+[90m     "The 'MENU' variable must synchronize with the active gameplay flow, holding values like 'In-Game' when the Playing state is active."[0m
+[33m⚠[0m    Generated code failed to parse (Unexpected token '}') — using no-op fallback.
+[32m✔[0m    Generated.
+[36mℹ[0m  Step B [7/7]: converting to code...
+[90m     "Collision detection logic must be actively evaluated between interactive sprites, including the Player, Level, Spots, Path, Spawn, and Bot entities."[0m
+[33m⚠[0m    Generated code failed to parse (Unexpected token '}') — using no-op fallback.
+[32m✔[0m    Generated.
+[32m✔[0m    [T3] LLM_The_game_state_must_always_remain_within
+[32m✔[0m    [T3] LLM_Score_and_statistic_variables_such_as_Hi
+[32m✔[0m    [T3] LLM_Sprite_coordinate_values_are_considered_
+[32m✔[0m    [T3] LLM_All_14_shared_variable_IDs_maintain_imme
+[32m✔[0m    [T3] LLM_The_game_loop_must_continuously_broadcas
+[32m✔[0m    [T3] LLM_The_MENU_variable_must_synchronize_with_
+[32m✔[0m    [T3] LLM_Collision_detection_logic_must_be_active
+[90m     7 LLM oracles generated.[0m
+[90m───────────────────────────────────────────────────────[0m
+[32m✔[0m  Oracle module written to: has\has_oracles.js
+[90m───────────────────────────────────────────────────────[0m
+[36mℹ[0m  Total oracles: 20
+[36mℹ[0m    Tier 2 (structural): 13
+[36mℹ[0m    Tier 3 (LLM):        7
+[36mℹ[0m    Camera suppression:  YES — SpatialBounds suppressed
+
+[1m[36mNext step: node fuzzer_full.js <program.sb3|.json> has_oracles.js[0m
+

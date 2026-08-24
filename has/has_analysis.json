@@ -1,0 +1,2525 @@
+{
+  "project": "has.sb3",
+  "sprites": [
+    {
+      "name": "Loop",
+      "variables": [
+        {
+          "name": "standard level code",
+          "currentValue": "#-217#-185#-166#-178#-166#-208#-231#-237#-237#-162#-18#126#234#-132#-37#58#153#218#-222#-188#-218#-188#-161#-161#-119#-60#-160#-141#-110#-79#-79#-141#-79#-110#-141#-90#-110#-135#-122#-76#-131#-118#-142#-162#-86#-123#-124#-152#-129#-105#-86#-86#-73#-63#-21#-21#30#30#30#49#30#19#29#42#30#30#47#47#57#24#107#131#137#-54#-100#-123#-39#-18.599999999999998#9#-6#26#27#25#31#31#31#31#-26#28#17#-92#122#64#107#76#46#130#140#81#133#133#164#164#176#182#182#158#55#76#100#124#147#166#72#106#121#171#146#90#228#208#208#93#93#153#154#183#-44#-44#98#177#24#-138#-27#-124#231#231#231#217#236#238#240#222#-161#-237#-224#-205#-186#-174#-200#-165#-179#-185#-168#-209#-182#-193#-124#-135#35#-94#-163/#-157#-157#-155#-177#-169#-177#-177#-126#-88#-122#-122#-122#-122#-143#-143#-143#-143#-143#-100#-100#-66#-65#35#65#84#134#149#103#103#103#134#134#165#165#168#115#134#110#-84#-93#-108#-94#-94#-94#3#45#-26#-69#-70#-70#-71#-56#-58#63#145#75#165#134#115#159#135#161#103#103#79#55#76#53#40#27#35#35#36#52#52#52#30#28#28#28#-67#-93#-10#-87#-56#-25#3#-11#-34#-55#-108#-23#-16#19#22#22#16#15#-71#-67#-94#-93#-70#-40#-87#-69#-73#-95#-100#-100#-100#-100#-100#-93#-94#-95#-96#-95#-93#-62#18#102#136#73#22#97#130#102#147#151#151#68#151#-83#-43#34#58#80#57#114#-5#33#75#-28#-27#17#61#105#105#-17#50#94#-40#-64#1#19#68#160#134#14#-94#-53/#asphalt_area-3#asphalt_area-3#concrete_wall-1#concrete_wall-1#concrete_wall-1#concrete_wall-1#concrete_wall-1#concrete_wall-2#concrete_wall-2#street-2#street-2#street-2#street-1#concrete_wall-2#concrete_wall-2#concrete_wall-2#concrete_wall-2#concrete_wall-2#grass-2#grass-2#grass-2#grass-2#hedge-1#hedge-1#hedge-2#concrete_wall-2#concrete_wall-2#gravel-2#gravel-2#gravel-2#gravel-2#gravel-2#gravel-2#gravel-2#gravel-2#tree-1#gravel-2#bush-2#hedge-2#stone_wall-1#stone_wall-1#dirt-1#dirt-1#dirt-1#house_corner-2#grass-3#grass-3#grass-1#grass-1#grass-1#grass-1#grass-1#concrete_wall-1#grass-2#grass-3#grass-3#gravel-2#gravel-2#concrete_wall-1#concrete_wall-2#bush-2#bush-2#stairs-1#stairs-2#dirt-2#dirt-2#stone_wall-1#stone_wall-1#stone_wall-2#stone_wall-1#dirt-1#dirt-1#bush-1#concrete_path-1#concrete_path-1#concrete_path-2#stairs-1#stony-1#stony-1#stony-1#tree-2#bush-2#tree-1#dirt-2#dirt-2#dirt-2#dirt-2#asphalt_area-1#bush-1#concrete_wall-2#stone_wall-1#house-1#grass-2#gravel-2#gravel-2#gravel-2#stairs-2#stairs-2#grass-3#gravel-2#gravel-2#gravel-2#gravel-2#stairs-1#concrete_wall-1#concrete_wall-1#garden_shed-1#stairs-2#dirt-1#dirt-1#dirt-1#dirt-1#dirt-1#bush-2#bush-2#bush-2#bush-2#tree-1#tree-1#asphalt_area-1#asphalt_area-1#asphalt_area-1#asphalt_area-1#asphalt_area-1#asphalt_area-3#asphalt_area-2#asphalt_area-2#bush-2#bush-2#house-3#house-3#bush-1#stone_wall-1#asphalt_area-1#tree-1#dirt-1#dirt-1#dirt-1#hedge-2#bush-2#stone_wall-1#bush-2#bush-2#hedge-2#concrete_wall-2#concrete_wall-1#concrete_wall-2#concrete_wall-1#concrete_wall-1#grass-3#grass-3#concrete_path-1#hedge-1#bush-2#stone_wall-1#tree-1#bush-2#bush-2#stone_wall-1#bush-2#dirt-1#grass-2/#90#180#540#450#540#810#810#900#900#990#990#990#990#990#990#990#990#990#90#90#90#135#180#360#90#180#180#180#180#180#180#180#180#180#180#180#180#270#270#540#630#630#630#630#810#810#810#810#810#810#810#810#900#90#90#90#90#90#90#180#180#180#450#450#450#450#540#540#630#900#720#810#810#810#90#90#180#270#270#270#270#315#90#180#180#180#180#180#180#180#270#270#270#270#270#270#270#270#270#270#270#270#270#360#360#360#450#540#540#540#540#540#540#540#540#675#675#675#675#810#810#810#810#810#810#810#810#810#810#1170#1170#90#90#90#90#90#90#90#180#225#270#90#90#180#180#270#360#450#450#450#450#90#90#1080#1260#1350#1350#1350#1440#1620#90#90/#0#0#0#0#0#0#0#24#23#22#-3#109#40#19#0#115#113#43#11#5#-3#-1#36#142#130#0#122#44#3#1#0#-39#0#0#0#0#-1#41#-3#6#0#-7#-28#-45#74#2#0#-10#-13#-13#-12#-10#0#0#-13#-8#0#-13#4#14#-7#0#0#-2#2#0#2#57#59#60#-5#1#35#35#0#0#12#11#11#11#19#11#16#-60#-54#2#-25#-206#5#-2#-2#65#-37#25#0#-8#-7#0#-141#-84#5#-63#-52#0#0#0#0#-94#0#8#4#-96#-20#2#16#4#3#1#0#-73#-78#-22#-52#-101#-101#-55#-21#-65#0#0#0#0#0#-175#0#0#0#0#20#129#68#68#68#68#69#69#69#0#0#-89#-84#-115#-43#-43#-43#-43#-43#-15#-72#-30#-113#-166/#28#26#154#-16#-222#-149#-52#59#-97#-53#-196#-175#-173#-138#39#226#-90#162/#171#-53#33#80#7#139#157#51#-17#9#54#-153#-50#165#26#62#-94#-84/#hiding_spot#hiding_spot#hiding_spot#spawn#hiding_spot#hiding_spot#hiding_spot#hiding_spot#hiding_spot#hiding_spot#hiding_spot#hiding_spot#hiding_spot#hiding_spot#hiding_spot#hiding_spot#hiding_spot#hiding_spot",
+          "type": "encoded_data"
+        },
+        {
+          "name": "tick30",
+          "currentValue": 5244.51,
+          "type": "timing"
+        }
+      ],
+      "lists": [],
+      "costumes": [
+        "blank"
+      ],
+      "keysListened": [
+        "m"
+      ],
+      "broadcastsListened": [
+        "Play Level Editor",
+        "Prepare Level Clones",
+        "Play",
+        "Prepare",
+        "Prepare Level Editor",
+        "Start Game-Round",
+        "End Game-Round",
+        "Main - Menu",
+        "LevelHitbox - Tick"
+      ],
+      "broadcastsSent": [
+        "Prepare Level Editor",
+        "Prepare Level Clones",
+        "Level Editor - Tick",
+        "Level - Tick",
+        "Spots - Tick",
+        "Prepare",
+        "Bot1 - Tick",
+        "LevelHitbox - Tick",
+        "Player - Tick",
+        "Visiblity - Tick",
+        "Start Game-Round",
+        "Bot2 - Tick",
+        "Load Paths",
+        "Bot3 - Tick",
+        "Bot4 - Tick",
+        "Path - Tick",
+        "Stats - Tick",
+        "Load Level",
+        "On which Gound",
+        "Save Level",
+        "Tutorial - Tick"
+      ],
+      "hasCollisionLogic": false,
+      "monotonicVars": [
+        "TICK"
+      ],
+      "blockCount": 420
+    },
+    {
+      "name": "Menu",
+      "variables": [
+        {
+          "name": "stats string",
+          "currentValue": "##103946462534463933##27362744##1924##15##31##19##36",
+          "type": "unknown"
+        },
+        {
+          "name": "item string",
+          "currentValue": "36",
+          "type": "numeric"
+        },
+        {
+          "name": "item#",
+          "currentValue": 7,
+          "type": "numeric"
+        },
+        {
+          "name": "letter#",
+          "currentValue": 103,
+          "type": "numeric"
+        }
+      ],
+      "lists": [
+        "score parser",
+        "splitted stats"
+      ],
+      "costumes": [
+        "UI-Background",
+        "MAIN",
+        "Go",
+        "Next Game Round",
+        "Home",
+        "Back",
+        "Stats",
+        "Copy Stats",
+        "Export Stats",
+        "Import Stats",
+        "Info",
+        "Info Text",
+        "Editor Info",
+        "Editor Info Text",
+        "Load",
+        "Save",
+        "Play",
+        "Level Editor",
+        "Audio ON",
+        "Audio SFX",
+        "Audio OFF",
+        "PLAY: Settings",
+        "Start As Random",
+        "Start As Seeker",
+        "Start As Hider",
+        "Standard Map",
+        "Custom Map",
+        "END: Player Found All",
+        "END: Bot Found All",
+        "END: [Player has counted] Saved All",
+        "END: [Bot has counted] Saved All",
+        "LOADING PATHS: 0",
+        "LOADING PATHS: 1",
+        "LOADING PATHS: 2",
+        "LOADING PATHS: 3",
+        "LOADING PATHS: 4",
+        "LOADING PATHS: 5",
+        "LOADING PATHS: 6",
+        "LOADING PATHS: 7",
+        "LOADING PATHS: 8",
+        "LOADING PATHS: 9",
+        "LOADING PATHS: 10",
+        "LOADING PATHS: 11",
+        "LOADING PATHS: 12",
+        "LOADING PATHS: 13",
+        "LOADING PATHS: 14",
+        "LOADING PATHS: 15",
+        "LOADING PATHS: 16",
+        "LOADING PATHS: 17",
+        "LOADING PATHS: 18",
+        "LOADING PATHS: 19",
+        "Game frozen",
+        "You are the SEEKER!",
+        "Go HIDE!"
+      ],
+      "keysListened": [],
+      "broadcastsListened": [
+        "Play",
+        "Main - Menu",
+        "Play: Settings - Menu",
+        "Start Game-Round",
+        "End Game-Round",
+        "Play Level Editor",
+        "Prepare Level Editor",
+        "Load Paths",
+        "Level - Tick",
+        "Delete Clone"
+      ],
+      "broadcastsSent": [
+        "Main - Menu",
+        "Play",
+        "Start Game-Round",
+        "Play: Settings - Menu",
+        "Play Level Editor",
+        "Save Level",
+        "Delete Clone",
+        "End Game-Round"
+      ],
+      "hasCollisionLogic": true,
+      "monotonicVars": [
+        "Rescue streak:",
+        "item#",
+        "letter#"
+      ],
+      "blockCount": 873
+    },
+    {
+      "name": "Messages",
+      "variables": [
+        {
+          "name": "show?",
+          "currentValue": "true",
+          "type": "flag"
+        },
+        {
+          "name": "showed message in ticks",
+          "currentValue": "90",
+          "type": "numeric"
+        },
+        {
+          "name": "pv message",
+          "currentValue": " SAVED EVERYBODY!",
+          "type": "unknown"
+        }
+      ],
+      "lists": [],
+      "costumes": [
+        "cover",
+        "Speaker",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30",
+        "31",
+        "32",
+        "33",
+        "34",
+        "35",
+        "36",
+        "37",
+        "38",
+        "39",
+        "40"
+      ],
+      "keysListened": [],
+      "broadcastsListened": [
+        "Start Game-Round",
+        "LevelHitbox - Tick",
+        "Level - Tick",
+        "End Game-Round",
+        "Main - Menu",
+        "Tutorial - Tick",
+        "Prepare Level Editor"
+      ],
+      "broadcastsSent": [],
+      "hasCollisionLogic": false,
+      "monotonicVars": [],
+      "blockCount": 238
+    },
+    {
+      "name": "Stats",
+      "variables": [
+        {
+          "name": "identifier",
+          "currentValue": "Bot4",
+          "type": "unknown"
+        }
+      ],
+      "lists": [],
+      "costumes": [
+        "Player:found-1",
+        "Player:found-2",
+        "Player:found-3",
+        "Player:found-4",
+        "Player:save",
+        "Player:hided",
+        "Player:seeker",
+        "Niro:found-1",
+        "Niro:found-2",
+        "Niro:found-3",
+        "Niro:found-4",
+        "Niro:save",
+        "Niro:hided",
+        "Niro:seeker",
+        "Miko:found-1",
+        "Miko:found-2",
+        "Miko:found-3",
+        "Miko:found-4",
+        "Miko:save",
+        "Miko:hided",
+        "Miko:seeker",
+        "Kilo:found-1",
+        "Kilo:found-2",
+        "Kilo:found-3",
+        "Kilo:found-4",
+        "Kilo:save",
+        "Kilo:hided",
+        "Kilo:seeker",
+        "Zuno:found-1",
+        "Zuno:found-2",
+        "Zuno:found-3",
+        "Zuno:found-4",
+        "Zuno:save",
+        "Zuno:hided",
+        "Zuno:seeker"
+      ],
+      "keysListened": [],
+      "broadcastsListened": [
+        "Stats - Tick",
+        "Prepare",
+        "End Game-Round",
+        "Main - Menu",
+        "Prepare Level Editor"
+      ],
+      "broadcastsSent": [],
+      "hasCollisionLogic": false,
+      "monotonicVars": [],
+      "blockCount": 125
+    },
+    {
+      "name": "Level",
+      "variables": [
+        {
+          "name": "#",
+          "currentValue": "",
+          "type": "unknown"
+        }
+      ],
+      "lists": [],
+      "costumes": [
+        "blank",
+        "BIG",
+        "street-1",
+        "street-2",
+        "asphalt_area-1",
+        "asphalt_area-2",
+        "asphalt_area-3",
+        "grass-1",
+        "grass-2",
+        "grass-3",
+        "dirt-1",
+        "dirt-2",
+        "gravel-1",
+        "gravel-2",
+        "stony-1",
+        "stony-2",
+        "bush-1",
+        "bush-2",
+        "hedge-1",
+        "hedge-2",
+        "concrete_wall-1",
+        "concrete_wall-2",
+        "stone_wall-1",
+        "stone_wall-2",
+        "tree-1",
+        "tree-2",
+        "stairs-1",
+        "stairs-2",
+        "concrete_path-1",
+        "concrete_path-2",
+        "house-1",
+        "house-2",
+        "house-3",
+        "house-4",
+        "house_corner-1",
+        "house_corner-2",
+        "garden_shed-1",
+        "street-1:hitbox",
+        "street-2:hitbox",
+        "asphalt_area-1:hitbox",
+        "asphalt_area-2:hitbox",
+        "asphalt_area-3:hitbox",
+        "grass-1:hitbox",
+        "grass-2:hitbox",
+        "grass-3:hitbox",
+        "dirt-1:hitbox",
+        "dirt-2:hitbox",
+        "gravel-1:hitbox",
+        "gravel-2:hitbox",
+        "stony-1:hitbox",
+        "stony-2:hitbox",
+        "bush-1:hitbox",
+        "bush-2:hitbox",
+        "hedge-1:hitbox",
+        "hedge-2:hitbox",
+        "concrete_wall-1:hitbox",
+        "concrete_wall-2:hitbox",
+        "stone_wall-1:hitbox",
+        "stone_wall-2:hitbox",
+        "tree-1:hitbox",
+        "tree-2:hitbox",
+        "stairs-1:hitbox",
+        "stairs-2:hitbox",
+        "concrete_path-1:hitbox",
+        "concrete_path-2:hitbox",
+        "house-1:hitbox",
+        "house-2:hitbox",
+        "house-3:hitbox",
+        "house-4:hitbox",
+        "house_corner-1:hitbox",
+        "house_corner-2:hitbox",
+        "garden_shed-1:hitbox",
+        "Edge"
+      ],
+      "keysListened": [
+        "z",
+        "x",
+        "y",
+        "r",
+        "f",
+        "b"
+      ],
+      "broadcastsListened": [
+        "Level - Tick",
+        "Prepare Level Clones",
+        "LevelHitbox - Tick",
+        "End Game-Round",
+        "Main - Menu",
+        "On which Gound"
+      ],
+      "broadcastsSent": [
+        "Prepare Level Clones"
+      ],
+      "hasCollisionLogic": true,
+      "monotonicVars": [
+        "#",
+        "TOUCHING SOMETHING OTHER?"
+      ],
+      "blockCount": 449
+    },
+    {
+      "name": "Background",
+      "variables": [],
+      "lists": [],
+      "costumes": [
+        "Fill"
+      ],
+      "keysListened": [],
+      "broadcastsListened": [
+        "LevelHitbox - Tick",
+        "Level - Tick",
+        "End Game-Round",
+        "Main - Menu"
+      ],
+      "broadcastsSent": [],
+      "hasCollisionLogic": false,
+      "monotonicVars": [],
+      "blockCount": 13
+    },
+    {
+      "name": "Spawn",
+      "variables": [],
+      "lists": [],
+      "costumes": [
+        "BIG",
+        "saving_spot",
+        "saving_spot:hitbox",
+        "arrow",
+        "arrow:hitbox"
+      ],
+      "keysListened": [],
+      "broadcastsListened": [
+        "LevelHitbox - Tick",
+        "Level - Tick",
+        "Main - Menu",
+        "End Game-Round"
+      ],
+      "broadcastsSent": [],
+      "hasCollisionLogic": true,
+      "monotonicVars": [],
+      "blockCount": 78
+    },
+    {
+      "name": "Spots",
+      "variables": [
+        {
+          "name": "#",
+          "currentValue": "",
+          "type": "unknown"
+        }
+      ],
+      "lists": [],
+      "costumes": [
+        "blank",
+        "BIG",
+        "spawn",
+        "hiding_spot"
+      ],
+      "keysListened": [
+        "h",
+        "s"
+      ],
+      "broadcastsListened": [
+        "Spots - Tick",
+        "Prepare Level Clones",
+        "End Game-Round",
+        "Main - Menu"
+      ],
+      "broadcastsSent": [
+        "Prepare Level Clones"
+      ],
+      "hasCollisionLogic": true,
+      "monotonicVars": [
+        "#",
+        "TOUCHING SOMETHING OTHER?",
+        "TOUCHING SPOT ICON?"
+      ],
+      "blockCount": 99
+    },
+    {
+      "name": "Path",
+      "variables": [
+        {
+          "name": "tile size",
+          "currentValue": "6",
+          "type": "numeric"
+        },
+        {
+          "name": "tile#",
+          "currentValue": 2999,
+          "type": "numeric"
+        },
+        {
+          "name": "letter#",
+          "currentValue": 6,
+          "type": "numeric"
+        },
+        {
+          "name": "spot#",
+          "currentValue": 2,
+          "type": "numeric"
+        },
+        {
+          "name": "bot#",
+          "currentValue": "4",
+          "type": "numeric"
+        },
+        {
+          "name": "bot1 path x offset",
+          "currentValue": -2,
+          "type": "numeric"
+        },
+        {
+          "name": "bot1 path y offset",
+          "currentValue": -2,
+          "type": "numeric"
+        },
+        {
+          "name": "bot2 path x offset",
+          "currentValue": 2,
+          "type": "numeric"
+        },
+        {
+          "name": "bot2 path y offset",
+          "currentValue": 3,
+          "type": "numeric"
+        },
+        {
+          "name": "bot3 path x offset",
+          "currentValue": -2,
+          "type": "numeric"
+        },
+        {
+          "name": "bot3 path y offset",
+          "currentValue": 0,
+          "type": "numeric"
+        },
+        {
+          "name": "bot4 path x offset",
+          "currentValue": 2,
+          "type": "numeric"
+        },
+        {
+          "name": "bot4 path y offset",
+          "currentValue": 3,
+          "type": "numeric"
+        },
+        {
+          "name": "bot x",
+          "currentValue": 28,
+          "type": "numeric"
+        },
+        {
+          "name": "bot y",
+          "currentValue": 171,
+          "type": "numeric"
+        },
+        {
+          "name": ".bot1 dir",
+          "currentValue": "",
+          "type": "direction"
+        },
+        {
+          "name": ".bot2 dir",
+          "currentValue": "goal",
+          "type": "direction"
+        },
+        {
+          "name": ".bot3 dir",
+          "currentValue": "goal",
+          "type": "direction"
+        },
+        {
+          "name": ".bot4 dir",
+          "currentValue": "goal",
+          "type": "direction"
+        }
+      ],
+      "lists": [
+        "splitted pos",
+        "spot1 path cost",
+        "spot1 path pos",
+        "spot2 path pos",
+        "spot4 path pos",
+        "spot5 path pos",
+        "spot6 path pos",
+        "spot7 path pos",
+        "spot8 path pos",
+        "spot9 path pos",
+        "spot3 path pos",
+        "spot10 path pos",
+        "spot2 path cost",
+        "spot3 path cost",
+        "spot4 path cost",
+        "spot5 path cost",
+        "spot6 path cost",
+        "spot7 path cost",
+        "spot8 path cost",
+        "spot9 path cost",
+        "spot10 path cost",
+        "spot11 path cost",
+        "spot12 path cost",
+        "spot13 path cost",
+        "spot14 path cost",
+        "spot15 path cost",
+        "spot16 path cost",
+        "spot17 path cost",
+        "spot18 path cost",
+        "spot19 path cost",
+        "spot20 path cost",
+        "spot11 path pos",
+        "spot12 path pos",
+        "spot13 path pos",
+        "spot14 path pos",
+        "spot15 path pos",
+        "spot16 path pos",
+        "spot17 path pos",
+        "spot18 path pos",
+        "spot19 path pos",
+        "spot20 path pos",
+        ".bot1 path cost",
+        ".bot1 path pos",
+        ".bot2 path cost",
+        ".bot2 path pos",
+        ".bot3 path cost",
+        ".bot3 path pos",
+        ".bot4 path cost",
+        ".bot4 path pos"
+      ],
+      "costumes": [
+        "goal",
+        "up",
+        "down",
+        "right",
+        "left",
+        "Fill"
+      ],
+      "keysListened": [],
+      "broadcastsListened": [
+        "Bot1 - Path Request",
+        "Load Paths",
+        "Continue Pathfind",
+        "Bot2 - Path Request",
+        "Prepare",
+        "Bot3 - Path Request",
+        "Bot4 - Path Request",
+        "Path - Tick",
+        "Main - Menu"
+      ],
+      "broadcastsSent": [
+        "Continue Pathfind"
+      ],
+      "hasCollisionLogic": true,
+      "monotonicVars": [
+        "spot#",
+        "tile#",
+        "letter#"
+      ],
+      "blockCount": 1258
+    },
+    {
+      "name": "Level Editor",
+      "variables": [
+        {
+          "name": "brush cost",
+          "currentValue": "bush-1",
+          "type": "unknown"
+        },
+        {
+          "name": "brush x",
+          "currentValue": -213,
+          "type": "numeric"
+        },
+        {
+          "name": "brush y",
+          "currentValue": 143,
+          "type": "numeric"
+        },
+        {
+          "name": "brush dir",
+          "currentValue": "90",
+          "type": "direction"
+        },
+        {
+          "name": "cooldown",
+          "currentValue": 0,
+          "type": "numeric"
+        },
+        {
+          "name": "brush cost#",
+          "currentValue": "201",
+          "type": "numeric"
+        },
+        {
+          "name": "brush lyr",
+          "currentValue": "00",
+          "type": "numeric"
+        },
+        {
+          "name": "save code",
+          "currentValue": "#-119#-204#-223#24#131#-223#-202#136#28#-116#208#-216#-152#-225#-57#29#127#119#183#238#-215#-224#-217#-88#-230#-214#-228#-235#-188#-161#-149#-149#-181#-188#118#160#203#222#222#203#162#120#99#99#119#162#145#122#199#199#163#163#195#195#159#170#-1#-151#71#161#-155#-69#-160#-189#35#56#56#53#-9#146#231#99#113#133#170#206#142#176#176#176#175#175#176#177#176#221#202#220#222#167#228#203#179#185#121#148#96#96#126#174#207#231#233#186#73#43#43#75#67#25#-5#-38#-32#-63#-88#-114#-133#-160#-178#-197#-211#-231#-235#-238#-240#-236#-186#-158#-141#-123#-104#-83#-58#-27#-23#23#-240#-230#206#206#206#205#134#62#-10#-82#-154#135#-175#-103#-31#134#79#-168#-168#-101#-32#-22#96#151#237#231#-200#-101#29#33#78/#-161#-143#-55#-161#-161#52#102#119#119#119#119#-162#142#112#142#142#142#142#142#142#-165#-156#-163#-67#-157#-173#-173#-177#-62#-62#-62#-73#-73#-73#65#65#65#45#10#-32#-32#-31#-12#19#39#42#17#-7#-8#22#2#25#33#40#12#-102#62#60#80#15#-116#-20#10#10#-59#-122#-127#11#-110#94#82#-49#-82#-102#-117#-72#-71#-85#-85#-83#-84#-84#-85#-84#-86#-99#-85#-103#-35#-44#-68#-48#174#164#164#173#162#166#162#162#175#173#161#164#162#162#170#178#178#179#176#173#173#169#168#168#168#169#170#171#172#169#151#142#134#140#162#162#162#162#162#162#162#162#162#162#119#129#64#-8#-80#-152#64#64#64#64#64#-8#-7#-8#-6#-80#-80#-78#-112#-110#-111#-59#-122#-129#-161#-161#56#38#-106#-4#-8/#street-2#street-1#street-2#street-2#street-1#street-1#street-1#street-1#street-2#street-2#street-1#concrete_wall-2#concrete_wall-2#concrete_wall-2#concrete_wall-2#concrete_wall-2#concrete_wall-2#concrete_wall-2#concrete_wall-2#concrete_wall-2#concrete_wall-2#concrete_wall-2#concrete_wall-2#house-4#concrete_path-1#concrete_path-1#concrete_path-1#concrete_path-1#asphalt_area-3#asphalt_area-3#asphalt_area-3#asphalt_area-3#asphalt_area-3#asphalt_area-3#hedge-1#hedge-1#hedge-1#hedge-1#hedge-1#hedge-1#hedge-1#hedge-1#hedge-1#hedge-1#hedge-1#hedge-1#hedge-1#hedge-1#hedge-1#hedge-1#hedge-1#hedge-1#bush-2#bush-2#bush-2#tree-2#tree-2#tree-2#tree-1#tree-1#tree-2#tree-1#stairs-1#stairs-1#house_corner-1#stairs-1#stairs-1#tree-1#tree-1#tree-1#tree-2#hedge-1#hedge-1#hedge-1#hedge-1#hedge-1#hedge-1#hedge-1#hedge-1#hedge-1#hedge-1#hedge-1#hedge-1#hedge-1#hedge-1#hedge-1#hedge-1#hedge-1#hedge-1#hedge-1#tree-1#tree-1#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-2#dirt-1#dirt-1#grass-3#grass-3#grass-3#grass-3#grass-3#grass-3#grass-3#grass-3#grass-3#grass-3#grass-3#grass-3#grass-3#grass-3#grass-3#grass-3#grass-3#grass-3#grass-3#grass-3#grass-3#grass-3#street-2#street-2#grass-3#house_corner-2#grass-3#grass-3#grass-3/#270#495#540#630#630#1080#1125#1530#1530#1530#1530#1755#1890#2025#2070#2070#2070#2070#2070#2070#2115#2115#2115#2970#3375#3375#3375#3375#3510#3510#3510#3510#3510#3510#3510#3510#3510#3600#3600#3690#3690#3690#3780#3780#3870#3960#4050#4230#4500#4680#4815#5040#5175#5175#5175#5175#5175#5175#5310#5310#5310#5310#5490#5490#5490#5760#5940#5940#5940#5940#5940#5940#6075#6255#6390#6705#6795#6930#6930#6930#6930#6930#6930#6930#6930#7380#7470#7560#7560#7695#7695#7695#7830#7830#7830#7830#7830#7830#7830#7830#7830#7830#7830#7830#7830#7830#7830#7830#7830#7830#7830#7830#7830#7830#7830#7830#7830#7830#7830#7830#7830#7830#7830#7830#7830#7830#7830#7830#7830#7830#7830#7830#7830#7830#7830#7830#7965#7965#90#90#90#90#90#90#90#90#90#90#90#90#90#90#90#90#90#90#90#90#90#90#90#90#90#540#540#540#540/#00#00#00#00#2#00#-1#1#0#00#-29#-29#-29#-29#-29#-29#-29#-29#-29#-29#-27#-22#-31#62#-12#-12#-12#-12#-12#-12#-12#-12#-12#-12#-15#-9#-9#-9#-9#-9#-9#-9#-9#-9#-9#-9#-9#-9#-9#-9#-9#-9#5#5#5#-91#5#5#5#5#5#5#5#5#61#61#61#61#61#61#61#61#61#55#52#0#16#-62#-62#-55#-55#-58#-50#-31#-31#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-42#-178#-178#-178#-178#-178#-178#-178#-178#-178#-178#-178#-178#-178#-154#-178#-178#-178#-178#-178#-178#-178#-154#-178#-144#-174#00#-19#-19#-95/#109#-95#211#217#56#-123#-67/#-19#5#-16#-74#-118#50#-52/#hiding_spot#hiding_spot#hiding_spot#hiding_spot#spawn#hiding_spot#hiding_spot",
+          "type": "encoded_data"
+        },
+        {
+          "name": "save code letter#",
+          "currentValue": 210,
+          "type": "numeric"
+        },
+        {
+          "name": "save code item",
+          "currentValue": "hiding_spot",
+          "type": "unknown"
+        }
+      ],
+      "lists": [
+        "cost selection",
+        "splitted level properties"
+      ],
+      "costumes": [
+        "blank",
+        "BIG",
+        "street-1",
+        "street-2",
+        "asphalt_area-1",
+        "asphalt_area-2",
+        "asphalt_area-3",
+        "grass-1",
+        "grass-2",
+        "grass-3",
+        "dirt-1",
+        "dirt-2",
+        "gravel-1",
+        "gravel-2",
+        "stony-1",
+        "stony-2",
+        "bush-1",
+        "bush-2",
+        "hedge-1",
+        "hedge-2",
+        "concrete_wall-1",
+        "concrete_wall-2",
+        "stone_wall-1",
+        "stone_wall-2",
+        "tree-1",
+        "tree-2",
+        "stairs-1",
+        "stairs-2",
+        "concrete_path-1",
+        "concrete_path-2",
+        "house-1",
+        "house-2",
+        "house-3",
+        "house-4",
+        "house_corner-1",
+        "house_corner-2",
+        "garden_shed-1",
+        "Overhanging",
+        "Objects",
+        "Ground"
+      ],
+      "keysListened": [
+        "r",
+        "f",
+        "b",
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "broadcastsListened": [
+        "Prepare Level Editor",
+        "Level Editor - Tick",
+        "Play",
+        "End Game-Round",
+        "Main - Menu",
+        "Load Level",
+        "Save Level",
+        "Prepare Level Clones"
+      ],
+      "broadcastsSent": [
+        "Prepare Level Clones"
+      ],
+      "hasCollisionLogic": false,
+      "monotonicVars": [
+        "brush dir",
+        "brush cost#",
+        "save code letter#",
+        "save code item"
+      ],
+      "blockCount": 526
+    },
+    {
+      "name": "Player",
+      "variables": [
+        {
+          "name": "pv mx",
+          "currentValue": -240,
+          "type": "numeric"
+        },
+        {
+          "name": "pv my",
+          "currentValue": 132,
+          "type": "numeric"
+        },
+        {
+          "name": "hidden for seeker?",
+          "currentValue": "2",
+          "type": "flag"
+        },
+        {
+          "name": "power",
+          "currentValue": "220",
+          "type": "numeric"
+        },
+        {
+          "name": "speed up",
+          "currentValue": "1",
+          "type": "numeric"
+        },
+        {
+          "name": "distance",
+          "currentValue": 46,
+          "type": "numeric"
+        },
+        {
+          "name": "hidden for seeker?",
+          "currentValue": 0,
+          "type": "flag"
+        },
+        {
+          "name": "speed up",
+          "currentValue": 0,
+          "type": "numeric"
+        },
+        {
+          "name": "power",
+          "currentValue": 0,
+          "type": "numeric"
+        },
+        {
+          "name": "distance",
+          "currentValue": 0,
+          "type": "numeric"
+        },
+        {
+          "name": "turn",
+          "currentValue": "right",
+          "type": "unknown"
+        },
+        {
+          "name": "want to speed up?",
+          "currentValue": "false",
+          "type": "flag"
+        },
+        {
+          "name": "last click release",
+          "currentValue": 4326,
+          "type": "numeric"
+        }
+      ],
+      "lists": [],
+      "costumes": [
+        "BIG",
+        "dot",
+        "Player",
+        "Player_stencil",
+        "Player_hitbox"
+      ],
+      "keysListened": [
+        "w",
+        "up arrow",
+        "s",
+        "down arrow",
+        "d",
+        "right arrow",
+        "a",
+        "left arrow",
+        "space"
+      ],
+      "broadcastsListened": [
+        "Player - Tick",
+        "Prepare",
+        "Level - Tick",
+        "Visiblity - Tick",
+        "Main - Menu",
+        "End Game-Round"
+      ],
+      "broadcastsSent": [],
+      "hasCollisionLogic": true,
+      "monotonicVars": [
+        "Total Players found:",
+        "hidden for seeker?",
+        "distance",
+        "Your total rescues:",
+        "last click release"
+      ],
+      "blockCount": 1076
+    },
+    {
+      "name": "Bot1",
+      "variables": [
+        {
+          "name": "point of intrest",
+          "currentValue": "",
+          "type": "score"
+        },
+        {
+          "name": "at point of intrest?",
+          "currentValue": "true",
+          "type": "score"
+        },
+        {
+          "name": "hidden for player?",
+          "currentValue": "0",
+          "type": "flag"
+        },
+        {
+          "name": "hidden for seeker?",
+          "currentValue": "100",
+          "type": "flag"
+        },
+        {
+          "name": "i",
+          "currentValue": "1",
+          "type": "numeric"
+        },
+        {
+          "name": "search cooldown",
+          "currentValue": "0",
+          "type": "numeric"
+        },
+        {
+          "name": "speed up",
+          "currentValue": "1",
+          "type": "numeric"
+        },
+        {
+          "name": "want to speed up?",
+          "currentValue": "false",
+          "type": "flag"
+        },
+        {
+          "name": "power",
+          "currentValue": "220",
+          "type": "numeric"
+        },
+        {
+          "name": "turn around cooldown",
+          "currentValue": 0,
+          "type": "numeric"
+        },
+        {
+          "name": "distance",
+          "currentValue": 11,
+          "type": "numeric"
+        },
+        {
+          "name": "hidden for seeker?",
+          "currentValue": 0,
+          "type": "flag"
+        },
+        {
+          "name": "power",
+          "currentValue": 0,
+          "type": "numeric"
+        },
+        {
+          "name": "speed up",
+          "currentValue": 0,
+          "type": "numeric"
+        },
+        {
+          "name": "distance",
+          "currentValue": 0,
+          "type": "numeric"
+        }
+      ],
+      "lists": [],
+      "costumes": [
+        "BIG",
+        "dot",
+        "Niro",
+        "Miko",
+        "Kilo",
+        "Zuno",
+        "Bot_hitbox",
+        "Bot_findbox",
+        "Bot_stencil"
+      ],
+      "keysListened": [
+        "m"
+      ],
+      "broadcastsListened": [
+        "Bot1 - Tick",
+        "Prepare",
+        "Level - Tick",
+        "Visiblity - Tick",
+        "Main - Menu",
+        "End Game-Round"
+      ],
+      "broadcastsSent": [
+        "Bot1 - Path Request"
+      ],
+      "hasCollisionLogic": true,
+      "monotonicVars": [
+        "hidden for player?",
+        "distance"
+      ],
+      "blockCount": 1413
+    },
+    {
+      "name": "Bot2",
+      "variables": [
+        {
+          "name": "point of intrest",
+          "currentValue": 4,
+          "type": "score"
+        },
+        {
+          "name": "at point of intrest?",
+          "currentValue": "true",
+          "type": "score"
+        },
+        {
+          "name": "hidden for player?",
+          "currentValue": 5,
+          "type": "flag"
+        },
+        {
+          "name": "hidden for seeker?",
+          "currentValue": 5,
+          "type": "flag"
+        },
+        {
+          "name": "i",
+          "currentValue": "2",
+          "type": "numeric"
+        },
+        {
+          "name": "speed up",
+          "currentValue": "1",
+          "type": "numeric"
+        },
+        {
+          "name": "power",
+          "currentValue": "220",
+          "type": "numeric"
+        },
+        {
+          "name": "want to speed up?",
+          "currentValue": "false",
+          "type": "flag"
+        },
+        {
+          "name": "turn around cooldown",
+          "currentValue": "0",
+          "type": "numeric"
+        },
+        {
+          "name": "distance",
+          "currentValue": 8,
+          "type": "numeric"
+        },
+        {
+          "name": "point of intrest",
+          "currentValue": 0,
+          "type": "score"
+        },
+        {
+          "name": "at point of intrest?",
+          "currentValue": 0,
+          "type": "score"
+        },
+        {
+          "name": "hidden for player?",
+          "currentValue": 0,
+          "type": "flag"
+        },
+        {
+          "name": "hidden for seeker?",
+          "currentValue": 0,
+          "type": "flag"
+        },
+        {
+          "name": "i",
+          "currentValue": 0,
+          "type": "numeric"
+        },
+        {
+          "name": "speed up",
+          "currentValue": 0,
+          "type": "numeric"
+        },
+        {
+          "name": "want to speed up?",
+          "currentValue": 0,
+          "type": "flag"
+        },
+        {
+          "name": "power",
+          "currentValue": 0,
+          "type": "numeric"
+        },
+        {
+          "name": "turn around cooldown",
+          "currentValue": 0,
+          "type": "numeric"
+        },
+        {
+          "name": "distance",
+          "currentValue": 0,
+          "type": "numeric"
+        }
+      ],
+      "lists": [],
+      "costumes": [
+        "BIG",
+        "dot",
+        "Niro",
+        "Miko",
+        "Kilo",
+        "Zuno",
+        "Bot_hitbox",
+        "Bot_findbox",
+        "Bot_stencil"
+      ],
+      "keysListened": [
+        "m"
+      ],
+      "broadcastsListened": [
+        "Bot2 - Tick",
+        "Prepare",
+        "Level - Tick",
+        "Visiblity - Tick",
+        "Main - Menu",
+        "End Game-Round"
+      ],
+      "broadcastsSent": [
+        "Bot2 - Path Request"
+      ],
+      "hasCollisionLogic": true,
+      "monotonicVars": [
+        "hidden for player?",
+        "hidden for seeker?",
+        "distance"
+      ],
+      "blockCount": 1994
+    },
+    {
+      "name": "Bot3",
+      "variables": [
+        {
+          "name": "point of intrest",
+          "currentValue": 12,
+          "type": "score"
+        },
+        {
+          "name": "at point of intrest?",
+          "currentValue": "true",
+          "type": "score"
+        },
+        {
+          "name": "hidden for player?",
+          "currentValue": 5,
+          "type": "flag"
+        },
+        {
+          "name": "hidden for seeker?",
+          "currentValue": 5,
+          "type": "flag"
+        },
+        {
+          "name": "i",
+          "currentValue": "3",
+          "type": "numeric"
+        },
+        {
+          "name": "speed up",
+          "currentValue": "1",
+          "type": "numeric"
+        },
+        {
+          "name": "want to speed up?",
+          "currentValue": "false",
+          "type": "flag"
+        },
+        {
+          "name": "power",
+          "currentValue": "220",
+          "type": "numeric"
+        },
+        {
+          "name": "turn around cooldown",
+          "currentValue": "0",
+          "type": "numeric"
+        },
+        {
+          "name": "distance",
+          "currentValue": 34,
+          "type": "numeric"
+        },
+        {
+          "name": "point of intrest",
+          "currentValue": 0,
+          "type": "score"
+        },
+        {
+          "name": "at point of intrest?",
+          "currentValue": 0,
+          "type": "score"
+        },
+        {
+          "name": "hidden for player?",
+          "currentValue": 0,
+          "type": "flag"
+        },
+        {
+          "name": "hidden for seeker?",
+          "currentValue": 0,
+          "type": "flag"
+        },
+        {
+          "name": "i",
+          "currentValue": 0,
+          "type": "numeric"
+        },
+        {
+          "name": "speed up",
+          "currentValue": 0,
+          "type": "numeric"
+        },
+        {
+          "name": "want to speed up?",
+          "currentValue": 0,
+          "type": "flag"
+        },
+        {
+          "name": "power",
+          "currentValue": 0,
+          "type": "numeric"
+        },
+        {
+          "name": "turn around cooldown",
+          "currentValue": 0,
+          "type": "numeric"
+        },
+        {
+          "name": "distance",
+          "currentValue": 0,
+          "type": "numeric"
+        }
+      ],
+      "lists": [],
+      "costumes": [
+        "BIG",
+        "dot",
+        "Niro",
+        "Miko",
+        "Kilo",
+        "Zuno",
+        "Bot_hitbox",
+        "Bot_findbox",
+        "Bot_stencil"
+      ],
+      "keysListened": [
+        "m"
+      ],
+      "broadcastsListened": [
+        "Bot3 - Tick",
+        "Prepare",
+        "Level - Tick",
+        "Visiblity - Tick",
+        "Main - Menu",
+        "End Game-Round"
+      ],
+      "broadcastsSent": [
+        "Bot3 - Path Request"
+      ],
+      "hasCollisionLogic": true,
+      "monotonicVars": [
+        "hidden for player?",
+        "distance",
+        "hidden for seeker?"
+      ],
+      "blockCount": 1994
+    },
+    {
+      "name": "Bot4",
+      "variables": [
+        {
+          "name": "point of intrest",
+          "currentValue": 2,
+          "type": "score"
+        },
+        {
+          "name": "at point of intrest?",
+          "currentValue": "true",
+          "type": "score"
+        },
+        {
+          "name": "hidden for player?",
+          "currentValue": 5,
+          "type": "flag"
+        },
+        {
+          "name": "hidden for seeker?",
+          "currentValue": 5,
+          "type": "flag"
+        },
+        {
+          "name": "i",
+          "currentValue": "4",
+          "type": "numeric"
+        },
+        {
+          "name": "speed up",
+          "currentValue": "1",
+          "type": "numeric"
+        },
+        {
+          "name": "want to speed up?",
+          "currentValue": "false",
+          "type": "flag"
+        },
+        {
+          "name": "power",
+          "currentValue": "220",
+          "type": "numeric"
+        },
+        {
+          "name": "turn around cooldown",
+          "currentValue": 0,
+          "type": "numeric"
+        },
+        {
+          "name": "distance",
+          "currentValue": 10,
+          "type": "numeric"
+        }
+      ],
+      "lists": [],
+      "costumes": [
+        "BIG",
+        "dot",
+        "Niro",
+        "Miko",
+        "Kilo",
+        "Zuno",
+        "Bot_hitbox",
+        "Bot_findbox",
+        "Bot_stencil"
+      ],
+      "keysListened": [
+        "m"
+      ],
+      "broadcastsListened": [
+        "Bot4 - Tick",
+        "Prepare",
+        "Level - Tick",
+        "Visiblity - Tick",
+        "Main - Menu",
+        "End Game-Round"
+      ],
+      "broadcastsSent": [
+        "Bot4 - Path Request"
+      ],
+      "hasCollisionLogic": true,
+      "monotonicVars": [
+        "hidden for player?",
+        "distance",
+        "hidden for seeker?"
+      ],
+      "blockCount": 1384
+    },
+    {
+      "name": "Thumbnail",
+      "variables": [],
+      "lists": [],
+      "costumes": [
+        "Bugs fixed Thumbnail",
+        "Thumbnail"
+      ],
+      "keysListened": [],
+      "broadcastsListened": [],
+      "broadcastsSent": [],
+      "hasCollisionLogic": false,
+      "monotonicVars": [],
+      "blockCount": 17
+    }
+  ],
+  "stage": {
+    "variables": [
+      {
+        "name": "ZOOM",
+        "currentValue": "3",
+        "type": "camera_zoom"
+      },
+      {
+        "name": "CAM X",
+        "currentValue": -8.801911804362968,
+        "type": "camera_axis"
+      },
+      {
+        "name": "CAM Y",
+        "currentValue": 93.72773292587108,
+        "type": "camera_axis"
+      },
+      {
+        "name": "TOUCHING SOMETHING OTHER?",
+        "currentValue": "0",
+        "type": "flag"
+      },
+      {
+        "name": "TICK",
+        "currentValue": 369,
+        "type": "timing"
+      },
+      {
+        "name": "TOUCHING UI?",
+        "currentValue": "1",
+        "type": "flag"
+      },
+      {
+        "name": "LEVEL CODE",
+        "currentValue": "#-217#-185#-166#-178#-166#-208#-231#-237#-237#-162#-18#126#234#-132#-37#58#153#218#-222#-188#-218#-188#-161#-161#-119#-60#-160#-141#-110#-79#-79#-141#-79#-110#-141#-90#-110#-135#-122#-76#-131#-118#-142#-162#-86#-123#-124#-152#-129#-105#-86#-86#-73#-63#-21#-21#30#30#30#49#30#19#29#42#30#30#47#47#57#24#107#131#137#-54#-100#-123#-39#-18.599999999999998#9#-6#26#27#25#31#31#31#31#-26#28#17#-92#122#64#107#76#46#130#140#81#133#133#164#164#176#182#182#158#55#76#100#124#147#166#72#106#121#171#146#90#228#208#208#93#93#153#154#183#-44#-44#98#177#24#-138#-27#-124#231#231#231#217#236#238#240#222#-161#-237#-224#-205#-186#-174#-200#-165#-179#-185#-168#-209#-182#-193#-124#-135#35#-94#-163/#-157#-157#-155#-177#-169#-177#-177#-126#-88#-122#-122#-122#-122#-143#-143#-143#-143#-143#-100#-100#-66#-65#35#65#84#134#149#103#103#103#134#134#165#165#168#115#134#110#-84#-93#-108#-94#-94#-94#3#45#-26#-69#-70#-70#-71#-56#-58#63#145#75#165#134#115#159#135#161#103#103#79#55#76#53#40#27#35#35#36#52#52#52#30#28#28#28#-67#-93#-10#-87#-56#-25#3#-11#-34#-55#-108#-23#-16#19#22#22#16#15#-71#-67#-94#-93#-70#-40#-87#-69#-73#-95#-100#-100#-100#-100#-100#-93#-94#-95#-96#-95#-93#-62#18#102#136#73#22#97#130#102#147#151#151#68#151#-83#-43#34#58#80#57#114#-5#33#75#-28#-27#17#61#105#105#-17#50#94#-40#-64#1#19#68#160#134#14#-94#-53/#asphalt_area-3#asphalt_area-3#concrete_wall-1#concrete_wall-1#concrete_wall-1#concrete_wall-1#concrete_wall-1#concrete_wall-2#concrete_wall-2#street-2#street-2#street-2#street-1#concrete_wall-2#concrete_wall-2#concrete_wall-2#concrete_wall-2#concrete_wall-2#grass-2#grass-2#grass-2#grass-2#hedge-1#hedge-1#hedge-2#concrete_wall-2#concrete_wall-2#gravel-2#gravel-2#gravel-2#gravel-2#gravel-2#gravel-2#gravel-2#gravel-2#tree-1#gravel-2#bush-2#hedge-2#stone_wall-1#stone_wall-1#dirt-1#dirt-1#dirt-1#house_corner-2#grass-3#grass-3#grass-1#grass-1#grass-1#grass-1#grass-1#concrete_wall-1#grass-2#grass-3#grass-3#gravel-2#gravel-2#concrete_wall-1#concrete_wall-2#bush-2#bush-2#stairs-1#stairs-2#dirt-2#dirt-2#stone_wall-1#stone_wall-1#stone_wall-2#stone_wall-1#dirt-1#dirt-1#bush-1#concrete_path-1#concrete_path-1#concrete_path-2#stairs-1#stony-1#stony-1#stony-1#tree-2#bush-2#tree-1#dirt-2#dirt-2#dirt-2#dirt-2#asphalt_area-1#bush-1#concrete_wall-2#stone_wall-1#house-1#grass-2#gravel-2#gravel-2#gravel-2#stairs-2#stairs-2#grass-3#gravel-2#gravel-2#gravel-2#gravel-2#stairs-1#concrete_wall-1#concrete_wall-1#garden_shed-1#stairs-2#dirt-1#dirt-1#dirt-1#dirt-1#dirt-1#bush-2#bush-2#bush-2#bush-2#tree-1#tree-1#asphalt_area-1#asphalt_area-1#asphalt_area-1#asphalt_area-1#asphalt_area-1#asphalt_area-3#asphalt_area-2#asphalt_area-2#bush-2#bush-2#house-3#house-3#bush-1#stone_wall-1#asphalt_area-1#tree-1#dirt-1#dirt-1#dirt-1#hedge-2#bush-2#stone_wall-1#bush-2#bush-2#hedge-2#concrete_wall-2#concrete_wall-1#concrete_wall-2#concrete_wall-1#concrete_wall-1#grass-3#grass-3#concrete_path-1#hedge-1#bush-2#stone_wall-1#tree-1#bush-2#bush-2#stone_wall-1#bush-2#dirt-1#grass-2/#90#180#540#450#540#810#810#900#900#990#990#990#990#990#990#990#990#990#90#90#90#135#180#360#90#180#180#180#180#180#180#180#180#180#180#180#180#270#270#540#630#630#630#630#810#810#810#810#810#810#810#810#900#90#90#90#90#90#90#180#180#180#450#450#450#450#540#540#630#900#720#810#810#810#90#90#180#270#270#270#270#315#90#180#180#180#180#180#180#180#270#270#270#270#270#270#270#270#270#270#270#270#270#360#360#360#450#540#540#540#540#540#540#540#540#675#675#675#675#810#810#810#810#810#810#810#810#810#810#1170#1170#90#90#90#90#90#90#90#180#225#270#90#90#180#180#270#360#450#450#450#450#90#90#1080#1260#1350#1350#1350#1440#1620#90#90/#0#0#0#0#0#0#0#24#23#22#-3#109#40#19#0#115#113#43#11#5#-3#-1#36#142#130#0#122#44#3#1#0#-39#0#0#0#0#-1#41#-3#6#0#-7#-28#-45#74#2#0#-10#-13#-13#-12#-10#0#0#-13#-8#0#-13#4#14#-7#0#0#-2#2#0#2#57#59#60#-5#1#35#35#0#0#12#11#11#11#19#11#16#-60#-54#2#-25#-206#5#-2#-2#65#-37#25#0#-8#-7#0#-141#-84#5#-63#-52#0#0#0#0#-94#0#8#4#-96#-20#2#16#4#3#1#0#-73#-78#-22#-52#-101#-101#-55#-21#-65#0#0#0#0#0#-175#0#0#0#0#20#129#68#68#68#68#69#69#69#0#0#-89#-84#-115#-43#-43#-43#-43#-43#-15#-72#-30#-113#-166/#28#26#154#-16#-222#-149#-52#59#-97#-53#-196#-175#-173#-138#39#226#-90#162/#171#-53#33#80#7#139#157#51#-17#9#54#-153#-50#165#26#62#-94#-84/#hiding_spot#hiding_spot#hiding_spot#spawn#hiding_spot#hiding_spot#hiding_spot#hiding_spot#hiding_spot#hiding_spot#hiding_spot#hiding_spot#hiding_spot#hiding_spot#hiding_spot#hiding_spot#hiding_spot#hiding_spot",
+        "type": "encoded_data"
+      },
+      {
+        "name": "PLAYER X",
+        "currentValue": -8.801911804362968,
+        "type": "position"
+      },
+      {
+        "name": "PLAYER Y",
+        "currentValue": 93.72773292587108,
+        "type": "position"
+      },
+      {
+        "name": "DIR OF VIEW",
+        "currentValue": 89.99999999999999,
+        "type": "direction"
+      },
+      {
+        "name": "BOT1 X",
+        "currentValue": -16,
+        "type": "numeric"
+      },
+      {
+        "name": "BOT1 Y",
+        "currentValue": 80,
+        "type": "numeric"
+      },
+      {
+        "name": "EDITOR?",
+        "currentValue": "false",
+        "type": "flag"
+      },
+      {
+        "name": "TOUCHING SPOT ICON?",
+        "currentValue": "0",
+        "type": "flag"
+      },
+      {
+        "name": "DELTA",
+        "currentValue": 1.050000000000182,
+        "type": "timing"
+      },
+      {
+        "name": "FPS",
+        "currentValue": 28.57142857142362,
+        "type": "timing"
+      },
+      {
+        "name": "SEEKER",
+        "currentValue": "Bot",
+        "type": "unknown"
+      },
+      {
+        "name": "LOADED PATHS?",
+        "currentValue": "true",
+        "type": "flag"
+      },
+      {
+        "name": "path clones",
+        "currentValue": 0,
+        "type": "numeric"
+      },
+      {
+        "name": "SEEKER IS COUNTING?",
+        "currentValue": "true",
+        "type": "flag"
+      },
+      {
+        "name": "START COUNTING FROM",
+        "currentValue": 35,
+        "type": "countdown"
+      },
+      {
+        "name": "COUNT",
+        "currentValue": 21,
+        "type": "countdown"
+      },
+      {
+        "name": "BOT2 X",
+        "currentValue": 154,
+        "type": "numeric"
+      },
+      {
+        "name": "BOT2 Y",
+        "currentValue": 33,
+        "type": "numeric"
+      },
+      {
+        "name": "CURRENT PLAYER STAT",
+        "currentValue": "hided",
+        "type": "game_state"
+      },
+      {
+        "name": "MAP",
+        "currentValue": "Standard",
+        "type": "unknown"
+      },
+      {
+        "name": "AUDIO",
+        "currentValue": "ON",
+        "type": "unknown"
+      },
+      {
+        "name": "CUSTOM PATHS?",
+        "currentValue": "standard",
+        "type": "flag"
+      },
+      {
+        "name": "BOT3 X",
+        "currentValue": -196,
+        "type": "numeric"
+      },
+      {
+        "name": "BOT3 Y",
+        "currentValue": 54,
+        "type": "numeric"
+      },
+      {
+        "name": "BOT4 X",
+        "currentValue": 28,
+        "type": "numeric"
+      },
+      {
+        "name": "BOT4 Y",
+        "currentValue": 171,
+        "type": "numeric"
+      },
+      {
+        "name": "Next Seeker:",
+        "currentValue": "Niro",
+        "type": "unknown"
+      },
+      {
+        "name": "Highest rescue streak:",
+        "currentValue": 1,
+        "type": "score"
+      },
+      {
+        "name": "Total Players found:",
+        "currentValue": "0",
+        "type": "score"
+      },
+      {
+        "name": "Your total rescues:",
+        "currentValue": 1,
+        "type": "score"
+      },
+      {
+        "name": "Rescue streak:",
+        "currentValue": 1,
+        "type": "score"
+      },
+      {
+        "name": "STATISTICS",
+        "currentValue": "GENERAL STATS:        Playtime: 0 min 9     Meters walked: 0      ⠀                                       HIDER STATS:         Stealth meters: 0     Highest rescue streak: 0 Your total rescues: 0                                          SEEKER STATS:              Total Players found: 0",
+        "type": "encoded_data"
+      },
+      {
+        "name": "PLAYER ON",
+        "currentValue": "grass",
+        "type": "unknown"
+      },
+      {
+        "name": "BOT1 ON",
+        "currentValue": "grass",
+        "type": "unknown"
+      },
+      {
+        "name": "BOT2 ON",
+        "currentValue": "hard",
+        "type": "unknown"
+      },
+      {
+        "name": "BOT3 ON",
+        "currentValue": "hard",
+        "type": "unknown"
+      },
+      {
+        "name": "BOT4 ON",
+        "currentValue": "hard",
+        "type": "unknown"
+      },
+      {
+        "name": "MAP?",
+        "currentValue": "false",
+        "type": "flag"
+      },
+      {
+        "name": "Meters walked:",
+        "currentValue": 56.0031114228839,
+        "type": "score"
+      },
+      {
+        "name": "Stealth meters:",
+        "currentValue": 23.92746304857924,
+        "type": "score"
+      },
+      {
+        "name": "LAST TIME",
+        "currentValue": "0",
+        "type": "numeric"
+      },
+      {
+        "name": "click cooldown",
+        "currentValue": 0,
+        "type": "numeric"
+      },
+      {
+        "name": "MENU",
+        "currentValue": "In-Game",
+        "type": "game_state"
+      }
+    ],
+    "lists": [
+      "LEVEL X",
+      "LEVEL Y",
+      "LEVEL COST",
+      "LEVEL DIR",
+      "LEVEL LYR",
+      "GENERAL PATH COST",
+      "GENERAL PATH POS",
+      "SPOTS X",
+      "SPOTS Y",
+      "SPOTS TYPE",
+      "CURRENT BOT BEHAVOIR",
+      "CURRENT BOT STAT",
+      "PLAYERS FOUND",
+      "MESSAGE",
+      "PLAYERS SAFE",
+      "BOT NAMES",
+      "BOT NAMES SELECTION",
+      "Triple click the map save code below, copy-paste it with Ctrl+C & Ctrl+V to save it somewehre safe or share it with others (link in desc)",
+      "TUTORIAL",
+      "Triple click your statistics below and copy paste them into the comments! (Ctrl+C & Ctrl+V)",
+      "Triple click your statistics save code below, copy paste it with Ctrl+C & Ctrl+V to save it somewhere save (Note: This save code will only work for you.)"
+    ]
+  },
+  "allBroadcasts": [
+    "Bot1 - Path Request",
+    "Bot1 - Tick",
+    "Bot2 - Path Request",
+    "Bot2 - Tick",
+    "Bot3 - Path Request",
+    "Bot3 - Tick",
+    "Bot4 - Path Request",
+    "Bot4 - Tick",
+    "Continue Pathfind",
+    "Delete Clone",
+    "End Game-Round",
+    "Level - Tick",
+    "Level Editor - Tick",
+    "LevelHitbox - Tick",
+    "Load Level",
+    "Load Paths",
+    "Main - Menu",
+    "On which Gound",
+    "Path - Tick",
+    "Play",
+    "Play Level Editor",
+    "Play: Settings - Menu",
+    "Player - Tick",
+    "Prepare",
+    "Prepare Level Clones",
+    "Prepare Level Editor",
+    "Save Level",
+    "Spots - Tick",
+    "Start Game-Round",
+    "Stats - Tick",
+    "Tutorial - Tick",
+    "Visiblity - Tick"
+  ],
+  "allKeys": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "a",
+    "b",
+    "d",
+    "down arrow",
+    "f",
+    "h",
+    "left arrow",
+    "m",
+    "r",
+    "right arrow",
+    "s",
+    "space",
+    "up arrow",
+    "w",
+    "x",
+    "y",
+    "z"
+  ],
+  "fsm": {
+    "stateVariables": [
+      "EDITOR?",
+      "LEVEL CODE",
+      "LOADED PATHS?",
+      "CUSTOM PATHS?",
+      "MAP?",
+      "AUDIO",
+      "SEEKER",
+      "MAP",
+      "MENU",
+      "show?",
+      "SEEKER IS COUNTING?",
+      "identifier",
+      "PLAYER ON",
+      "BOT1 ON",
+      "BOT2 ON",
+      "BOT3 ON",
+      "BOT4 ON",
+      "CURRENT PLAYER STAT",
+      "want to speed up?",
+      "turn",
+      "at point of intrest?"
+    ],
+    "broadcasts": {
+      "setup": [
+        "Prepare Level Editor",
+        "Prepare Level Clones",
+        "Prepare",
+        "Load Paths",
+        "Load Level"
+      ],
+      "start": [
+        "Player - Tick",
+        "Start Game-Round",
+        "Play Level Editor",
+        "Play",
+        "Play: Settings - Menu"
+      ],
+      "end": [
+        "End Game-Round"
+      ],
+      "menu": [
+        "Main - Menu",
+        "Play: Settings - Menu"
+      ],
+      "tick": [
+        "Level Editor - Tick",
+        "Level - Tick",
+        "Spots - Tick",
+        "Bot1 - Tick",
+        "LevelHitbox - Tick",
+        "Player - Tick",
+        "Visiblity - Tick",
+        "Bot2 - Tick",
+        "Bot3 - Tick",
+        "Bot4 - Tick",
+        "Path - Tick",
+        "Stats - Tick",
+        "Tutorial - Tick"
+      ],
+      "other": [
+        "On which Gound",
+        "Save Level",
+        "Delete Clone",
+        "Continue Pathfind",
+        "Bot1 - Path Request",
+        "Bot2 - Path Request",
+        "Bot3 - Path Request",
+        "Bot4 - Path Request"
+      ]
+    },
+    "inferredStates": [
+      "Boot",
+      "Initialising",
+      "Menu",
+      "Playing",
+      "GameOver"
+    ]
+  },
+  "cameraSystem": {
+    "present": true,
+    "hasZoom": true
+  },
+  "duplicateVariables": [
+    {
+      "id": "dFuW.+_a7a_UTYt]U)zB",
+      "entries": [
+        {
+          "sprite": "Player",
+          "name": "hidden for seeker?",
+          "value": "2"
+        },
+        {
+          "sprite": "Bot1",
+          "name": "hidden for seeker?",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "Oas#qWiCBfGx$8^[+.K+",
+      "entries": [
+        {
+          "sprite": "Player",
+          "name": "power",
+          "value": "220"
+        },
+        {
+          "sprite": "Bot1",
+          "name": "power",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "N^9`gV#[To2cLl4u2*Sg",
+      "entries": [
+        {
+          "sprite": "Player",
+          "name": "speed up",
+          "value": "1"
+        },
+        {
+          "sprite": "Bot1",
+          "name": "speed up",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "w;*m{|Ru@{0@WbI}D_Wa",
+      "entries": [
+        {
+          "sprite": "Player",
+          "name": "distance",
+          "value": 46
+        },
+        {
+          "sprite": "Bot1",
+          "name": "distance",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "Eqhx;1Rj5E:xoH@xkuKo",
+      "entries": [
+        {
+          "sprite": "Player",
+          "name": "hidden for seeker?",
+          "value": 0
+        },
+        {
+          "sprite": "Bot1",
+          "name": "hidden for seeker?",
+          "value": "100"
+        },
+        {
+          "sprite": "Bot2",
+          "name": "hidden for seeker?",
+          "value": 0
+        },
+        {
+          "sprite": "Bot3",
+          "name": "hidden for seeker?",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "l%|oGA4Zh,+P7t}vYB8!",
+      "entries": [
+        {
+          "sprite": "Player",
+          "name": "speed up",
+          "value": 0
+        },
+        {
+          "sprite": "Bot1",
+          "name": "speed up",
+          "value": "1"
+        },
+        {
+          "sprite": "Bot2",
+          "name": "speed up",
+          "value": 0
+        },
+        {
+          "sprite": "Bot3",
+          "name": "speed up",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "pE+-A7Sr2~t~B?V(sIS4",
+      "entries": [
+        {
+          "sprite": "Player",
+          "name": "power",
+          "value": 0
+        },
+        {
+          "sprite": "Bot1",
+          "name": "power",
+          "value": "220"
+        },
+        {
+          "sprite": "Bot2",
+          "name": "power",
+          "value": 0
+        },
+        {
+          "sprite": "Bot3",
+          "name": "power",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "dj+_V1J.3JMpb5yDTZ]X",
+      "entries": [
+        {
+          "sprite": "Player",
+          "name": "distance",
+          "value": 0
+        },
+        {
+          "sprite": "Bot1",
+          "name": "distance",
+          "value": 11
+        },
+        {
+          "sprite": "Bot2",
+          "name": "distance",
+          "value": 0
+        },
+        {
+          "sprite": "Bot3",
+          "name": "distance",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "*E31B*$vX;{a-tLi%#Gf",
+      "entries": [
+        {
+          "sprite": "Bot1",
+          "name": "point of intrest",
+          "value": ""
+        },
+        {
+          "sprite": "Bot2",
+          "name": "point of intrest",
+          "value": 0
+        },
+        {
+          "sprite": "Bot3",
+          "name": "point of intrest",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "-YHE_fe;CL{wF1mP_=`T",
+      "entries": [
+        {
+          "sprite": "Bot1",
+          "name": "at point of intrest?",
+          "value": "true"
+        },
+        {
+          "sprite": "Bot2",
+          "name": "at point of intrest?",
+          "value": 0
+        },
+        {
+          "sprite": "Bot3",
+          "name": "at point of intrest?",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "#?~EVxk^2[bko,(B._9L",
+      "entries": [
+        {
+          "sprite": "Bot1",
+          "name": "hidden for player?",
+          "value": "0"
+        },
+        {
+          "sprite": "Bot2",
+          "name": "hidden for player?",
+          "value": 0
+        },
+        {
+          "sprite": "Bot3",
+          "name": "hidden for player?",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "AkeEMkL/RpW2y+ousxy8",
+      "entries": [
+        {
+          "sprite": "Bot1",
+          "name": "i",
+          "value": "1"
+        },
+        {
+          "sprite": "Bot2",
+          "name": "i",
+          "value": 0
+        },
+        {
+          "sprite": "Bot3",
+          "name": "i",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "Ulf03j0-,ltD@jjCcK=v",
+      "entries": [
+        {
+          "sprite": "Bot1",
+          "name": "want to speed up?",
+          "value": "false"
+        },
+        {
+          "sprite": "Bot2",
+          "name": "want to speed up?",
+          "value": 0
+        },
+        {
+          "sprite": "Bot3",
+          "name": "want to speed up?",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "mz3?J-iJyz`Q`Rob!cY)",
+      "entries": [
+        {
+          "sprite": "Bot1",
+          "name": "turn around cooldown",
+          "value": 0
+        },
+        {
+          "sprite": "Bot2",
+          "name": "turn around cooldown",
+          "value": 0
+        },
+        {
+          "sprite": "Bot3",
+          "name": "turn around cooldown",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "oracleHints": [
+    {
+      "type": "monotonic_increase",
+      "variable": "TICK",
+      "description": "\"TICK\" should never decrease"
+    },
+    {
+      "type": "monotonic_increase",
+      "variable": "Rescue streak:",
+      "description": "\"Rescue streak:\" should never decrease"
+    },
+    {
+      "type": "monotonic_increase",
+      "variable": "item#",
+      "description": "\"item#\" should never decrease"
+    },
+    {
+      "type": "monotonic_increase",
+      "variable": "letter#",
+      "description": "\"letter#\" should never decrease"
+    },
+    {
+      "type": "monotonic_increase",
+      "variable": "#",
+      "description": "\"#\" should never decrease"
+    },
+    {
+      "type": "monotonic_increase",
+      "variable": "TOUCHING SOMETHING OTHER?",
+      "description": "\"TOUCHING SOMETHING OTHER?\" should never decrease"
+    },
+    {
+      "type": "monotonic_increase",
+      "variable": "#",
+      "description": "\"#\" should never decrease"
+    },
+    {
+      "type": "monotonic_increase",
+      "variable": "TOUCHING SOMETHING OTHER?",
+      "description": "\"TOUCHING SOMETHING OTHER?\" should never decrease"
+    },
+    {
+      "type": "monotonic_increase",
+      "variable": "TOUCHING SPOT ICON?",
+      "description": "\"TOUCHING SPOT ICON?\" should never decrease"
+    },
+    {
+      "type": "monotonic_increase",
+      "variable": "spot#",
+      "description": "\"spot#\" should never decrease"
+    },
+    {
+      "type": "monotonic_increase",
+      "variable": "tile#",
+      "description": "\"tile#\" should never decrease"
+    },
+    {
+      "type": "monotonic_increase",
+      "variable": "letter#",
+      "description": "\"letter#\" should never decrease"
+    },
+    {
+      "type": "monotonic_increase",
+      "variable": "brush dir",
+      "description": "\"brush dir\" should never decrease"
+    },
+    {
+      "type": "monotonic_increase",
+      "variable": "brush cost#",
+      "description": "\"brush cost#\" should never decrease"
+    },
+    {
+      "type": "monotonic_increase",
+      "variable": "save code letter#",
+      "description": "\"save code letter#\" should never decrease"
+    },
+    {
+      "type": "monotonic_increase",
+      "variable": "save code item",
+      "description": "\"save code item\" should never decrease"
+    },
+    {
+      "type": "monotonic_increase",
+      "variable": "Total Players found:",
+      "description": "\"Total Players found:\" should never decrease"
+    },
+    {
+      "type": "monotonic_increase",
+      "variable": "hidden for seeker?",
+      "description": "\"hidden for seeker?\" should never decrease"
+    },
+    {
+      "type": "monotonic_increase",
+      "variable": "distance",
+      "description": "\"distance\" should never decrease"
+    },
+    {
+      "type": "monotonic_increase",
+      "variable": "Your total rescues:",
+      "description": "\"Your total rescues:\" should never decrease"
+    },
+    {
+      "type": "monotonic_increase",
+      "variable": "last click release",
+      "description": "\"last click release\" should never decrease"
+    },
+    {
+      "type": "monotonic_increase",
+      "variable": "hidden for player?",
+      "description": "\"hidden for player?\" should never decrease"
+    },
+    {
+      "type": "monotonic_increase",
+      "variable": "distance",
+      "description": "\"distance\" should never decrease"
+    },
+    {
+      "type": "monotonic_increase",
+      "variable": "hidden for player?",
+      "description": "\"hidden for player?\" should never decrease"
+    },
+    {
+      "type": "monotonic_increase",
+      "variable": "hidden for seeker?",
+      "description": "\"hidden for seeker?\" should never decrease"
+    },
+    {
+      "type": "monotonic_increase",
+      "variable": "distance",
+      "description": "\"distance\" should never decrease"
+    },
+    {
+      "type": "monotonic_increase",
+      "variable": "hidden for player?",
+      "description": "\"hidden for player?\" should never decrease"
+    },
+    {
+      "type": "monotonic_increase",
+      "variable": "distance",
+      "description": "\"distance\" should never decrease"
+    },
+    {
+      "type": "monotonic_increase",
+      "variable": "hidden for seeker?",
+      "description": "\"hidden for seeker?\" should never decrease"
+    },
+    {
+      "type": "monotonic_increase",
+      "variable": "hidden for player?",
+      "description": "\"hidden for player?\" should never decrease"
+    },
+    {
+      "type": "monotonic_increase",
+      "variable": "distance",
+      "description": "\"distance\" should never decrease"
+    },
+    {
+      "type": "monotonic_increase",
+      "variable": "hidden for seeker?",
+      "description": "\"hidden for seeker?\" should never decrease"
+    },
+    {
+      "type": "countdown_non_negative",
+      "variable": "START COUNTING FROM",
+      "description": "\"START COUNTING FROM\" should not go below 0 during normal play"
+    },
+    {
+      "type": "countdown_non_negative",
+      "variable": "COUNT",
+      "description": "\"COUNT\" should not go below 0 during normal play"
+    },
+    {
+      "type": "state_enum",
+      "variable": "EDITOR?",
+      "knownValues": [
+        "false",
+        "true"
+      ],
+      "description": "\"EDITOR?\" should only take values: false, true"
+    },
+    {
+      "type": "state_enum",
+      "variable": "LEVEL CODE",
+      "knownValues": [
+        "standard level code",
+        ""
+      ],
+      "description": "\"LEVEL CODE\" should only take values: standard level code, "
+    },
+    {
+      "type": "state_enum",
+      "variable": "LOADED PATHS?",
+      "knownValues": [
+        "false",
+        "true"
+      ],
+      "description": "\"LOADED PATHS?\" should only take values: false, true"
+    },
+    {
+      "type": "state_enum",
+      "variable": "CUSTOM PATHS?",
+      "knownValues": [
+        "load custom",
+        "standard",
+        "load standard",
+        "custom"
+      ],
+      "description": "\"CUSTOM PATHS?\" should only take values: load custom, standard, load standard, custom"
+    },
+    {
+      "type": "state_enum",
+      "variable": "MAP?",
+      "knownValues": [
+        "true",
+        "false"
+      ],
+      "description": "\"MAP?\" should only take values: true, false"
+    },
+    {
+      "type": "state_enum",
+      "variable": "AUDIO",
+      "knownValues": [
+        "ON",
+        "SFX",
+        "OFF"
+      ],
+      "description": "\"AUDIO\" should only take values: ON, SFX, OFF"
+    },
+    {
+      "type": "state_enum",
+      "variable": "SEEKER",
+      "knownValues": [
+        "Player",
+        "Bot"
+      ],
+      "description": "\"SEEKER\" should only take values: Player, Bot"
+    },
+    {
+      "type": "state_enum",
+      "variable": "MAP",
+      "knownValues": [
+        "Custom",
+        "Standard"
+      ],
+      "description": "\"MAP\" should only take values: Custom, Standard"
+    },
+    {
+      "type": "state_enum",
+      "variable": "MENU",
+      "knownValues": [
+        "Load Paths",
+        "Editor",
+        "In-Game",
+        "Game-End",
+        "Main",
+        "Play Settings"
+      ],
+      "description": "\"MENU\" should only take values: Load Paths, Editor, In-Game, Game-End, Main, Play Settings"
+    },
+    {
+      "type": "state_enum",
+      "variable": "show?",
+      "knownValues": [
+        "true",
+        "false"
+      ],
+      "description": "\"show?\" should only take values: true, false"
+    },
+    {
+      "type": "state_enum",
+      "variable": "SEEKER IS COUNTING?",
+      "knownValues": [
+        "true",
+        "false"
+      ],
+      "description": "\"SEEKER IS COUNTING?\" should only take values: true, false"
+    },
+    {
+      "type": "state_enum",
+      "variable": "identifier",
+      "knownValues": [
+        "Player",
+        "Bot1",
+        "Bot2",
+        "Bot3",
+        "Bot4"
+      ],
+      "description": "\"identifier\" should only take values: Player, Bot1, Bot2, Bot3, Bot4"
+    },
+    {
+      "type": "state_enum",
+      "variable": "PLAYER ON",
+      "knownValues": [
+        "hard",
+        "stony",
+        "dirt",
+        "gravel",
+        "grass"
+      ],
+      "description": "\"PLAYER ON\" should only take values: hard, stony, dirt, gravel, grass"
+    },
+    {
+      "type": "state_enum",
+      "variable": "BOT1 ON",
+      "knownValues": [
+        "stony",
+        "dirt",
+        "gravel",
+        "grass",
+        "hard"
+      ],
+      "description": "\"BOT1 ON\" should only take values: stony, dirt, gravel, grass, hard"
+    },
+    {
+      "type": "state_enum",
+      "variable": "BOT2 ON",
+      "knownValues": [
+        "stony",
+        "dirt",
+        "gravel",
+        "grass",
+        "hard"
+      ],
+      "description": "\"BOT2 ON\" should only take values: stony, dirt, gravel, grass, hard"
+    },
+    {
+      "type": "state_enum",
+      "variable": "BOT3 ON",
+      "knownValues": [
+        "stony",
+        "dirt",
+        "gravel",
+        "grass",
+        "hard"
+      ],
+      "description": "\"BOT3 ON\" should only take values: stony, dirt, gravel, grass, hard"
+    },
+    {
+      "type": "state_enum",
+      "variable": "BOT4 ON",
+      "knownValues": [
+        "stony",
+        "dirt",
+        "gravel",
+        "grass",
+        "hard"
+      ],
+      "description": "\"BOT4 ON\" should only take values: stony, dirt, gravel, grass, hard"
+    },
+    {
+      "type": "state_enum",
+      "variable": "CURRENT PLAYER STAT",
+      "knownValues": [
+        "hided",
+        "discovered",
+        "saved",
+        "found"
+      ],
+      "description": "\"CURRENT PLAYER STAT\" should only take values: hided, discovered, saved, found"
+    },
+    {
+      "type": "state_enum",
+      "variable": "want to speed up?",
+      "knownValues": [
+        "false",
+        "true"
+      ],
+      "description": "\"want to speed up?\" should only take values: false, true"
+    },
+    {
+      "type": "state_enum",
+      "variable": "turn",
+      "knownValues": [
+        "",
+        "up",
+        "up-right",
+        "up-left",
+        "down",
+        "down-right",
+        "down-left",
+        "right",
+        "left"
+      ],
+      "description": "\"turn\" should only take values: , up, up-right, up-left, down, down-right, down-left, right, left"
+    },
+    {
+      "type": "state_enum",
+      "variable": "at point of intrest?",
+      "knownValues": [
+        "false",
+        "true"
+      ],
+      "description": "\"at point of intrest?\" should only take values: false, true"
+    },
+    {
+      "type": "aliasing_bug",
+      "count": 14,
+      "examples": [
+        "Player.hidden for seeker? = Bot1.hidden for seeker?",
+        "Player.power = Bot1.power",
+        "Player.speed up = Bot1.speed up"
+      ],
+      "description": "14 variable IDs shared across sprites — writes in one sprite corrupt another"
+    },
+    {
+      "type": "camera_system",
+      "description": "Virtual camera present — SpatialBounds violations are false positives. Suppress generic spatial oracle."
+    }
+  ],
+  "llmPrompt": "This is a Scratch program called \"has.sb3\".\nIt has 16 sprites: Loop, Menu, Messages, Stats, Level, Background, Spawn, Spots, Path, Level Editor, Player, Bot1, Bot2, Bot3, Bot4, Thumbnail.\nIt uses a virtual camera system (variables: ZOOM, CAM X, CAM Y). Sprites are intentionally moved off the 480×360 stage as the camera pans — spatial bounds violations are expected and are NOT bugs.\nThe game tracks state using: \"CURRENT PLAYER STAT\" (current value: \"hided\"), \"MENU\" (current value: \"In-Game\").\nScore/stat variables (should only increase): Highest rescue streak:, Total Players found:, Your total rescues:, Rescue streak:, Meters walked:, Stealth meters:, point of intrest, at point of intrest?, point of intrest, at point of intrest?, point of intrest, at point of intrest?, point of intrest, at point of intrest?, point of intrest, at point of intrest?, point of intrest, at point of intrest?.\nWARNING: 14 variable IDs are shared across multiple sprites. This means writes to those variables in one sprite immediately affect another sprite — a likely aliasing bug.\nInferred game states: Boot → Initialising → Menu → Playing → GameOver.\nTick broadcasts (fire every frame): Level Editor - Tick, Level - Tick, Spots - Tick, Bot1 - Tick, LevelHitbox - Tick, Player - Tick, Visiblity - Tick, Bot2 - Tick, Bot3 - Tick, Bot4 - Tick, Path - Tick, Stats - Tick, Tutorial - Tick.\nEnd-of-round broadcasts: End Game-Round.\nSprites with collision detection logic: Menu, Level, Spawn, Spots, Path, Player, Bot1, Bot2, Bot3, Bot4.\n\nBased on the above, list 5 to 8 properties that should ALWAYS be true while this program runs. For each property, write it as a single sentence starting with \"The\". Focus on game logic correctness, not graphical rendering."
+}

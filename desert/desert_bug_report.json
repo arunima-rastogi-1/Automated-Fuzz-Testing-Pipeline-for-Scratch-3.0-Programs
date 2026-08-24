@@ -1,0 +1,31 @@
+{
+  "program": "desert.sb3",
+  "oracles": "desert_oracles.js",
+  "timestamp": "2026-08-20T15:59:01.256Z",
+  "totalSequences": 12,
+  "totalTicks": 900,
+  "oracleCount": 9,
+  "cameraSystem": false,
+  "coverage": {
+    "statesVisited": [
+      "Unclassified"
+    ],
+    "eventsTriggered": [
+      "inject:start",
+      "key:Left",
+      "key:Right",
+      "key:Up"
+    ]
+  },
+  "bugsFound": 1,
+  "bugs": [
+    {
+      "oracle": "Monotonic_Water",
+      "tier": 2,
+      "description": "\"Water\" should never decrease",
+      "sequence": "Boot_Long_600",
+      "tick": 348,
+      "detail": "Water decreased: 12 → 11"
+    }
+  ]
+}

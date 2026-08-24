@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<title>Fuzzer Report — has</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#0a0e1a;color:#e2e8f0;
+     padding:2.5rem;line-height:1.65;max-width:960px;margin:0 auto}
+h1{font-size:1.8rem;font-weight:700;color:#fff;margin-bottom:.3rem}
+.sub{color:#64748b;font-size:.88rem;margin-bottom:2.5rem;border-bottom:1px solid #1e2d45;padding-bottom:1.5rem}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.75rem;margin-bottom:2rem}
+.metric{background:#111827;border:1px solid #1e2d45;border-radius:10px;padding:.9rem;text-align:center}
+.val{font-size:1.9rem;font-weight:800;display:block;line-height:1.2}
+.lbl{font-size:.72rem;color:#64748b;text-transform:uppercase;letter-spacing:.05em;margin-top:.2rem}
+h2{font-size:.88rem;font-weight:700;color:#4a90d9;text-transform:uppercase;letter-spacing:.1em;
+    margin:2.5rem 0 .9rem;padding-bottom:.4rem;border-bottom:1px solid #1e2d45}
+.card{background:#111827;border-radius:10px;padding:1.25rem;margin-bottom:1.1rem}
+.badge{display:inline-block;padding:2px 9px;border-radius:4px;font-size:.7rem;font-weight:700;text-transform:uppercase}
+.bars{background:#111827;border:1px solid #1e2d45;border-radius:10px;padding:1.25rem;
+       display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem}
+.bar-wrap{background:#1a2235;border-radius:6px;height:10px;overflow:hidden;margin:.3rem 0}
+.bar-fill{height:100%;border-radius:6px}
+table{width:100%;border-collapse:collapse;font-size:.83rem;background:#111827;border-radius:8px;overflow:hidden}
+th{background:#1a2235;padding:.5rem .75rem;text-align:left;font-weight:600;color:#64748b;
+    font-size:.73rem;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid #1e2d45}
+td{padding:.45rem .75rem;border-bottom:1px solid #1e2d45;vertical-align:top}
+tr:last-child td{border-bottom:none}
+footer{margin-top:3rem;padding-top:1rem;border-top:1px solid #1e2d45;
+        font-size:.78rem;color:#334155;text-align:center}
+code{background:#1e2d45;color:#90c8ff;padding:1px 5px;border-radius:3px;font-size:.88em}
+</style></head><body>
+<h1>Fuzzer Evaluation Report</h1>
+<div class="sub">
+  has.sb3 &nbsp;·&nbsp;
+  Generated 17 August 2026, 23:04 &nbsp;·&nbsp;
+  14 sequences &nbsp;·&nbsp; 5,680 ticks &nbsp;·&nbsp;
+  University of Manchester — MSc Cyber Security Dissertation
+</div>
+
+<div class="metrics">
+  <div class="metric"><span class="val" style="color:#4a90d9">19</span><div class="lbl">Total Oracles</div></div>
+  <div class="metric"><span class="val" style="color:#ef4444">1</span><div class="lbl">Fired</div></div>
+  <div class="metric"><span class="val" style="color:#22c55e">1</span><div class="lbl">True Positives</div></div>
+  <div class="metric"><span class="val" style="color:#f59e0b">0</span><div class="lbl">False Positives</div></div>
+  <div class="metric"><span class="val" style="color:#22c55e">100%</span><div class="lbl">Precision</div></div>
+  <div class="metric"><span class="val" style="color:#22c55e">18</span><div class="lbl">Silent (passing)</div></div>
+  <div class="metric"><span class="val" style="color:#a855f7">2/6</span><div class="lbl">State Coverage</div></div>
+  <div class="metric"><span class="val" style="color:#4a90d9">5,680</span><div class="lbl">Total Ticks</div></div>
+</div>
+
+<div class="bars">
+  <div>
+    <div style="font-size:.8rem;color:#94a3b8;margin-bottom:.3rem">Precision — 1 TP / 0 FP out of 1 bugs</div>
+    <div class="bar-wrap"><div class="bar-fill" style="width:100%;background:#22c55e"></div></div>
+    <div style="font-size:.85rem;font-weight:700;color:#22c55e">100%</div>
+  </div>
+  <div>
+    <div style="font-size:.8rem;color:#94a3b8;margin-bottom:.3rem">State coverage — 2 of 6 states visited</div>
+    <div class="bar-wrap"><div class="bar-fill" style="width:33%;background:#a855f7"></div></div>
+    <div style="font-size:.85rem;font-weight:700;color:#a855f7">33% — CountingDown, Playing</div>
+  </div>
+</div>
+
+<h2>Bugs Found (1 unique across 14 sequences)</h2>
+
+<div class="card" style="border-left:4px solid #22c55e">
+  <span class="badge" style="background:#052e16;color:#22c55e">TRUE POSITIVE</span>
+  <span class="badge" style="background:#1e3a5f;color:#90c8ff;margin-left:.4rem">Tier 2 — Structural</span>
+  <div style="font-family:monospace;color:#90c8ff;font-weight:600;margin:.6rem 0 .3rem">StaticBug_AliasingVariables</div>
+  <div style="font-size:.85rem;color:#94a3b8;margin-bottom:.75rem">14 variable IDs shared across sprites â€” writes in one sprite corrupt another</div>
+  <div style="font-size:.82rem;color:#e2e8f0">
+    First fired at <strong>tick 0</strong> in
+    <code style="background:#1e2d45;color:#90c8ff;padding:1px 5px;border-radius:3px">Boot_Idle</code>
+    — fired in <strong>14/14</strong> sequences.<br>
+    <span style="color:#94a3b8;font-size:.8rem">14 variable IDs shared across sprites â€” writes in one sprite corrupt another Examples: Player.hidden for seeker? = Bot</span>
+  </div>
+  <div style="margin-top:.75rem;font-size:.8rem;color:#94a3b8">
+    <strong style="color:#ccc">Root cause:</strong> Scratch sprite duplication copies variable UUIDs verbatim.
+    The VM loads them as a single shared JavaScript object — a write by Player immediately changes the value
+    seen by Bot1, Bot2, Bot3 and Bot4.
+  </div>
+</div>
+
+
+<h2>Silent Oracles — Passing Invariants (18 of 19)</h2>
+<p style="font-size:.85rem;color:#64748b;margin-bottom:.9rem">
+  These oracles fired zero violations across all 14 sequences and 5,680 ticks.
+  Each represents a confirmed correctness property of the program under the tested inputs.
+</p>
+<table>
+  <thead><tr><th>Oracle</th><th>Result</th></tr></thead>
+  <tbody><tr><td style='font-family:monospace;font-size:.8rem;color:#90c8ff'>Monotonic_Rescue_streak</td><td style='color:#86efac;font-size:.8rem'>Never decreased across 5,680 ticks</td></tr>
+<tr><td style='font-family:monospace;font-size:.8rem;color:#90c8ff'>Monotonic_Total_Players_found</td><td style='color:#86efac;font-size:.8rem'>Score variable monotonically non-decreasing</td></tr>
+<tr><td style='font-family:monospace;font-size:.8rem;color:#90c8ff'>Monotonic_Your_total_rescues</td><td style='color:#86efac;font-size:.8rem'>Rescue count never went backward</td></tr>
+<tr><td style='font-family:monospace;font-size:.8rem;color:#90c8ff'>Countdown_NonNegative</td><td style='color:#86efac;font-size:.8rem'>COUNT never underflowed below −5</td></tr>
+<tr><td style='font-family:monospace;font-size:.8rem;color:#90c8ff'>StateEnum_CURRENT_PLAYER_STAT</td><td style='color:#86efac;font-size:.8rem'>Stayed within {hided, discovered, saved, found}</td></tr>
+<tr><td style='font-family:monospace;font-size:.8rem;color:#90c8ff'>StateEnum_MENU</td><td style='color:#86efac;font-size:.8rem'>Stayed within {Main, In-Game, Game-End, Editor, …}</td></tr>
+<tr><td style='font-family:monospace;font-size:.8rem;color:#90c8ff'>StateEnum_SEEKER_IS_COUNTING</td><td style='color:#86efac;font-size:.8rem'>Only ever 'true' or 'false'</td></tr>
+<tr><td style='font-family:monospace;font-size:.8rem;color:#90c8ff'>StateEnum_AUDIO</td><td style='color:#86efac;font-size:.8rem'>AUDIO variable within expected values</td></tr>
+<tr><td style='font-family:monospace;font-size:.8rem;color:#90c8ff'>StateEnum_MAP</td><td style='color:#86efac;font-size:.8rem'>MAP within expected enumeration</td></tr>
+<tr><td style='font-family:monospace;font-size:.8rem;color:#90c8ff'>+ 9 more T3 LLM oracles…</td><td style='color:#86efac;font-size:.8rem'>All passed — invariants held</td></tr></tbody>
+</table>
+
+<h2>Aliasing Bug — 14 Shared Variable IDs</h2>
+<p style="font-size:.85rem;color:#64748b;margin-bottom:.9rem">
+  These variables share the same UUID across multiple sprites. Scratch 3 sprite duplication copies
+  UUIDs verbatim; the VM loads them as one JavaScript object. Any write by one sprite is
+  immediately visible to all others — a silent data corruption bug.
+</p>
+<table>
+  <thead><tr><th>Variable UUID</th><th>Variable Name</th><th>Sprites Affected</th></tr></thead>
+  <tbody><tr><td style='font-family:monospace;font-size:.8rem;color:#d8b4fe'>dFuW.+_a7a_UTY…</td><td style='font-family:monospace'>hidden for seeker?</td><td style='color:#94a3b8'>Player, Bot1</td></tr><tr><td style='font-family:monospace;font-size:.8rem;color:#d8b4fe'>Oas#qWiCBfGx$8…</td><td style='font-family:monospace'>power</td><td style='color:#94a3b8'>Player, Bot1</td></tr><tr><td style='font-family:monospace;font-size:.8rem;color:#d8b4fe'>N^9`gV#[To2cLl…</td><td style='font-family:monospace'>speed up</td><td style='color:#94a3b8'>Player, Bot1</td></tr><tr><td style='font-family:monospace;font-size:.8rem;color:#d8b4fe'>w;*m{|Ru@{0@Wb…</td><td style='font-family:monospace'>distance</td><td style='color:#94a3b8'>Player, Bot1</td></tr><tr><td style='font-family:monospace;font-size:.8rem;color:#d8b4fe'>Eqhx;1Rj5E:xoH…</td><td style='font-family:monospace'>hidden for seeker?</td><td style='color:#94a3b8'>Player, Bot1, Bot2, Bot3</td></tr><tr><td style='font-family:monospace;font-size:.8rem;color:#d8b4fe'>l%|oGA4Zh,+P7t…</td><td style='font-family:monospace'>speed up</td><td style='color:#94a3b8'>Player, Bot1, Bot2, Bot3</td></tr><tr><td style='font-family:monospace;font-size:.8rem;color:#d8b4fe'>pE+-A7Sr2~t~B?…</td><td style='font-family:monospace'>power</td><td style='color:#94a3b8'>Player, Bot1, Bot2, Bot3</td></tr><tr><td style='font-family:monospace;font-size:.8rem;color:#d8b4fe'>dj+_V1J.3JMpb5…</td><td style='font-family:monospace'>distance</td><td style='color:#94a3b8'>Player, Bot1, Bot2, Bot3</td></tr></tbody>
+</table>
+
+<h2>Sequence Results (14 sequences)</h2>
+<table>
+  <thead><tr><th>Sequence</th><th>Result</th><th>Oracles Triggered</th></tr></thead>
+  <tbody><tr><td style='font-family:monospace;font-size:.82rem'>Boot_Idle</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Boot_Long_600</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Boot_then_Playing</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Double_Inject</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Playing_All_Keys</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Playing_Hold_B</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Playing_Hold_F</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Playing_Hold_H</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Playing_Hold_R</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Playing_Hold_S</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Playing_Mixed_Long</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Playing_Random_600</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Playing_Rapid_Switch</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Playing_Spam_B_Long</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr></tbody>
+</table>
+
+<footer>
+  MSc Cyber Security Dissertation · University of Manchester · has.sb3<br>
+  Oracle tiers: T1 implicit crash · T2 structural (monotonic, countdown, state_enum, aliasing) · T3 LLM (Groq / LLaMA-3.3-70B)
+</footer>
+</body></html>

@@ -1,0 +1,70 @@
+{
+  "program": "Maze.sb3",
+  "oracles": "maze_oracles.js",
+  "timestamp": "2026-08-20T15:58:24.728Z",
+  "totalSequences": 14,
+  "totalTicks": 7360,
+  "oracleCount": 8,
+  "cameraSystem": false,
+  "coverage": {
+    "statesVisited": [
+      "Don't Update?=false|Touching Color?=false|Key Pressed?=false",
+      "Don't Update?=false|Touching Color?=false|Key Pressed?=true"
+    ],
+    "eventsTriggered": [
+      "inject:start",
+      "key:0",
+      "key:1",
+      "key:2",
+      "key:3",
+      "key:4",
+      "key:5",
+      "key:6",
+      "key:7",
+      "key:8",
+      "key:9",
+      "key:a",
+      "key:b",
+      "key:c",
+      "key:d",
+      "key:Down",
+      "key:e",
+      "key:f",
+      "key:g",
+      "key:h",
+      "key:i",
+      "key:j",
+      "key:k",
+      "key:l",
+      "key:Left",
+      "key:m",
+      "key:n",
+      "key:o",
+      "key:p",
+      "key:q",
+      "key:r",
+      "key:Right",
+      "key:s",
+      "key: ",
+      "key:t",
+      "key:u",
+      "key:Up",
+      "key:v",
+      "key:w",
+      "key:x",
+      "key:y",
+      "key:z"
+    ]
+  },
+  "bugsFound": 1,
+  "bugs": [
+    {
+      "oracle": "Monotonic_Index",
+      "tier": 2,
+      "description": "\"Index\" should never decrease",
+      "sequence": "Playing_All_Keys",
+      "tick": 627,
+      "detail": "Index decreased: 5 → 4"
+    }
+  ]
+}

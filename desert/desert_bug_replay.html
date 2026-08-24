@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bug Replay — desert</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#07090f; --surface:#0d1219; --border:#1a2535;
+  --blue:#4a90d9; --green:#22c55e; --red:#ef4444;
+  --amber:#f59e0b; --purple:#a855f7; --text:#e2e8f0; --muted:#64748b;
+}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);
+      padding:2rem;line-height:1.6;max-width:1100px;margin:0 auto}
+h1{font-size:1.7rem;font-weight:700;color:#fff;margin-bottom:.25rem}
+.sub{color:var(--muted);font-size:.9rem;margin-bottom:2rem;font-family:monospace}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin-bottom:2rem}
+.metric{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;text-align:center}
+.metric .val{font-size:2rem;font-weight:800;display:block;line-height:1.2}
+.metric .lbl{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-top:.25rem}
+h2{font-size:.95rem;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.08em;
+    margin:2rem 0 .75rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
+.chip{background:#111827;border:1px solid var(--border);border-radius:20px;padding:.25rem .75rem;
+       font-size:.78rem;font-family:monospace;color:#cbd5e1}
+.chip.key{color:var(--amber)}
+.chip.bc{color:var(--purple)}
+.chip.state{color:var(--green)}
+.empty-note{color:var(--muted);font-size:.85rem;font-style:italic}
+
+/* ── REPLAY ── */
+#replay{background:var(--surface);border:1px solid var(--border);border-radius:12px;
+         padding:1.5rem;margin-top:1rem}
+#replay-empty{text-align:center;padding:3rem 1rem;color:var(--muted)}
+#replay-empty .big{font-size:2.5rem;margin-bottom:.5rem}
+#scene-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;
+             flex-wrap:wrap;gap:.5rem}
+.tier-badge{padding:2px 10px;border-radius:20px;font-size:.7rem;font-weight:700;text-transform:uppercase}
+.tier-badge.t2{background:#1e3a2e;color:var(--green)}
+.tier-badge.t3{background:#3a2e1e;color:var(--amber)}
+#seq-tick{font-family:monospace;font-size:.78rem;color:var(--muted)}
+#scene-desc{font-size:1rem;color:#fff;margin-bottom:1rem}
+#scene-visual{background:#0a0e18;border-radius:8px;padding:1.25rem;margin-bottom:1rem;min-height:110px;
+               display:flex;align-items:center;justify-content:center}
+#scene-detail{font-family:monospace;font-size:.85rem;color:#fca5a5;background:#1a0e0e;
+               border-left:3px solid var(--red);padding:.6rem .9rem;border-radius:4px}
+
+.drop-gauge{width:100%;max-width:420px}
+.drop-gauge .label{display:flex;justify-content:space-between;font-family:monospace;font-size:.8rem;
+                     color:var(--muted);margin-bottom:.35rem}
+.drop-gauge .bar-track{height:14px;background:#1a2535;border-radius:7px;overflow:hidden;position:relative}
+.drop-gauge .bar-before{position:absolute;top:0;left:0;height:100%;background:#22c55e44}
+.drop-gauge .bar-after{position:absolute;top:0;left:0;height:100%;background:var(--red);
+                          transition:width 1.1s cubic-bezier(.4,0,.2,1)}
+.drop-gauge .vals{display:flex;justify-content:space-between;font-family:monospace;font-size:.78rem;
+                    margin-top:.35rem}
+.drop-gauge .vals .before{color:var(--green)}
+.drop-gauge .vals .after{color:var(--red)}
+
+.enum-visual{font-family:monospace;font-size:.9rem;text-align:center}
+.enum-visual .got{color:var(--red);font-weight:700}
+.enum-visual .allowed{color:var(--muted);margin-top:.4rem;font-size:.78rem}
+
+#step-nav{display:flex;align-items:center;gap:.75rem;margin-top:1.25rem}
+#step-nav button{background:#1a2535;border:1px solid var(--border);color:var(--text);
+                   padding:.4rem .9rem;border-radius:6px;cursor:pointer;font-size:.82rem}
+#step-nav button:hover{background:#233047}
+#step-nav button:disabled{opacity:.4;cursor:default}
+#step-dots{display:flex;gap:.35rem;flex:1;justify-content:center}
+.dot{width:8px;height:8px;border-radius:50%;background:#2a3548;cursor:pointer;transition:background .2s}
+.dot.active{background:var(--blue)}
+
+footer{margin-top:2rem;color:var(--muted);font-size:.78rem;text-align:center}
+</style>
+</head>
+<body>
+
+<h1>Bug Replay — desert</h1>
+<div class="sub">desert.sb3 · 2026-08-20T15:59:01.256Z</div>
+
+<div class="metrics">
+  <div class="metric"><span class="val" style="color:var(--blue)">12</span><span class="lbl">Sequences</span></div>
+  <div class="metric"><span class="val" style="color:var(--blue)">900</span><span class="lbl">Total Ticks</span></div>
+  <div class="metric"><span class="val" style="color:var(--purple)">9</span><span class="lbl">Oracles</span></div>
+  <div class="metric"><span class="val" style="color:var(--red)">1</span><span class="lbl">Bugs Found</span></div>
+  <div class="metric"><span class="val" style="color:var(--green)">8</span><span class="lbl">Silent Oracles</span></div>
+  <div class="metric"><span class="val" style="color:var(--amber)">1</span><span class="lbl">States Visited</span></div>
+</div>
+
+<h2>Coverage</h2>
+<div class="chips">
+  <span class="chip key">left arrow</span><span class="chip key">right arrow</span><span class="chip key">up arrow</span>
+</div>
+<div class="chips">
+  <span class="chip bc">inject:start</span><span class="chip bc">key:Left</span><span class="chip bc">key:Right</span><span class="chip bc">key:Up</span>
+</div>
+<div class="chips">
+  <span class="chip state">Unclassified</span>
+</div>
+
+
+<h2>Sprites (11)</h2>
+<div class="chips">
+  <span class="chip">Player · 226 blocks</span><span class="chip">Levels · 17 blocks</span><span class="chip">Thumbnail · 23 blocks</span><span class="chip">Cactus · 15 blocks</span><span class="chip">Bounce · 10 blocks</span><span class="chip">Speed · 10 blocks</span><span class="chip">Backdrop · 12 blocks</span><span class="chip">Shadow · 13 blocks</span><span class="chip">Player Shadow · 13 blocks</span><span class="chip">Red border · 11 blocks</span><span class="chip">Water · 17 blocks</span>
+</div>
+
+<h2>Bug Timeline</h2>
+<div id="replay"></div>
+
+<footer>
+  Generated by generate_bug_replay.py — a project-agnostic view built only from
+  desert_bug_report.json and desert_analysis.json.
+  Nothing on this page is fabricated: sections with no data say so.
+</footer>
+
+<script>
+const BEATS = [{"oracle": "Monotonic_Water", "tier": 2, "description": "\"Water\" should never decrease", "sequence": "Boot_Long_600", "tick": 348, "detail": "Water decreased: 12 \u2192 11", "parsed": {"kind": "drop", "var": "Water", "before": 12.0, "after": 11.0}}];
+
+function renderVisual(p) {
+  if (p.kind === 'drop') {
+    const pct = p.before > 0 ? Math.max(0, Math.min(100, (p.after / p.before) * 100)) : 0;
+    return `<div class="drop-gauge">
+      <div class="label"><span>${p.var}</span><span>should never decrease</span></div>
+      <div class="bar-track">
+        <div class="bar-before" style="width:100%"></div>
+        <div class="bar-after" id="bar-after" style="width:100%"></div>
+      </div>
+      <div class="vals"><span class="before">${p.before}</span><span class="after">→ ${p.after}</span></div>
+    </div>`;
+  }
+  if (p.kind === 'invalid_enum') {
+    return `<div class="enum-visual">
+      <div>${p.var} = <span class="got">"${p.value}"</span></div>
+      <div class="allowed">allowed: ${p.allowed}</div>
+    </div>`;
+  }
+  if (p.kind === 'aliasing') {
+    return `<div class="enum-visual" style="color:var(--red)">Shared-variable aliasing detected</div>`;
+  }
+  return `<div class="enum-visual" style="color:var(--muted)">See detail below</div>`;
+}
+
+let idx = 0;
+function draw() {
+  const root = document.getElementById('replay');
+  if (BEATS.length === 0) {
+    root.innerHTML = `<div id="replay-empty"><div class="big">✔</div>
+      <div>No oracle violations detected across ${ 12 } sequences / ${ 900 } ticks.</div></div>`;
+    return;
+  }
+  const b = BEATS[idx];
+  const tierClass = b.tier === 2 ? 't2' : 't3';
+  const tierLabel = b.tier === 2 ? 'Tier 2 · Structural' : 'Tier 3 · LLM';
+  root.innerHTML = `
+    <div id="scene-head">
+      <div><strong>${b.oracle}</strong> <span class="tier-badge ${tierClass}">${tierLabel}</span></div>
+      <div id="seq-tick">${b.sequence} · tick ${b.tick}</div>
+    </div>
+    <div id="scene-desc">${b.description}</div>
+    <div id="scene-visual">${renderVisual(b.parsed)}</div>
+    <div id="scene-detail">${b.detail}</div>
+    <div id="step-nav">
+      <button id="prev-btn">◀ Prev</button>
+      <div id="step-dots"></div>
+      <button id="next-btn">Next ▶</button>
+    </div>
+  `;
+  const dots = document.getElementById('step-dots');
+  BEATS.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'dot' + (i === idx ? ' active' : '');
+    d.onclick = () => { idx = i; draw(); };
+    dots.appendChild(d);
+  });
+  document.getElementById('prev-btn').disabled = idx === 0;
+  document.getElementById('prev-btn').onclick = () => { idx = Math.max(0, idx - 1); draw(); };
+  document.getElementById('next-btn').disabled = idx === BEATS.length - 1;
+  document.getElementById('next-btn').onclick = () => { idx = Math.min(BEATS.length - 1, idx + 1); draw(); };
+
+  if (b.parsed.kind === 'drop') {
+    const pct = b.parsed.before > 0 ? Math.max(0, Math.min(100, (b.parsed.after / b.parsed.before) * 100)) : 0;
+    requestAnimationFrame(() => {
+      const el = document.getElementById('bar-after');
+      if (el) el.style.width = pct + '%';
+    });
+  }
+}
+draw();
+</script>
+</body>
+</html>

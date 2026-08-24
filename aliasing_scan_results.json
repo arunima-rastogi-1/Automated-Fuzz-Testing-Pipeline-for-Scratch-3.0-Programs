@@ -1,0 +1,362 @@
+[
+  {
+    "file": "1202566897.json",
+    "status": "aliased",
+    "sprite_count": 101,
+    "aliased_count": 4,
+    "aliased_vars": [
+      {
+        "uuid": "W$:[;X,p+=y:*N…",
+        "name": "CloneID",
+        "sprites": [
+          "NPC: May",
+          "EnemyProjectiles",
+          "EnemyEffects"
+        ],
+        "isList": false
+      },
+      {
+        "uuid": "V-Eu$G@fiF!H9B…",
+        "name": "SpikeBundlePositionTracker",
+        "sprites": [
+          "NPC: May",
+          "EnemyProjectiles",
+          "EnemyEffects"
+        ],
+        "isList": false
+      },
+      {
+        "uuid": "Z]Q@i1@aKg1/q8…",
+        "name": "BigFlowerBurstTimer",
+        "sprites": [
+          "NPC: May",
+          "EnemyProjectiles",
+          "EnemyEffects"
+        ],
+        "isList": false
+      },
+      {
+        "uuid": "7k@4B/[!#6Ie_E…",
+        "name": "RuinJump",
+        "sprites": [
+          "NPC: May",
+          "EnemyProjectiles"
+        ],
+        "isList": false
+      }
+    ],
+    "has_bug": true
+  },
+  {
+    "file": "1304422869.json",
+    "status": "clean",
+    "sprite_count": 241,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1312717956.json",
+    "status": "clean",
+    "sprite_count": 13,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1317369795.json",
+    "status": "clean",
+    "sprite_count": 21,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1322136828.json",
+    "status": "clean",
+    "sprite_count": 2,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1322840911.json",
+    "status": "clean",
+    "sprite_count": 3,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1325353502.json",
+    "status": "clean",
+    "sprite_count": 5,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1351219038.json",
+    "status": "clean",
+    "sprite_count": 9,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1352790074.json",
+    "status": "clean",
+    "sprite_count": 8,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1362168931.json",
+    "status": "clean",
+    "sprite_count": 14,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1362408842.json",
+    "status": "clean",
+    "sprite_count": 8,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1362832961.json",
+    "status": "clean",
+    "sprite_count": 18,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1363464746.json",
+    "status": "clean",
+    "sprite_count": 28,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1363909446.json",
+    "status": "clean",
+    "sprite_count": 16,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1364135589.json",
+    "status": "clean",
+    "sprite_count": 15,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1364656541.json",
+    "status": "clean",
+    "sprite_count": 11,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1364738419.json",
+    "status": "clean",
+    "sprite_count": 6,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1364912715.json",
+    "status": "clean",
+    "sprite_count": 13,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1365068601.json",
+    "status": "clean",
+    "sprite_count": 3,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1365757876.json",
+    "status": "clean",
+    "sprite_count": 10,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1365775223.json",
+    "status": "clean",
+    "sprite_count": 19,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1366301573.json",
+    "status": "clean",
+    "sprite_count": 1,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1366381907.json",
+    "status": "clean",
+    "sprite_count": 3,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1366496587.json",
+    "status": "clean",
+    "sprite_count": 5,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1366760881.json",
+    "status": "clean",
+    "sprite_count": 14,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1366836283.json",
+    "status": "clean",
+    "sprite_count": 39,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1366892438.json",
+    "status": "clean",
+    "sprite_count": 18,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1368118060.json",
+    "status": "clean",
+    "sprite_count": 8,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1368135331.json",
+    "status": "clean",
+    "sprite_count": 2,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1368179027.json",
+    "status": "clean",
+    "sprite_count": 4,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1368372946.json",
+    "status": "clean",
+    "sprite_count": 11,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1368563205.json",
+    "status": "clean",
+    "sprite_count": 19,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1368591799.json",
+    "status": "clean",
+    "sprite_count": 3,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1368595478.json",
+    "status": "clean",
+    "sprite_count": 10,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1368626148.json",
+    "status": "clean",
+    "sprite_count": 2,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1368829545.json",
+    "status": "clean",
+    "sprite_count": 3,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1368898992.json",
+    "status": "clean",
+    "sprite_count": 14,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1368901543.json",
+    "status": "clean",
+    "sprite_count": 5,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1368915551.json",
+    "status": "clean",
+    "sprite_count": 4,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  },
+  {
+    "file": "1369387652.json",
+    "status": "clean",
+    "sprite_count": 2,
+    "aliased_count": 0,
+    "aliased_vars": [],
+    "has_bug": false
+  }
+]

@@ -1,0 +1,48 @@
+SCRATCH ALIASING BUG SCAN — LOCAL FOLDER
+Folder: scan_projects   Date: Tue Aug 18 2026
+
+Projects with aliasing bug : 1 / 40 (3%)
+Clean projects             : 39 / 40 (97%)
+
+File                                        Sprites  Aliased  Bug
+────────────────────────────────────────────────────────────────────
+1202566897.json                             101      4        YES
+1304422869.json                             241      0        no
+1312717956.json                             13       0        no
+1317369795.json                             21       0        no
+1322136828.json                             2        0        no
+1322840911.json                             3        0        no
+1325353502.json                             5        0        no
+1351219038.json                             9        0        no
+1352790074.json                             8        0        no
+1362168931.json                             14       0        no
+1362408842.json                             8        0        no
+1362832961.json                             18       0        no
+1363464746.json                             28       0        no
+1363909446.json                             16       0        no
+1364135589.json                             15       0        no
+1364656541.json                             11       0        no
+1364738419.json                             6        0        no
+1364912715.json                             13       0        no
+1365068601.json                             3        0        no
+1365757876.json                             10       0        no
+1365775223.json                             19       0        no
+1366301573.json                             1        0        no
+1366381907.json                             3        0        no
+1366496587.json                             5        0        no
+1366760881.json                             14       0        no
+1366836283.json                             39       0        no
+1366892438.json                             18       0        no
+1368118060.json                             8        0        no
+1368135331.json                             2        0        no
+1368179027.json                             4        0        no
+1368372946.json                             11       0        no
+1368563205.json                             19       0        no
+1368591799.json                             3        0        no
+1368595478.json                             10       0        no
+1368626148.json                             2        0        no
+1368829545.json                             3        0        no
+1368898992.json                             14       0        no
+1368901543.json                             5        0        no
+1368915551.json                             4        0        no
+1369387652.json                             2        0        no
