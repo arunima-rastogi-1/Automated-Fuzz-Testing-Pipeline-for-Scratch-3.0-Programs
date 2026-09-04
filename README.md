@@ -8,9 +8,9 @@ No hand-written test cases, no formal specification. It found a previously undoc
 
 1. **Static analysis** (`analyser.js`) — unzips a `.sb3` file, reads its block structure without executing anything, and extracts every sprite's variables, keys, broadcasts, and collision logic. Flags duplicate variable identifiers shared across sprites (the aliasing defect) and infers a rough state machine from broadcast names.
 2. **Oracle generation** (`oracle_generator.js`) — turns that analysis into runnable JavaScript checks in two tiers:
-   - **Tier 2** — deterministic rules (monotonic variables, state enums, countdown bounds, aliasing).
+   - **Tier 2** — deterministic rules (monotonic variables, state enums, countdown bounds, lives bounds, aliasing).
    - **Tier 3** — an LLM (via the Groq API) reads a plain-English summary of the project and proposes properties that should always hold, which get compiled into check functions.
-3. **Fuzzing** (`fuzzer_full.js`) — loads the project into headless [`scratch-vm`](https://github.com/scratchfoundation/scratch-vm), presses the green flag, and runs it through 14 scripted input sequences (idle, key holds, random input, rapid key-switching, double-start idempotency checks) derived from that project's own detected key vocabulary. Every few ticks, every oracle is checked against the live VM state. Produces a JSON bug report.
+3. **Fuzzing** (`fuzzer_full.js`) — loads the project into headless [`scratch-vm`](https://github.com/scratchfoundation/scratch-vm), presses the green flag, and runs it through a set of scripted input sequences (idle, key holds, random input, rapid key-switching, double-start idempotency checks) derived from that project's own detected key vocabulary — the exact count scales with it, from 12 sequences for a project with a handful of keys up to 14 for one with dozens. Every few ticks, every oracle is checked against the live VM state. Produces a JSON bug report.
 4. **Reporting** — `generate_bug_replay.py` renders any bug report into a self-contained, step-through HTML page, built generically from whatever the report actually contains (no per-project hardcoding).
 
 A separate, lighter path scans many projects at once for just the aliasing defect, without full fuzzing:
@@ -25,9 +25,9 @@ Evaluated against three real, structurally different Scratch programs:
 
 | Program | Genre | Sprites | Result |
 |---|---|---|---|
-| `has.sb3` | Hide-and-seek rescue game | 16 | **14 variable IDs shared across 5 sprites** — a structural aliasing defect, found by static analysis alone |
+| `has.sb3` | Hide-and-seek rescue game | 16 | **14 variable IDs shared across 4 sprites** — a structural aliasing defect, found by static analysis alone |
 | `Maze.sb3` | Navigation / puzzle game | 5 | 1 monotonic-variable oracle violation under fuzzing |
-| `desert.sb3` | Survival game | 11 | 1 monotonic-variable oracle violation under fuzzing |
+| `desert.sb3` | Survival game | 11 | 2 Tier 2 violations under fuzzing — a monotonic decrease on `Water`, and a lives-bounds violation on `Health` |
 
 A follow-up scan of 40 public Scratch projects found the same aliasing defect in 1 further project (2.5%), suggesting it's a real, if uncommon, risk tied to the ordinary "duplicate sprite" editor workflow rather than a one-off.
 
@@ -67,7 +67,3 @@ Each stage's output feeds the next: `_analysis.json` → `_oracles.js` → `_bug
 ## Tech stack
 
 Node.js, [`scratch-vm`](https://github.com/scratchfoundation/scratch-vm) (headless), [Groq](https://groq.com) LLM inference API, Python (for HTML report rendering).
-=======
-# Automated-Fuzz-Testing-Pipeline-for-Scratch-3.0-Programs
-Automated fuzz-testing pipeline for Scratch 3.0 — static analysis + LLM-generated oracles + headless VM execution. Found a previously undocumented variable-aliasing defect in the Scratch runtime.
->>>>>>> 8078c3c6ca76bd892a5157207f7ca89e00dc2318
