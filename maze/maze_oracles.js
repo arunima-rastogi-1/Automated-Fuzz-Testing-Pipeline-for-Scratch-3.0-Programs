@@ -30,46 +30,104 @@ const ORACLES = [
 })(),
   },
   {
-    tier: 3,
-    name: "LLM_Based_on_the_provided_program_structure_",
-    description: "Based on the provided program structure and inferred logic, here are 6 properties that should always be true while the program runs:",
-    check: (vm) => { try { const stage = vm.runtime?.getTargetForStage(); if (!stage || !stage.variables) return { violated: false }; const getVar = (key) => { const v = stage.variables[key]; if (!v) return undefined; return v.list ? v.list : v.value; }; const stat = getVar('CURRENT PLAYER STAT'); if (stat !== undefined && !['hided', 'discovered', 'saved', 'found'].includes(stat)) return { violated: true, message: `Invalid CURRENT PLAYER STAT value: ${stat}` }; const menu = getVar('MENU'); if (menu !== undefined && !['Main', 'In-Game', 'Game-End', 'Editor', 'Load Paths', 'Play Settings'].includes(menu)) return { violated: true, message: `Invalid MENU value: ${menu}` }; return { violated: false }; } catch (e) { return { violated: false }; } },
+    tier: 2,
+    name: "StateEnum_Don_t_Update",
+    description: "\"Don't Update?\" should only take values: false, true",
+    check: (vm) => {
+  const stage = vm.runtime.getTargetForStage();
+  if (!stage) return { violated: false };
+  const v = stage.lookupVariableByNameAndType("Don't Update?", "");
+  if (!v) return { violated: false };
+  const allowed = ["false","true"];
+  const cur = String(v.value);
+  if (!allowed.includes(cur)) {
+    return { violated: true, detail: `Don't Update? = "${cur}" — not in allowed set: ${allowed.join(", ")}` };
+  }
+  return { violated: false };
+},
+  },
+  {
+    tier: 2,
+    name: "StateEnum_Touching_Color",
+    description: "\"Touching Color?\" should only take values: true, false",
+    check: (vm) => {
+  const stage = vm.runtime.getTargetForStage();
+  if (!stage) return { violated: false };
+  const v = stage.lookupVariableByNameAndType("Touching Color?", "");
+  if (!v) return { violated: false };
+  const allowed = ["true","false"];
+  const cur = String(v.value);
+  if (!allowed.includes(cur)) {
+    return { violated: true, detail: `Touching Color? = "${cur}" — not in allowed set: ${allowed.join(", ")}` };
+  }
+  return { violated: false };
+},
+  },
+  {
+    tier: 2,
+    name: "StateEnum_Key_Pressed",
+    description: "\"Key Pressed?\" should only take values: false, true",
+    check: (vm) => {
+  const stage = vm.runtime.getTargetForStage();
+  if (!stage) return { violated: false };
+  const v = stage.lookupVariableByNameAndType("Key Pressed?", "");
+  if (!v) return { violated: false };
+  const allowed = ["false","true"];
+  const cur = String(v.value);
+  if (!allowed.includes(cur)) {
+    return { violated: true, detail: `Key Pressed? = "${cur}" — not in allowed set: ${allowed.join(", ")}` };
+  }
+  return { violated: false };
+},
   },
   {
     tier: 3,
-    name: "LLM_The_game_logic_maintains_exactly_one_act",
-    description: "The game logic maintains exactly one active state from the set {Boot, Playing, GameOver} at any given instant.",
-    check: (vm) => ({ violated: false }) // generation failed,
+    name: "LLM_The_program_enforces_a_strict_state_prog",
+    description: "The program enforces a strict state progression where exactly one of Boot, Playing, or GameOver is active at any given time.",
+    check: (vm) => {
+  const stage = vm.runtime.getTargetForStage();
+  if (!stage) return { violated: false };
+  const stateVar = stage.lookupVariableByNameAndType("State", "");
+  if (!stateVar) return { violated: false };
+  const validStates = ["Boot", "Playing", "GameOver"];
+  return { violated: !validStates.includes(String(stateVar.value)) };
+},
   },
   {
     tier: 3,
-    name: "LLM_The_Character_sprite_processes_direction",
-    description: "The Character sprite processes directional movement inputs only when the system is in the Playing state.",
-    check: (vm) => ({ violated: false }) // generation failed,
+    name: "LLM_The_logo_end_broadcast_functions_exclusi",
+    description: "The logo end broadcast functions exclusively as the signal that concludes the Boot phase and initiates the Playing phase.",
+    check: (vm) => ({ violated: false }),
   },
   {
     tier: 3,
-    name: "LLM_The_collision_event_between_the_Characte",
-    description: "The collision event between the Character sprite and the Key sprite is the mandatory trigger required to end the current round.",
-    check: (vm) => ({ violated: false }) // generation failed,
+    name: "LLM_The_win_broadcast_functions_exclusively_",
+    description: "The win broadcast functions exclusively as the signal that concludes the Playing phase and initiates the GameOver phase.",
+    check: (vm) => ({ violated: false }),
   },
   {
     tier: 3,
-    name: "LLM_The_broadcast_of_the_win_message_signifi",
-    description: "The broadcast of the \"win\" message signifies the definitive transition from the Playing state to the GameOver state.",
-    check: (vm) => ({ violated: false }) // generation failed,
+    name: "LLM_The_Character_sprite_s_movement_routines",
+    description: "The Character sprite's movement routines and collision evaluation scripts only execute when the game is actively in the Playing state.",
+    check: (vm) => ({ violated: false }) // generation failed (invalid syntax),
   },
   {
     tier: 3,
-    name: "LLM_The_initialization_of_the_Playing_state_",
-    description: "The initialization of the Playing state is dependent on the prior processing of the \"logo end\" broadcast.",
-    check: (vm) => ({ violated: false }) // generation failed,
+    name: "LLM_A_Key_sprite_that_overlaps_with_the_Char",
+    description: "A Key sprite that overlaps with the Character is immediately marked as collected and permanently excluded from further collision validation for the remainder of that round.",
+    check: (vm) => ({ violated: false }) // generation failed (invalid syntax),
   },
   {
     tier: 3,
-    name: "LLM_The_Key_sprite_and_Character_sprite_must",
-    description: "The Key sprite and Character sprite must remain initialized and active in the game world to satisfy the program's collision detection requirements.",
-    check: (vm) => { const targets = vm.runtime.targets || []; const key = targets.find(t => !t.isStage && t.getName() === 'Key'); const char = targets.find(t => !t.isStage && t.getName() === 'Character'); if (!key || !char) return { violated: true }; return { violated: false }; },
+    name: "LLM_The_Key_Press_sprite_only_routes_input_e",
+    description: "The Key Press sprite only routes input events or triggers gameplay actions while the Playing state is active to prevent invalid commands during non-playable phases.",
+    check: (vm) => ({ violated: false }) // generation failed (invalid syntax),
+  },
+  {
+    tier: 3,
+    name: "LLM_All_collision_detection_logic_and_broadc",
+    description: "All collision detection logic and broadcast listeners on the Character and Key sprites are strictly gated by the current game state to prevent spurious interactions between phases.",
+    check: (vm) => ({ violated: false }) // generation failed (invalid syntax),
   },
 ];
 

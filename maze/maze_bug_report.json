@@ -1,10 +1,10 @@
 {
   "program": "Maze.sb3",
   "oracles": "maze_oracles.js",
-  "timestamp": "2026-08-20T15:58:24.728Z",
+  "timestamp": "2026-08-31T18:17:31.657Z",
   "totalSequences": 14,
   "totalTicks": 7360,
-  "oracleCount": 8,
+  "oracleCount": 11,
   "cameraSystem": false,
   "coverage": {
     "statesVisited": [
@@ -56,15 +56,23 @@
       "key:z"
     ]
   },
-  "bugsFound": 1,
+  "bugsFound": 2,
   "bugs": [
     {
       "oracle": "Monotonic_Index",
       "tier": 2,
       "description": "\"Index\" should never decrease",
       "sequence": "Playing_All_Keys",
-      "tick": 627,
-      "detail": "Index decreased: 5 → 4"
+      "tick": 615,
+      "detail": "Index decreased: 5 → 2"
+    },
+    {
+      "oracle": "Monotonic_Index",
+      "tier": 2,
+      "description": "\"Index\" should never decrease",
+      "sequence": "Playing_Rapid_Switch",
+      "tick": 654,
+      "detail": "Index decreased: 5 → 2"
     }
   ]
 }

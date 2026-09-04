@@ -76,14 +76,14 @@ footer{margin-top:2rem;color:var(--muted);font-size:.78rem;text-align:center}
 <body>
 
 <h1>Bug Replay — desert</h1>
-<div class="sub">desert.sb3 · 2026-08-20T15:59:01.256Z</div>
+<div class="sub">desert.sb3 · 2026-08-31T18:10:10.939Z</div>
 
 <div class="metrics">
   <div class="metric"><span class="val" style="color:var(--blue)">12</span><span class="lbl">Sequences</span></div>
   <div class="metric"><span class="val" style="color:var(--blue)">900</span><span class="lbl">Total Ticks</span></div>
-  <div class="metric"><span class="val" style="color:var(--purple)">9</span><span class="lbl">Oracles</span></div>
-  <div class="metric"><span class="val" style="color:var(--red)">1</span><span class="lbl">Bugs Found</span></div>
-  <div class="metric"><span class="val" style="color:var(--green)">8</span><span class="lbl">Silent Oracles</span></div>
+  <div class="metric"><span class="val" style="color:var(--purple)">11</span><span class="lbl">Oracles</span></div>
+  <div class="metric"><span class="val" style="color:var(--red)">2</span><span class="lbl">Bugs Found</span></div>
+  <div class="metric"><span class="val" style="color:var(--green)">9</span><span class="lbl">Silent Oracles</span></div>
   <div class="metric"><span class="val" style="color:var(--amber)">1</span><span class="lbl">States Visited</span></div>
 </div>
 
@@ -114,7 +114,7 @@ footer{margin-top:2rem;color:var(--muted);font-size:.78rem;text-align:center}
 </footer>
 
 <script>
-const BEATS = [{"oracle": "Monotonic_Water", "tier": 2, "description": "\"Water\" should never decrease", "sequence": "Boot_Long_600", "tick": 348, "detail": "Water decreased: 12 \u2192 11", "parsed": {"kind": "drop", "var": "Water", "before": 12.0, "after": 11.0}}];
+const BEATS = [{"oracle": "LivesBounds_Health", "tier": 2, "description": "\"Health\" should stay between 0 and -4", "sequence": "Boot_Idle", "tick": 0, "detail": "Health exceeded its starting value (-4): 5", "parsed": {"kind": "text", "text": "Health exceeded its starting value (-4): 5"}}, {"oracle": "Monotonic_Water", "tier": 2, "description": "\"Water\" should never decrease", "sequence": "Boot_Long_600", "tick": 348, "detail": "Water decreased: 12 \u2192 11", "parsed": {"kind": "drop", "var": "Water", "before": 12.0, "after": 11.0}}];
 
 function renderVisual(p) {
   if (p.kind === 'drop') {

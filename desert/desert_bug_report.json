@@ -1,10 +1,10 @@
 {
   "program": "desert.sb3",
   "oracles": "desert_oracles.js",
-  "timestamp": "2026-08-20T15:59:01.256Z",
+  "timestamp": "2026-08-31T18:10:10.939Z",
   "totalSequences": 12,
   "totalTicks": 900,
-  "oracleCount": 9,
+  "oracleCount": 11,
   "cameraSystem": false,
   "coverage": {
     "statesVisited": [
@@ -17,8 +17,96 @@
       "key:Up"
     ]
   },
-  "bugsFound": 1,
+  "bugsFound": 13,
   "bugs": [
+    {
+      "oracle": "LivesBounds_Health",
+      "tier": 2,
+      "description": "\"Health\" should stay between 0 and -4",
+      "sequence": "Boot_Idle",
+      "tick": 0,
+      "detail": "Health exceeded its starting value (-4): 5"
+    },
+    {
+      "oracle": "LivesBounds_Health",
+      "tier": 2,
+      "description": "\"Health\" should stay between 0 and -4",
+      "sequence": "Boot_then_Playing",
+      "tick": 0,
+      "detail": "Health exceeded its starting value (-4): 5"
+    },
+    {
+      "oracle": "LivesBounds_Health",
+      "tier": 2,
+      "description": "\"Health\" should stay between 0 and -4",
+      "sequence": "Playing_Hold_Left",
+      "tick": 0,
+      "detail": "Health exceeded its starting value (-4): 5"
+    },
+    {
+      "oracle": "LivesBounds_Health",
+      "tier": 2,
+      "description": "\"Health\" should stay between 0 and -4",
+      "sequence": "Playing_Hold_Right",
+      "tick": 0,
+      "detail": "Health exceeded its starting value (-4): 5"
+    },
+    {
+      "oracle": "LivesBounds_Health",
+      "tier": 2,
+      "description": "\"Health\" should stay between 0 and -4",
+      "sequence": "Playing_Hold_Up",
+      "tick": 0,
+      "detail": "Health exceeded its starting value (-4): 5"
+    },
+    {
+      "oracle": "LivesBounds_Health",
+      "tier": 2,
+      "description": "\"Health\" should stay between 0 and -4",
+      "sequence": "Playing_All_Keys",
+      "tick": 0,
+      "detail": "Health exceeded its starting value (-4): 5"
+    },
+    {
+      "oracle": "LivesBounds_Health",
+      "tier": 2,
+      "description": "\"Health\" should stay between 0 and -4",
+      "sequence": "Playing_Random_600",
+      "tick": 0,
+      "detail": "Health exceeded its starting value (-4): 5"
+    },
+    {
+      "oracle": "LivesBounds_Health",
+      "tier": 2,
+      "description": "\"Health\" should stay between 0 and -4",
+      "sequence": "Playing_Spam_Long",
+      "tick": 0,
+      "detail": "Health exceeded its starting value (-4): 5"
+    },
+    {
+      "oracle": "LivesBounds_Health",
+      "tier": 2,
+      "description": "\"Health\" should stay between 0 and -4",
+      "sequence": "Playing_Mixed_Long",
+      "tick": 0,
+      "detail": "Health exceeded its starting value (-4): 5"
+    },
+    {
+      "oracle": "LivesBounds_Health",
+      "tier": 2,
+      "description": "\"Health\" should stay between 0 and -4",
+      "sequence": "Double_Inject",
+      "tick": 0,
+      "detail": "Health exceeded its starting value (-4): 5"
+    },
+    {
+      "oracle": "LivesBounds_Health",
+      "tier": 2,
+      "description": "\"Health\" should stay between 0 and -4",
+      "sequence": "Boot_Long_600",
+      "tick": 0,
+      "detail": "Health exceeded its starting value (-4): 5"
+    },
     {
       "oracle": "Monotonic_Water",
       "tier": 2,
@@ -26,6 +114,14 @@
       "sequence": "Boot_Long_600",
       "tick": 348,
       "detail": "Water decreased: 12 → 11"
+    },
+    {
+      "oracle": "LivesBounds_Health",
+      "tier": 2,
+      "description": "\"Health\" should stay between 0 and -4",
+      "sequence": "Playing_Rapid_Switch",
+      "tick": 0,
+      "detail": "Health exceeded its starting value (-4): 5"
     }
   ]
 }

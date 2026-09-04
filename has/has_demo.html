@@ -195,7 +195,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(
     <div id="fuzz-status">
       <div class="fs-row">
         <span class="fs-label">sequence</span><span class="fs-val" id="fs-seq">—</span>
-        <span class="fs-label">oracles</span><span class="fs-val" id="fs-oracles">19</span>
+        <span class="fs-label">oracles</span><span class="fs-val" id="fs-oracles">35</span>
         <span class="fs-label">bugs</span><span class="fs-val red" id="fs-bugs">0</span>
       </div>
     </div>
@@ -230,7 +230,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(
   <div id="timeline"><!-- segs by JS --></div>
   <div id="bb-stats">
     <div class="bb-stat"><span class="bbs-val" style="color:var(--blue)" id="st-ticks">0</span><span class="bbs-lbl">ticks</span></div>
-    <div class="bb-stat"><span class="bbs-val" style="color:var(--green)" id="st-silent">18</span><span class="bbs-lbl">silent</span></div>
+    <div class="bb-stat"><span class="bbs-val" style="color:var(--green)" id="st-silent">34</span><span class="bbs-lbl">silent</span></div>
     <div class="bb-stat"><span class="bbs-val" style="color:var(--green)" id="st-tp">0</span><span class="bbs-lbl">TP</span></div>
     <div class="bb-stat"><span class="bbs-val" style="color:var(--amber)" id="st-fp">0</span><span class="bbs-lbl">FP</span></div>
     <div class="bb-stat"><span class="bbs-val" style="color:var(--blue)">100%</span><span class="bbs-lbl">precision</span></div>
@@ -245,10 +245,10 @@ const ALIAS_VARS  = [{"name": "hidden for seeker?", "sprites": ["Player", "Bot1"
 const T2_NAME     = "StaticBug_AliasingVariables";
 const T3_NAME     = "LLM_oracle";
 const T2_DETAIL   = "14 variable IDs shared across sprites \u00e2\u20ac\u201d writes in one sprite corrupt another E";
-const TOTAL_TICKS = 5680;
+const TOTAL_TICKS = 6360;
 const TOTAL_SEQS  = 14;
-const SILENT      = 18;
-const ORACLE_N    = 19;
+const SILENT      = 34;
+const ORACLE_N    = 35;
 
 // ── MAP TILES ─────────────────────────────────────────────────────────────────
 (function buildMap() {

@@ -26,37 +26,28 @@ const log = {
   rule: () => console.log(`${C.gray}${"─".repeat(55)}${C.reset}`),
 };
 
-// Variables we skip for monotonic oracles (internal counters, not game logic)
-const MONOTONIC_SKIP = new Set([
-  "#",
-  "TOUCHING SOMETHING OTHER?",
-  "TOUCHING SPOT ICON?",
-  "spot#",
-  "tile#",
-  "letter#",
-  "item#",
-  "TICK",
-  "brush dir",
-  "brush cost#",
-  "save code letter#",
-  "save code item",
-  "distance",
-  "hidden for seeker?",
-  "hidden for player?",
-  "last click release",
+// Types (from analyser.js's classifyVariable) for which "should never decrease"
+// isn't a meaningful claim: camera/position/direction values legitimately move
+// both ways, timing values reset every tick, flags and state names aren't
+// numeric increases at all, and encoded data isn't a quantity.
+const MONOTONIC_EXCLUDE_TYPES = new Set([
+  "camera_axis", "camera_zoom", "position", "direction",
+  "timing", "game_state", "flag", "encoded_data",
 ]);
 
-// Stage variables worth tracking for state enum violations
-const STATE_ENUM_INCLUDE = new Set([
-  "CURRENT PLAYER STAT",
-  "MENU",
-  "AUDIO",
-  "SEEKER",
-  "EDITOR?",
-  "LOADED PATHS?",
-  "MAP",
-  "SEEKER IS COUNTING?",
-]);
+// Looks up the type analyser.js assigned to a variable name (stage first,
+// then every sprite), so filtering can be based on the same generic
+// classification used everywhere else in the pipeline rather than a
+// hand-picked list of names from one project.
+function findVarType(analysis, name) {
+  const stageHit = (analysis.stage?.variables || []).find((v) => v.name === name);
+  if (stageHit) return stageHit.type;
+  for (const s of analysis.sprites || []) {
+    const hit = (s.variables || []).find((v) => v.name === name);
+    if (hit) return hit.type;
+  }
+  return "unknown";
+}
 
 function buildTier2Oracles(analysis) {
   const oracles = [];
@@ -68,8 +59,13 @@ function buildTier2Oracles(analysis) {
     seen.add(key);
 
     switch (hint.type) {
-      case "monotonic_increase":
-        if (MONOTONIC_SKIP.has(hint.variable)) break;
+      case "monotonic_increase": {
+        const varType = findVarType(analysis, hint.variable);
+        // Exclude by semantic type (generic) and by the "#" suffix, a common
+        // Scratch community convention for internal/technical variables
+        // (loop indices, clone counters) rather than user-facing game state.
+        if (MONOTONIC_EXCLUDE_TYPES.has(varType)) break;
+        if (hint.variable.endsWith("#")) break;
         oracles.push({
           tier: 2,
           type: "monotonic",
@@ -78,20 +74,25 @@ function buildTier2Oracles(analysis) {
           varName: hint.variable,
         });
         break;
+      }
 
       case "countdown_non_negative":
-        if (hint.variable !== "COUNT") break;
         oracles.push({
           tier: 2,
           type: "countdown",
-          name: "Countdown_NonNegative",
+          name: `Countdown_${slug(hint.variable)}`,
           description: hint.description,
           varName: hint.variable,
         });
         break;
 
-      case "state_enum":
-        if (!STATE_ENUM_INCLUDE.has(hint.variable)) break;
+      case "state_enum": {
+        // Only exclusion: a variable whose actual saved value is long enough
+        // to be classified as encoded data (e.g. a serialised level layout
+        // that happens to also pick up 2+ short literal assignments along
+        // the way) rather than a real, human-meaningful state variable.
+        const varType = findVarType(analysis, hint.variable);
+        if (varType === "encoded_data") break;
         oracles.push({
           tier: 2,
           type: "state_enum",
@@ -99,6 +100,18 @@ function buildTier2Oracles(analysis) {
           description: hint.description,
           varName: hint.variable,
           knownValues: hint.knownValues,
+        });
+        break;
+      }
+
+      case "lives_bounds":
+        oracles.push({
+          tier: 2,
+          type: "lives_bounds",
+          name: `LivesBounds_${slug(hint.variable)}`,
+          description: hint.description,
+          varName: hint.variable,
+          initialValue: hint.initialValue,
         });
         break;
 
@@ -134,8 +147,40 @@ function buildTier2Oracles(analysis) {
 //   Step B — for each property, ask Claude to write a JS predicate function.
 
 const SCRATCH_VM_API_REFERENCE = `
-
+Useful scratch-vm accessors:
+- const stage = vm.runtime.getTargetForStage();
+- const v = stage.lookupVariableByNameAndType("VAR NAME", ""); v.value is its current value.
+- To read a sprite's own variable instead of the stage's, find its target via
+  vm.runtime.targets.find(t => t.sprite && t.sprite.name === "SPRITE NAME"), then
+  the same lookupVariableByNameAndType(...) call on that target.
+- Always guard against a missing target/variable by returning { violated: false }.
 `.trim();
+
+// Builds a short, project-specific context block for Step B from the same
+// analysis data Step A already used — no project's variable names or sprite
+// list are hardcoded here, unlike the fixed description this replaced.
+function buildProgramContext(analysis) {
+  const lines = [];
+  lines.push(`- Sprites: ${analysis.sprites.map((s) => s.name).join(", ")}.`);
+  const stageVarNames = analysis.stage.variables.map((v) => v.name);
+  if (stageVarNames.length) {
+    lines.push(`- Stage variables: ${stageVarNames.join(", ")}.`);
+  }
+  for (const sv of analysis.fsm?.stateVariables || []) {
+    const hint = analysis.oracleHints.find(
+      (h) => h.type === "state_enum" && h.variable === sv,
+    );
+    if (hint?.knownValues) {
+      lines.push(`- "${sv}" takes values: ${hint.knownValues.join(", ")}.`);
+    }
+  }
+  if (analysis.cameraSystem?.present) {
+    lines.push(
+      `- The game has a virtual camera system — sprites moving off the visible stage is NORMAL, not a bug.`,
+    );
+  }
+  return lines.join("\n");
+}
 
 async function callLLM(client, prompt, maxTokens) {
   const resp = await client.chat.completions.create({
@@ -201,11 +246,7 @@ Property to implement:
 "${prop}"
 
 Context about this specific program:
-- It is a hide and seek game with sprites: Player, Bot1, Bot2, Bot3, Bot4
-- Stage variables include: CURRENT PLAYER STAT, MENU, SEEKER, COUNT, LOADED PATHS?, CAM X, CAM Y, ZOOM, Meters walked:, Total Players found:, Your total rescues:, Rescue streak:
-- CURRENT PLAYER STAT takes values: hided, discovered, saved, found
-- MENU takes values: Main, In-Game, Game-End, Editor, Load Paths, Play Settings
-- The game has a virtual camera (CAM X, CAM Y, ZOOM) — sprites going off stage is NORMAL
+${buildProgramContext(analysis)}
 
 Return ONLY a valid JavaScript arrow function with signature (vm) => { ... }.
 No markdown, no explanation, no module.exports. Just the function.
@@ -305,11 +346,30 @@ function emitOracleCode(oracle) {
   if (!stage) return { violated: false };
   const v = stage.lookupVariableByNameAndType(${vn}, "");
   if (!v) return { violated: false };
-  const vc = stage.lookupVariableByNameAndType("SEEKER IS COUNTING?", "");
-  const counting = vc && (vc.value === "true" || vc.value === true);
   const count = parseFloat(v.value);
-  if (counting && count < -5) {
-    return { violated: true, detail: \`COUNT underflowed to \${count} during countdown\` };
+  if (!isNaN(count) && count < -5) {
+    return { violated: true, detail: \`${oracle.varName} underflowed to \${count}\` };
+  }
+  return { violated: false };
+}`;
+    }
+
+    case "lives_bounds": {
+      const vn = JSON.stringify(oracle.varName);
+      const initVal = JSON.stringify(parseFloat(oracle.initialValue));
+      return `(vm) => {
+  const stage = vm.runtime.getTargetForStage();
+  if (!stage) return { violated: false };
+  const v = stage.lookupVariableByNameAndType(${vn}, "");
+  if (!v) return { violated: false };
+  const current = parseFloat(v.value);
+  const initial = ${initVal};
+  if (isNaN(current) || isNaN(initial)) return { violated: false };
+  if (current < -0.001) {
+    return { violated: true, detail: \`${oracle.varName} went below 0: \${current}\` };
+  }
+  if (current > initial + 0.001) {
+    return { violated: true, detail: \`${oracle.varName} exceeded its starting value (\${initial}): \${current}\` };
   }
   return { violated: false };
 }`;

@@ -31,20 +31,20 @@ code{background:#1e2d45;color:#90c8ff;padding:1px 5px;border-radius:3px;font-siz
 <h1>Fuzzer Evaluation Report</h1>
 <div class="sub">
   has.sb3 &nbsp;·&nbsp;
-  Generated 17 August 2026, 23:04 &nbsp;·&nbsp;
-  14 sequences &nbsp;·&nbsp; 5,680 ticks &nbsp;·&nbsp;
+  Generated 31 August 2026, 19:34 &nbsp;·&nbsp;
+  14 sequences &nbsp;·&nbsp; 6,360 ticks &nbsp;·&nbsp;
   University of Manchester — MSc Cyber Security Dissertation
 </div>
 
 <div class="metrics">
-  <div class="metric"><span class="val" style="color:#4a90d9">19</span><div class="lbl">Total Oracles</div></div>
+  <div class="metric"><span class="val" style="color:#4a90d9">35</span><div class="lbl">Total Oracles</div></div>
   <div class="metric"><span class="val" style="color:#ef4444">1</span><div class="lbl">Fired</div></div>
   <div class="metric"><span class="val" style="color:#22c55e">1</span><div class="lbl">True Positives</div></div>
   <div class="metric"><span class="val" style="color:#f59e0b">0</span><div class="lbl">False Positives</div></div>
   <div class="metric"><span class="val" style="color:#22c55e">100%</span><div class="lbl">Precision</div></div>
-  <div class="metric"><span class="val" style="color:#22c55e">18</span><div class="lbl">Silent (passing)</div></div>
+  <div class="metric"><span class="val" style="color:#22c55e">34</span><div class="lbl">Silent (passing)</div></div>
   <div class="metric"><span class="val" style="color:#a855f7">2/6</span><div class="lbl">State Coverage</div></div>
-  <div class="metric"><span class="val" style="color:#4a90d9">5,680</span><div class="lbl">Total Ticks</div></div>
+  <div class="metric"><span class="val" style="color:#4a90d9">6,360</span><div class="lbl">Total Ticks</div></div>
 </div>
 
 <div class="bars">
@@ -56,7 +56,7 @@ code{background:#1e2d45;color:#90c8ff;padding:1px 5px;border-radius:3px;font-siz
   <div>
     <div style="font-size:.8rem;color:#94a3b8;margin-bottom:.3rem">State coverage — 2 of 6 states visited</div>
     <div class="bar-wrap"><div class="bar-fill" style="width:33%;background:#a855f7"></div></div>
-    <div style="font-size:.85rem;font-weight:700;color:#a855f7">33% — CountingDown, Playing</div>
+    <div style="font-size:.85rem;font-weight:700;color:#a855f7">33% — CURRENT PLAYER STAT=hided|MENU=Main, CURRENT PLAYER STAT=hided|MENU=Play Settings</div>
   </div>
 </div>
 
@@ -81,9 +81,9 @@ code{background:#1e2d45;color:#90c8ff;padding:1px 5px;border-radius:3px;font-siz
 </div>
 
 
-<h2>Silent Oracles — Passing Invariants (18 of 19)</h2>
+<h2>Silent Oracles — Passing Invariants (34 of 35)</h2>
 <p style="font-size:.85rem;color:#64748b;margin-bottom:.9rem">
-  These oracles fired zero violations across all 14 sequences and 5,680 ticks.
+  These oracles fired zero violations across all 14 sequences and 6,360 ticks.
   Each represents a confirmed correctness property of the program under the tested inputs.
 </p>
 <table>
@@ -97,7 +97,7 @@ code{background:#1e2d45;color:#90c8ff;padding:1px 5px;border-radius:3px;font-siz
 <tr><td style='font-family:monospace;font-size:.8rem;color:#90c8ff'>StateEnum_SEEKER_IS_COUNTING</td><td style='color:#86efac;font-size:.8rem'>Only ever 'true' or 'false'</td></tr>
 <tr><td style='font-family:monospace;font-size:.8rem;color:#90c8ff'>StateEnum_AUDIO</td><td style='color:#86efac;font-size:.8rem'>AUDIO variable within expected values</td></tr>
 <tr><td style='font-family:monospace;font-size:.8rem;color:#90c8ff'>StateEnum_MAP</td><td style='color:#86efac;font-size:.8rem'>MAP within expected enumeration</td></tr>
-<tr><td style='font-family:monospace;font-size:.8rem;color:#90c8ff'>+ 9 more T3 LLM oracles…</td><td style='color:#86efac;font-size:.8rem'>All passed — invariants held</td></tr></tbody>
+<tr><td style='font-family:monospace;font-size:.8rem;color:#90c8ff'>+ 25 more T3 LLM oracles…</td><td style='color:#86efac;font-size:.8rem'>All passed — invariants held</td></tr></tbody>
 </table>
 
 <h2>Aliasing Bug — 14 Shared Variable IDs</h2>
@@ -114,7 +114,7 @@ code{background:#1e2d45;color:#90c8ff;padding:1px 5px;border-radius:3px;font-siz
 <h2>Sequence Results (14 sequences)</h2>
 <table>
   <thead><tr><th>Sequence</th><th>Result</th><th>Oracles Triggered</th></tr></thead>
-  <tbody><tr><td style='font-family:monospace;font-size:.82rem'>Boot_Idle</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Boot_Long_600</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Boot_then_Playing</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Double_Inject</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Playing_All_Keys</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Playing_Hold_B</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Playing_Hold_F</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Playing_Hold_H</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Playing_Hold_R</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Playing_Hold_S</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Playing_Mixed_Long</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Playing_Random_600</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Playing_Rapid_Switch</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Playing_Spam_B_Long</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr></tbody>
+  <tbody><tr><td style='font-family:monospace;font-size:.82rem'>Boot_Idle</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Boot_Long_600</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Boot_then_Playing</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Double_Inject</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Playing_All_Keys</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Playing_Hold_1</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Playing_Hold_2</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Playing_Hold_3</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Playing_Hold_4</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Playing_Hold_a</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Playing_Mixed_Long</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Playing_Random_600</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Playing_Rapid_Switch</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr><tr><td style='font-family:monospace;font-size:.82rem'>Playing_Spam_Long</td><td><span style="background:#450a0a;color:#fca5a5;padding:2px 7px;border-radius:4px;font-size:.75rem">1 bug</span></td><td style='font-size:.8rem;color:#94a3b8'>StaticBug_AliasingVariables</td></tr></tbody>
 </table>
 
 <footer>

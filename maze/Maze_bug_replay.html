@@ -76,14 +76,14 @@ footer{margin-top:2rem;color:var(--muted);font-size:.78rem;text-align:center}
 <body>
 
 <h1>Bug Replay — Maze</h1>
-<div class="sub">Maze.sb3 · 2026-08-20T15:58:24.728Z</div>
+<div class="sub">Maze.sb3 · 2026-08-31T18:17:31.657Z</div>
 
 <div class="metrics">
   <div class="metric"><span class="val" style="color:var(--blue)">14</span><span class="lbl">Sequences</span></div>
   <div class="metric"><span class="val" style="color:var(--blue)">7360</span><span class="lbl">Total Ticks</span></div>
-  <div class="metric"><span class="val" style="color:var(--purple)">8</span><span class="lbl">Oracles</span></div>
+  <div class="metric"><span class="val" style="color:var(--purple)">11</span><span class="lbl">Oracles</span></div>
   <div class="metric"><span class="val" style="color:var(--red)">1</span><span class="lbl">Bugs Found</span></div>
-  <div class="metric"><span class="val" style="color:var(--green)">7</span><span class="lbl">Silent Oracles</span></div>
+  <div class="metric"><span class="val" style="color:var(--green)">10</span><span class="lbl">Silent Oracles</span></div>
   <div class="metric"><span class="val" style="color:var(--amber)">2</span><span class="lbl">States Visited</span></div>
 </div>
 
@@ -114,7 +114,7 @@ footer{margin-top:2rem;color:var(--muted);font-size:.78rem;text-align:center}
 </footer>
 
 <script>
-const BEATS = [{"oracle": "Monotonic_Index", "tier": 2, "description": "\"Index\" should never decrease", "sequence": "Playing_All_Keys", "tick": 627, "detail": "Index decreased: 5 \u2192 4", "parsed": {"kind": "drop", "var": "Index", "before": 5.0, "after": 4.0}}];
+const BEATS = [{"oracle": "Monotonic_Index", "tier": 2, "description": "\"Index\" should never decrease", "sequence": "Playing_All_Keys", "tick": 615, "detail": "Index decreased: 5 \u2192 2", "parsed": {"kind": "drop", "var": "Index", "before": 5.0, "after": 2.0}}];
 
 function renderVisual(p) {
   if (p.kind === 'drop') {

@@ -1,5 +1,5 @@
 SCRATCH ALIASING BUG SCAN — LOCAL FOLDER
-Folder: scan_projects   Date: Tue Aug 18 2026
+Folder: scan_projects   Date: Mon Aug 31 2026
 
 Projects with aliasing bug : 1 / 40 (3%)
 Clean projects             : 39 / 40 (97%)

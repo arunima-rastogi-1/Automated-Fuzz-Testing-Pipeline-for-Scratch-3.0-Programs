@@ -1,10 +1,10 @@
 {
   "program": "has.sb3",
   "oracles": "has_oracles.js",
-  "timestamp": "2026-08-20T16:03:56.426Z",
+  "timestamp": "2026-08-31T18:34:22.475Z",
   "totalSequences": 14,
   "totalTicks": 6360,
-  "oracleCount": 20,
+  "oracleCount": 35,
   "cameraSystem": true,
   "coverage": {
     "statesVisited": [

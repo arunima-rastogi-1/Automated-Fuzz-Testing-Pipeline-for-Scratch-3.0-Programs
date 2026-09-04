@@ -31,6 +31,28 @@ const ORACLES = [
   },
   {
     tier: 2,
+    name: "Monotonic_save_code_item",
+    description: "\"save code item\" should never decrease",
+    check: (() => {
+  let _prev = null;
+  return (vm) => {
+    const stage = vm.runtime.getTargetForStage();
+    if (!stage) return { violated: false };
+    const v = stage.lookupVariableByNameAndType("save code item", "");
+    if (!v) return { violated: false };
+    const current = parseFloat(v.value);
+    if (_prev !== null && !isNaN(current) && !isNaN(_prev) && current < _prev - 0.001) {
+      const d = `save code item decreased: ${_prev} → ${current}`;
+      _prev = current;
+      return { violated: true, detail: d };
+    }
+    if (!isNaN(current)) _prev = current;
+    return { violated: false };
+  };
+})(),
+  },
+  {
+    tier: 2,
     name: "Monotonic_Total_Players_found",
     description: "\"Total Players found:\" should never decrease",
     check: (() => {
@@ -43,6 +65,28 @@ const ORACLES = [
     const current = parseFloat(v.value);
     if (_prev !== null && !isNaN(current) && !isNaN(_prev) && current < _prev - 0.001) {
       const d = `Total Players found: decreased: ${_prev} → ${current}`;
+      _prev = current;
+      return { violated: true, detail: d };
+    }
+    if (!isNaN(current)) _prev = current;
+    return { violated: false };
+  };
+})(),
+  },
+  {
+    tier: 2,
+    name: "Monotonic_distance",
+    description: "\"distance\" should never decrease",
+    check: (() => {
+  let _prev = null;
+  return (vm) => {
+    const stage = vm.runtime.getTargetForStage();
+    if (!stage) return { violated: false };
+    const v = stage.lookupVariableByNameAndType("distance", "");
+    if (!v) return { violated: false };
+    const current = parseFloat(v.value);
+    if (_prev !== null && !isNaN(current) && !isNaN(_prev) && current < _prev - 0.001) {
+      const d = `distance decreased: ${_prev} → ${current}`;
       _prev = current;
       return { violated: true, detail: d };
     }
@@ -75,18 +119,54 @@ const ORACLES = [
   },
   {
     tier: 2,
-    name: "Countdown_NonNegative",
+    name: "Monotonic_last_click_release",
+    description: "\"last click release\" should never decrease",
+    check: (() => {
+  let _prev = null;
+  return (vm) => {
+    const stage = vm.runtime.getTargetForStage();
+    if (!stage) return { violated: false };
+    const v = stage.lookupVariableByNameAndType("last click release", "");
+    if (!v) return { violated: false };
+    const current = parseFloat(v.value);
+    if (_prev !== null && !isNaN(current) && !isNaN(_prev) && current < _prev - 0.001) {
+      const d = `last click release decreased: ${_prev} → ${current}`;
+      _prev = current;
+      return { violated: true, detail: d };
+    }
+    if (!isNaN(current)) _prev = current;
+    return { violated: false };
+  };
+})(),
+  },
+  {
+    tier: 2,
+    name: "Countdown_START_COUNTING_FROM",
+    description: "\"START COUNTING FROM\" should not go below 0 during normal play",
+    check: (vm) => {
+  const stage = vm.runtime.getTargetForStage();
+  if (!stage) return { violated: false };
+  const v = stage.lookupVariableByNameAndType("START COUNTING FROM", "");
+  if (!v) return { violated: false };
+  const count = parseFloat(v.value);
+  if (!isNaN(count) && count < -5) {
+    return { violated: true, detail: `START COUNTING FROM underflowed to ${count}` };
+  }
+  return { violated: false };
+},
+  },
+  {
+    tier: 2,
+    name: "Countdown_COUNT",
     description: "\"COUNT\" should not go below 0 during normal play",
     check: (vm) => {
   const stage = vm.runtime.getTargetForStage();
   if (!stage) return { violated: false };
   const v = stage.lookupVariableByNameAndType("COUNT", "");
   if (!v) return { violated: false };
-  const vc = stage.lookupVariableByNameAndType("SEEKER IS COUNTING?", "");
-  const counting = vc && (vc.value === "true" || vc.value === true);
   const count = parseFloat(v.value);
-  if (counting && count < -5) {
-    return { violated: true, detail: `COUNT underflowed to ${count} during countdown` };
+  if (!isNaN(count) && count < -5) {
+    return { violated: true, detail: `COUNT underflowed to ${count}` };
   }
   return { violated: false };
 },
@@ -121,6 +201,40 @@ const ORACLES = [
   const cur = String(v.value);
   if (!allowed.includes(cur)) {
     return { violated: true, detail: `LOADED PATHS? = "${cur}" — not in allowed set: ${allowed.join(", ")}` };
+  }
+  return { violated: false };
+},
+  },
+  {
+    tier: 2,
+    name: "StateEnum_CUSTOM_PATHS",
+    description: "\"CUSTOM PATHS?\" should only take values: load custom, standard, load standard, custom",
+    check: (vm) => {
+  const stage = vm.runtime.getTargetForStage();
+  if (!stage) return { violated: false };
+  const v = stage.lookupVariableByNameAndType("CUSTOM PATHS?", "");
+  if (!v) return { violated: false };
+  const allowed = ["load custom","standard","load standard","custom"];
+  const cur = String(v.value);
+  if (!allowed.includes(cur)) {
+    return { violated: true, detail: `CUSTOM PATHS? = "${cur}" — not in allowed set: ${allowed.join(", ")}` };
+  }
+  return { violated: false };
+},
+  },
+  {
+    tier: 2,
+    name: "StateEnum_MAP",
+    description: "\"MAP?\" should only take values: true, false",
+    check: (vm) => {
+  const stage = vm.runtime.getTargetForStage();
+  if (!stage) return { violated: false };
+  const v = stage.lookupVariableByNameAndType("MAP?", "");
+  if (!v) return { violated: false };
+  const allowed = ["true","false"];
+  const cur = String(v.value);
+  if (!allowed.includes(cur)) {
+    return { violated: true, detail: `MAP? = "${cur}" — not in allowed set: ${allowed.join(", ")}` };
   }
   return { violated: false };
 },
@@ -195,6 +309,23 @@ const ORACLES = [
   },
   {
     tier: 2,
+    name: "StateEnum_show",
+    description: "\"show?\" should only take values: true, false",
+    check: (vm) => {
+  const stage = vm.runtime.getTargetForStage();
+  if (!stage) return { violated: false };
+  const v = stage.lookupVariableByNameAndType("show?", "");
+  if (!v) return { violated: false };
+  const allowed = ["true","false"];
+  const cur = String(v.value);
+  if (!allowed.includes(cur)) {
+    return { violated: true, detail: `show? = "${cur}" — not in allowed set: ${allowed.join(", ")}` };
+  }
+  return { violated: false };
+},
+  },
+  {
+    tier: 2,
     name: "StateEnum_SEEKER_IS_COUNTING",
     description: "\"SEEKER IS COUNTING?\" should only take values: true, false",
     check: (vm) => {
@@ -206,6 +337,108 @@ const ORACLES = [
   const cur = String(v.value);
   if (!allowed.includes(cur)) {
     return { violated: true, detail: `SEEKER IS COUNTING? = "${cur}" — not in allowed set: ${allowed.join(", ")}` };
+  }
+  return { violated: false };
+},
+  },
+  {
+    tier: 2,
+    name: "StateEnum_identifier",
+    description: "\"identifier\" should only take values: Player, Bot1, Bot2, Bot3, Bot4",
+    check: (vm) => {
+  const stage = vm.runtime.getTargetForStage();
+  if (!stage) return { violated: false };
+  const v = stage.lookupVariableByNameAndType("identifier", "");
+  if (!v) return { violated: false };
+  const allowed = ["Player","Bot1","Bot2","Bot3","Bot4"];
+  const cur = String(v.value);
+  if (!allowed.includes(cur)) {
+    return { violated: true, detail: `identifier = "${cur}" — not in allowed set: ${allowed.join(", ")}` };
+  }
+  return { violated: false };
+},
+  },
+  {
+    tier: 2,
+    name: "StateEnum_PLAYER_ON",
+    description: "\"PLAYER ON\" should only take values: hard, stony, dirt, gravel, grass",
+    check: (vm) => {
+  const stage = vm.runtime.getTargetForStage();
+  if (!stage) return { violated: false };
+  const v = stage.lookupVariableByNameAndType("PLAYER ON", "");
+  if (!v) return { violated: false };
+  const allowed = ["hard","stony","dirt","gravel","grass"];
+  const cur = String(v.value);
+  if (!allowed.includes(cur)) {
+    return { violated: true, detail: `PLAYER ON = "${cur}" — not in allowed set: ${allowed.join(", ")}` };
+  }
+  return { violated: false };
+},
+  },
+  {
+    tier: 2,
+    name: "StateEnum_BOT1_ON",
+    description: "\"BOT1 ON\" should only take values: stony, dirt, gravel, grass, hard",
+    check: (vm) => {
+  const stage = vm.runtime.getTargetForStage();
+  if (!stage) return { violated: false };
+  const v = stage.lookupVariableByNameAndType("BOT1 ON", "");
+  if (!v) return { violated: false };
+  const allowed = ["stony","dirt","gravel","grass","hard"];
+  const cur = String(v.value);
+  if (!allowed.includes(cur)) {
+    return { violated: true, detail: `BOT1 ON = "${cur}" — not in allowed set: ${allowed.join(", ")}` };
+  }
+  return { violated: false };
+},
+  },
+  {
+    tier: 2,
+    name: "StateEnum_BOT2_ON",
+    description: "\"BOT2 ON\" should only take values: stony, dirt, gravel, grass, hard",
+    check: (vm) => {
+  const stage = vm.runtime.getTargetForStage();
+  if (!stage) return { violated: false };
+  const v = stage.lookupVariableByNameAndType("BOT2 ON", "");
+  if (!v) return { violated: false };
+  const allowed = ["stony","dirt","gravel","grass","hard"];
+  const cur = String(v.value);
+  if (!allowed.includes(cur)) {
+    return { violated: true, detail: `BOT2 ON = "${cur}" — not in allowed set: ${allowed.join(", ")}` };
+  }
+  return { violated: false };
+},
+  },
+  {
+    tier: 2,
+    name: "StateEnum_BOT3_ON",
+    description: "\"BOT3 ON\" should only take values: stony, dirt, gravel, grass, hard",
+    check: (vm) => {
+  const stage = vm.runtime.getTargetForStage();
+  if (!stage) return { violated: false };
+  const v = stage.lookupVariableByNameAndType("BOT3 ON", "");
+  if (!v) return { violated: false };
+  const allowed = ["stony","dirt","gravel","grass","hard"];
+  const cur = String(v.value);
+  if (!allowed.includes(cur)) {
+    return { violated: true, detail: `BOT3 ON = "${cur}" — not in allowed set: ${allowed.join(", ")}` };
+  }
+  return { violated: false };
+},
+  },
+  {
+    tier: 2,
+    name: "StateEnum_BOT4_ON",
+    description: "\"BOT4 ON\" should only take values: stony, dirt, gravel, grass, hard",
+    check: (vm) => {
+  const stage = vm.runtime.getTargetForStage();
+  if (!stage) return { violated: false };
+  const v = stage.lookupVariableByNameAndType("BOT4 ON", "");
+  if (!v) return { violated: false };
+  const allowed = ["stony","dirt","gravel","grass","hard"];
+  const cur = String(v.value);
+  if (!allowed.includes(cur)) {
+    return { violated: true, detail: `BOT4 ON = "${cur}" — not in allowed set: ${allowed.join(", ")}` };
   }
   return { violated: false };
 },
@@ -229,6 +462,57 @@ const ORACLES = [
   },
   {
     tier: 2,
+    name: "StateEnum_want_to_speed_up",
+    description: "\"want to speed up?\" should only take values: false, true",
+    check: (vm) => {
+  const stage = vm.runtime.getTargetForStage();
+  if (!stage) return { violated: false };
+  const v = stage.lookupVariableByNameAndType("want to speed up?", "");
+  if (!v) return { violated: false };
+  const allowed = ["false","true"];
+  const cur = String(v.value);
+  if (!allowed.includes(cur)) {
+    return { violated: true, detail: `want to speed up? = "${cur}" — not in allowed set: ${allowed.join(", ")}` };
+  }
+  return { violated: false };
+},
+  },
+  {
+    tier: 2,
+    name: "StateEnum_turn",
+    description: "\"turn\" should only take values: , up, up-right, up-left, down, down-right, down-left, right, left",
+    check: (vm) => {
+  const stage = vm.runtime.getTargetForStage();
+  if (!stage) return { violated: false };
+  const v = stage.lookupVariableByNameAndType("turn", "");
+  if (!v) return { violated: false };
+  const allowed = ["","up","up-right","up-left","down","down-right","down-left","right","left"];
+  const cur = String(v.value);
+  if (!allowed.includes(cur)) {
+    return { violated: true, detail: `turn = "${cur}" — not in allowed set: ${allowed.join(", ")}` };
+  }
+  return { violated: false };
+},
+  },
+  {
+    tier: 2,
+    name: "StateEnum_at_point_of_intrest",
+    description: "\"at point of intrest?\" should only take values: false, true",
+    check: (vm) => {
+  const stage = vm.runtime.getTargetForStage();
+  if (!stage) return { violated: false };
+  const v = stage.lookupVariableByNameAndType("at point of intrest?", "");
+  if (!v) return { violated: false };
+  const allowed = ["false","true"];
+  const cur = String(v.value);
+  if (!allowed.includes(cur)) {
+    return { violated: true, detail: `at point of intrest? = "${cur}" — not in allowed set: ${allowed.join(", ")}` };
+  }
+  return { violated: false };
+},
+  },
+  {
+    tier: 2,
     name: "StaticBug_AliasingVariables",
     description: "14 variable IDs shared across sprites — writes in one sprite corrupt another",
     check: (() => {
@@ -242,44 +526,56 @@ const ORACLES = [
   },
   {
     tier: 3,
-    name: "LLM_The_game_state_must_always_remain_within",
-    description: "The game state must always remain within the valid set of defined values: Boot, Initialising, Menu, Playing, or GameOver.",
+    name: "LLM_The_game_state_always_resides_in_exactly",
+    description: "The game state always resides in exactly one valid mode from the Boot → Initialising → Menu → Playing → GameOver sequence and transitions strictly along the defined path without skipping or invalid backtracking.",
     check: (vm) => ({ violated: false }) // generation failed (invalid syntax),
   },
   {
     tier: 3,
-    name: "LLM_Score_and_statistic_variables_such_as_Hi",
-    description: "Score and statistic variables such as 'Highest rescue streak', 'Total Players found', 'Your total rescues', 'Rescue streak', 'Meters walked', and 'Stealth meters' must never decrease during runtime.",
+    name: "LLM_The_frame_based_tick_broadcasts_always_f",
+    description: "The frame-based tick broadcasts always fire in a consistent, deterministic order during active gameplay to guarantee synchronized updates across all AI, hitbox, and tracking sprites.",
+    check: (vm) => ({ violated: false }),
+  },
+  {
+    tier: 3,
+    name: "LLM_The_score_and_statistic_variables_always",
+    description: "The score and statistic variables always maintain strictly non-decreasing values, never decrementing or resetting below their initialized baseline once gameplay begins.",
     check: (vm) => ({ violated: false }) // generation failed (invalid syntax),
   },
   {
     tier: 3,
-    name: "LLM_Sprite_coordinate_values_are_considered_",
-    description: "Sprite coordinate values are considered valid regardless of whether they lie inside or outside the 480×360 stage viewport due to the intentional virtual camera panning system.",
-    check: (vm) => ({ violated: false }),
+    name: "LLM_The_virtual_camera_coordinates_and_zoom_",
+    description: "The virtual camera coordinates and zoom factors always contain mathematically valid numbers to ensure accurate offset calculations for hitbox scaling, pathfinding distances, and collision boundary checks.",
+    check: (vm) => {
+  const stage = vm.runtime.getTargetForStage();
+  if (!stage) return { violated: false };
+  const zoom = stage.lookupVariableByNameAndType("ZOOM", "");
+  const camX = stage.lookupVariableByNameAndType("CAM X", "");
+  const camY = stage.lookupVariableByNameAndType("CAM Y", "");
+  if (!zoom || !camX || !camY) return { violated: false };
+  const isValid = v => Number.isFinite(Number(v.value));
+  return { violated: !isValid(zoom) || !isValid(camX) || !isValid(camY) };
+},
   },
   {
     tier: 3,
-    name: "LLM_All_14_shared_variable_IDs_maintain_imme",
-    description: "All 14 shared variable IDs maintain immediate global consistency, meaning any assignment to a shared variable instantly updates its value for all sprites referencing that ID.",
-    check: (vm) => ({ violated: false }),
+    name: "LLM_The_MENU_and_CURRENT_PLAYER_STAT_variabl",
+    description: "The \"MENU\" and \"CURRENT PLAYER STAT\" variables always accurately mirror the actual runtime context, ensuring gameplay mechanics, AI routines, and input handlers correctly enable or disable based on the active screen.",
+    check: (vm) => {
+  const stage = vm.runtime.getTargetForStage();
+  if (!stage) return { violated: false };
+  const menuVar = stage.lookupVariableByNameAndType("MENU", "");
+  const statVar = stage.lookupVariableByNameAndType("CURRENT PLAYER STAT", "");
+  if (!menuVar || !statVar) return { violated: false };
+  const validMenu = ["Load Paths", "Editor", "In-Game", "Game-End", "Main", "Play Settings"];
+  const validStat = ["hided", "discovered", "saved", "found"];
+  return { violated: !validMenu.includes(menuVar.value) || !validStat.includes(statVar.value) };
+},
   },
   {
     tier: 3,
-    name: "LLM_The_game_loop_must_continuously_broadcas",
-    description: "The game loop must continuously broadcast tick messages every frame to drive logic updates for critical sprites including the Player, Bots, Level, Path, and Spots.",
-    check: (vm) => ({ violated: false }),
-  },
-  {
-    tier: 3,
-    name: "LLM_The_MENU_variable_must_synchronize_with_",
-    description: "The 'MENU' variable must synchronize with the active gameplay flow, holding values like 'In-Game' when the Playing state is active.",
-    check: (vm) => ({ violated: false }) // generation failed (invalid syntax),
-  },
-  {
-    tier: 3,
-    name: "LLM_Collision_detection_logic_must_be_active",
-    description: "Collision detection logic must be actively evaluated between interactive sprites, including the Player, Level, Spots, Path, Spawn, and Bot entities.",
+    name: "LLM_The_collision_detection_logic_across_all",
+    description: "The collision detection logic across all interactive sprites always remains gated by the current game state, completely ignoring hitbox evaluations whenever the menu, initialization, or game-over phases are active.",
     check: (vm) => ({ violated: false }) // generation failed (invalid syntax),
   },
 ];

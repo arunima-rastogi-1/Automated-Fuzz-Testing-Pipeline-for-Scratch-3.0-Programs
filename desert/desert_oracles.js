@@ -74,40 +74,82 @@ const ORACLES = [
 })(),
   },
   {
-    tier: 3,
-    name: "LLM_The_game_state_machine_always_progresses",
-    description: "The game state machine always progresses linearly through Boot, Playing, and GameOver without bypassing or reverting states during standard execution cycles.",
-    check: (vm) => ({ violated: false }) // generation failed,
+    tier: 2,
+    name: "LivesBounds_Health",
+    description: "\"Health\" should stay between 0 and -4",
+    check: (vm) => {
+  const stage = vm.runtime.getTargetForStage();
+  if (!stage) return { violated: false };
+  const v = stage.lookupVariableByNameAndType("Health", "");
+  if (!v) return { violated: false };
+  const current = parseFloat(v.value);
+  const initial = -4;
+  if (isNaN(current) || isNaN(initial)) return { violated: false };
+  if (current < -0.001) {
+    return { violated: true, detail: `Health went below 0: ${current}` };
+  }
+  if (current > initial + 0.001) {
+    return { violated: true, detail: `Health exceeded its starting value (${initial}): ${current}` };
+  }
+  return { violated: false };
+},
+  },
+  {
+    tier: 2,
+    name: "LivesBounds_Recovered_health",
+    description: "\"Recovered health\" should stay between 0 and 0",
+    check: (vm) => {
+  const stage = vm.runtime.getTargetForStage();
+  if (!stage) return { violated: false };
+  const v = stage.lookupVariableByNameAndType("Recovered health", "");
+  if (!v) return { violated: false };
+  const current = parseFloat(v.value);
+  const initial = 0;
+  if (isNaN(current) || isNaN(initial)) return { violated: false };
+  if (current < -0.001) {
+    return { violated: true, detail: `Recovered health went below 0: ${current}` };
+  }
+  if (current > initial + 0.001) {
+    return { violated: true, detail: `Recovered health exceeded its starting value (${initial}): ${current}` };
+  }
+  return { violated: false };
+},
   },
   {
     tier: 3,
-    name: "LLM_The_Health_variable_is_initialized_to_4_",
-    description: "The Health variable is initialized to -4 and is exclusively modified through predefined collision events, scripted interactions, or state transition routines.",
+    name: "LLM_The_program_must_always_maintain_exactly",
+    description: "The program must always maintain exactly one active state among Boot, Playing, or GameOver, with any state transition strictly adhering to the Boot to Playing and Playing to Gameover progression.",
+    check: (vm) => ({ violated: false }) // generation failed (invalid syntax),
+  },
+  {
+    tier: 3,
+    name: "LLM_The_Health_variable_must_remain_at_its_i",
+    description: "The Health variable must remain at its initial value of -4 until the Playing state is entered and must only be modified through explicitly programmed collision or recovery events thereafter.",
     check: (vm) => ({ violated: false }),
   },
   {
     tier: 3,
-    name: "LLM_The_Recovered_health_variable_is_initial",
-    description: "The Recovered health variable is initialized to 0 and only increments when explicitly triggered by designated game mechanics during the Playing state.",
+    name: "LLM_The_Recovered_health_variable_must_never",
+    description: "The Recovered health variable must never become negative at any point during execution and must only increase when a valid healing trigger occurs.",
+    check: (vm) => { const stage = vm.runtime.getTargetForStage(); if (!stage) return { violated: false }; const v = stage.lookupVariableByNameAndType("Recovered health", ""); if (!v) return { violated: false }; if (typeof v.value === "number" && v.value < 0) return { violated: true, details: "Recovered health is negative" }; return { violated: false }; },
+  },
+  {
+    tier: 3,
+    name: "LLM_The_Player_sprite_s_movement_and_collisi",
+    description: "The Player sprite’s movement and collision detection scripts must only execute when the game state is Playing and must halt automatically when the state changes to Boot or GameOver.",
+    check: (vm) => ({ violated: false }) // generation failed (invalid syntax),
+  },
+  {
+    tier: 3,
+    name: "LLM_Every_collision_event_between_the_Player",
+    description: "Every collision event between the Player and Water sprites must consistently invoke a deterministic response routine before further gameplay logic proceeds.",
     check: (vm) => ({ violated: false }),
   },
   {
     tier: 3,
-    name: "LLM_The_estop_broadcast_is_solely_utilized_t",
-    description: "The `estop` broadcast is solely utilized to signal round termination or GameOver conditions, ensuring a deterministic exit from the Playing state.",
-    check: (vm) => ({ violated: false }) // generation failed,
-  },
-  {
-    tier: 3,
-    name: "LLM_Collision_detection_between_the_Player_a",
-    description: "Collision detection between the Player and Water sprites is evaluated continuously during gameplay and processes its associated logic exactly once per distinct contact to prevent duplicate state modifications.",
-    check: (vm) => ({ violated: false }),
-  },
-  {
-    tier: 3,
-    name: "LLM_All_sprite_initializations_variable_assi",
-    description: "All sprite initializations, variable assignments, and state validations are completed during the Boot phase before the program permits entry into the Playing state.",
-    check: (vm) => ({ violated: false }) // generation failed,
+    name: "LLM_The_estop_broadcast_must_only_be_sent_up",
+    description: "The `estop` broadcast must only be sent upon entering the GameOver state, and all gameplay-dependent scripts must immediately suspend their execution loops upon receiving it.",
+    check: (vm) => ({ violated: false }) // generation failed (invalid syntax),
   },
 ];
 
